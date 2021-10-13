@@ -38,6 +38,10 @@ div.content {
   height: 1000px;
 }
 
+#code {
+  font-family: "Nanum Gothic Coding", monospace;
+}
+
 @media screen and (max-width: 900px) {
   ul.sidenav {
     width: 100%;
