@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pi Server</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style></style>
+  </head>
+  <body>
+    <nav>
+      <ul class="sidenav">
+        <li><a class="active" href="#home">Diaz</a></li>
+        <li><a href="#rpi-srv">Server</a></li>
+        <li><a href="#contact">Contact</a></li>
+
+        <li class="right"><a href="#about">About</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Pi-Hosted Series</a>
+          <div class="dropdown-content">
+            <a href="Pi-Hosted_part_1.html">Part 1</a>
+            <a href="Pi-Hosted_part_2.html">Part 2</a>
+            <a href="Pi-Hosted_part_3.html">Part 3</a>
+            <a href="Pi-Hosted_part_4.html">Part 4</a>
+            <a href="Pi-Hosted_part_5.html">Part 5</a>
+            <a href="Pi-Hosted_part_6.html">Part 6</a>
+            <a href="Pi-Hosted_part_7.html">Part 7</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="content">
+      <h1>Part 1</h1>
+      <h2>Pi-Hosted</h2>
+      <iframe
+        width="658"
+        height="370"
+        src="https://www.youtube.com/embed/cO2-gQ09Jj0"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <h3>Hardware I used:</h3>
+      <ul>
+        <li>Pi 4</li>
+        <li>SD → To config Usb bootloader</li>
+        <li>SSD or USB or HDD</li>
+        <li>Pi Imager > RPI Desktop OS</li>
+        <li>HDMI cord</li>
+      </ul>
+      <section>
+        <h3>Step by step:</h3>
+        <h4>Prep the Pi</h4>
+        <p>issues:</p>
+        <p>
+          I had some issues following this particular video since he skip the
+          step and flash the OS on the HDD instead of doing it on a SD and then
+          copy everything from the SD to the SSD from the pi.
+        </p>
+        <ul>
+          <li>
+            I had some issues following this particular video since he skip the
+            step and flash the OS on the HDD instead of doing it on a SD and
+            then copy everything from the SD to the SSD from the pi.
+          </li>
+          <li>I had to setup the Pi following **Video until minute 9:</li>
+        </ul>
+        <div>
+          <h5>SSD Boot for Raspberry Pi4 (Setup)</h5>
+          <p><strong>issues:</strong></p>
+          <p>
+            lo hice y sirvio pero tuve problemas...el dia siguiente encontre un
+            Video_Serie q me encanto. Format my drive and start over. However, I
+            had to go back and do this setup from SSD since the Pi-hosted video
+            did not boot my pi correctly.
+          </p>
+          <hr />
+          <div>
+            <p>
+              I follow the steps in the video below but I run into some issues
+              which I will explain.
+            </p>
+            <a
+              href="https://www.notion.so/SSD-Boot-for-Raspberry-Pi4-Setup-93bc1fe3e91f4fa0a5c65916ea5d6b92#d48146caf5f54a0bbaa2b25fbd6e632f"
+              >video</a
+            >
+            <p>
+              Alternative Video
+              <a href="https://www.youtube.com/watch?v=pto45lMgH5w">here</a>.
+            </p>
+          </div>
+          <div>
+            <h4>Comands I used:</h4>
+            <p>Commands used before Software update</p>
+            <p>
+              <code
+                >Change the password on the desktop or using SSH with: passwd
+                set a time zone and a location Here are the commands used to
+                upgrade the Software and Eeprom: How to Update EEPROM on
+                Raspberry Pi 4 For USB Boot... sudo apt update sudo apt
+                full-upgrade sudo rpi-update sudo reboot sudo rpi-eeprom-update
+                -d -a sudo raspi-config advance options > boot order > USB
+                advance options > bootloader Version > E1 - last version ROM
+                display options > Resolution > MODE 82 - 16:9 sudo poweroff y
+                listo. Remove SD. Ahora ya puedo usar a USB or SSD on my Pi.
+                however, my SSD did not boot from my pi. I had to copy the SD
+                Image to my SSD. menu > accessories > SD card copy. from
+                SD(dev/mmcblk) to SSD remove the SD and boot from SSD</code
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
