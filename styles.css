@@ -2,6 +2,7 @@
 body {
   margin: 0;
   font-family: Arial;
+  color: #272727;
 }
 
 ul.sidenav {
@@ -17,14 +18,15 @@ ul.sidenav {
 
 ul.sidenav li a {
   display: block;
-  color: #000;
+  color: #868c7c;
   padding: 8px 16px;
   text-decoration: none;
+  font-weight: bold;
 }
 
 ul.sidenav li a.active {
-  background-color: #af8c4cc9;
-  color: green;
+  background-color: #c1b4b0;
+  color: #e4f0d0;
 }
 
 ul.sidenav li a:hover:not(.active) {
