@@ -1,8 +1,27 @@
 /* responsible page: https://www.w3schools.com/css/css_navbar_horizontal.asp */
+/* VARIABLES: */
+:root {
+  --bannerBg: #;
+  --bannerText: #;
+  --Nav-Bg: #f1f1f1;
+  --Nav-Text: #868c7c;
+  --Nav-ActiveBG: #c1b4b0;
+  --Nav-ActiveText: #e4f0d0;
+  --Nav-HoverBg: #555;
+  --Nav-HoverText: white;
+  --Tabs-Bg: #f1f1f1;
+  --Tabs-ActiveText: #ccc;
+  --Tabs-HoverBG: #ddd;
+  --sm: 14px;
+  --md: 16px;
+  --lg: 18px;
+}
+
 body {
   margin: 0;
   font-family: Arial;
   color: #272727;
+  font-size: var(--md);
 }
 
 ul.sidenav {
@@ -10,7 +29,7 @@ ul.sidenav {
   margin: 0;
   padding: 0;
   width: 25%;
-  background-color: #f1f1f1;
+  background-color: var(--Nav-Bg);
   position: fixed;
   height: 100%;
   overflow: auto;
@@ -18,20 +37,20 @@ ul.sidenav {
 
 ul.sidenav li a {
   display: block;
-  color: #868c7c;
+  color: var(--Nav-Text);
   padding: 8px 16px;
   text-decoration: none;
   font-weight: bold;
 }
 
 ul.sidenav li a.active {
-  background-color: #c1b4b0;
-  color: #e4f0d0;
+  background-color: var(--Nav-ActiveBG);
+  color: var(--Nav-ActiveText);
 }
 
 ul.sidenav li a:hover:not(.active) {
-  background-color: #555;
-  color: white;
+  background-color: var(--Nav-HoverBg);
+  color: var(--Nav-HoverText);
 }
 
 div.content {
@@ -40,8 +59,47 @@ div.content {
   height: 1000px;
 }
 
+/* tabs Menu*/
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  background-color: var(--Tabs-Bg);
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: var(--Tabs-HoverBG);
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: var(--Tabs-ActiveText);
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 15px 12px;
+  border: 1px solid rgb(160, 95, 95);
+  border-top: none;
+}
+/*  END  tabs Menu*/
+
 /* Style By Jp */
-header {
+header,
+footer {
   background-color: rgba(0, 0, 0, 0.562);
   /*center the text*/
   display: flex;
@@ -60,7 +118,11 @@ h1 {
   font: 80px "BazarMedium";
   letter-spacing: 10px;
 }
-
+footer {
+  color: #d7ceb2;
+  font: 15px "BazarMedium";
+  letter-spacing: 8px;
+}
 #code {
   font-family: "Nanum Gothic Coding", monospace;
 }
@@ -99,41 +161,3 @@ h1 {
     float: none;
   }
 }
-
-/* tabs Menu*/
-/* Style the tab */
-.tab {
-  overflow: hidden;
-  background-color: #f1f1f1;
-}
-
-/* Style the buttons inside the tab */
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 17px;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid rgb(160, 95, 95);
-  border-top: none;
-}
-/*  END  tabs Menu*/
