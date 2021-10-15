@@ -38,8 +38,40 @@ div.content {
   height: 1000px;
 }
 
+/* Style By Jp */
+header {
+  background-color: rgba(0, 0, 0, 0.562);
+  /*center the text*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  width: 80px;
+  height: 80px;
+  float: right;
+  margin: 20px;
+}
+h1 {
+  color: #d7ceb2;
+  text-shadow: 3px 3px 0px #2c2e38, 5px 5px 0px #5c5f72;
+  font: 80px "BazarMedium";
+  letter-spacing: 10px;
+}
+
 #code {
   font-family: "Nanum Gothic Coding", monospace;
+}
+
+.LogoApps {
+  background-color: black;
+}
+.LogoApps img {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 900px) {
