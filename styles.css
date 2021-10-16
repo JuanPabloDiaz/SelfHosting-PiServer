@@ -122,21 +122,48 @@ footer {
   color: #d7ceb2;
   font: 15px "BazarMedium";
   letter-spacing: 8px;
+  padding: 5px;
 }
 #code {
   font-family: "Nanum Gothic Coding", monospace;
 }
-
-.LogoApps {
-  background-color: black;
-}
-.LogoApps img {
-  width: 80px;
-  height: 80px;
+/*  images & videos */
+figure {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+figure img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+figcaption {
+  background-color: red;
+}
+.LogoApps {
+  background-color: black;
+}
+.LogoApps img {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+iframe {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+/* END img & vid*/
 
 @media screen and (max-width: 900px) {
   ul.sidenav {
@@ -153,11 +180,28 @@ footer {
   div.content {
     margin-left: 0;
   }
+  .logo {
+    width: 40px;
+    height: 40px;
+    float: right;
+    margin: 10px;
+  }
+  h1 {
+    font: 40px;
+    letter-spacing: 7px;
+  }
 }
 
 @media screen and (max-width: 400px) {
   ul.sidenav li a {
     text-align: center;
     float: none;
+  }
+  .logo {
+    display: none;
+  }
+  h1 {
+    font: 20px;
+    letter-spacing: 5px;
   }
 }
