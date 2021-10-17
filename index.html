@@ -648,7 +648,7 @@
               <li data-title="3. Visual Explanation Of The Chapter">
                 <div class="video">
                   <iframe
-                    src="https://www.youtube.com/embed/cO2-gQ09Jj0"
+                    src="https://www.youtube.com/embed/_d3J88ootYo"
                     title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -764,7 +764,7 @@
               <li data-title="5. Visual Explanation Of The Chapter">
                 <div class="video">
                   <iframe
-                    src="https://www.youtube.com/embed/cO2-gQ09Jj0"
+                    src="https://www.youtube.com/embed/cKAhnf8X1lo"
                     title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -878,15 +878,98 @@ services:
                   <li class="notes success">Deploy the container.</li>
                 </ol>
               </li>
-              <li data-title="4. Access JDownloader"></li>
-              <li data-title="5. File Browser"></li>
-              <li data-title="6. Docker Compose"></li>
-              <li data-title="7. Add To Portainer"></li>
-              <li data-title="8. Access File Browser"></li>
+              <li data-title="4. Access JDownloader">
+                <ol>
+                  <li>Go to 192.168.1.250:3129</li>
+                  <li>no me deja connectar</li>
+                  <li>
+                    Go to the website and login
+                    <ul>
+                      <li>my.jdownloader.org/login</li>
+                    </ul>
+                  </li>
+                </ol>
+              </li>
+              <li data-title="5. File Browser">
+                Go to Docker hub and download File Browser
+                <ol class="letras">
+                  <li>Make sure to use one that support X64 & ARM</li>
+                  <li><b>Name</b>: filebrowser/filebrowser</li>
+                  <li>
+                    <a
+                      href="https://hub.docker.com/r/filebrowser/filebrowser"
+                      target="_blank"
+                      >Docker Hub</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://filebrowser.org/" target="_blank"
+                      >File Browser website</a
+                    >
+                  </li>
+                </ol>
+              </li>
+              <li data-title="6. Docker Compose">
+                <xmp class="codebox"
+>docker run \
+    -v /path/to/root:/srv \
+    -v /path/filebrowser.db:/database.db \
+    -v /path/.filebrowser.json:/.filebrowser.json \
+    --user $(id -u):$(id -g)
+    -p 80:80 \
+    filebrowser/filebrowser</xmp
+                >
+                <p>
+                  <a href="https://filebrowser.org/installation" target="_blank"
+                    >-More details-</a
+                  >
+                </p>
+              </li>
+              <li data-title="7. Add To Portainer">
+                <p class="notes info">
+                  Note: Basado en el Docker Compose de arriba es q se configura
+                  la info de abajo:
+                </p>
+                <ol>
+                  <li>Containers > Add Container</li>
+                  <li><b>Name</b>: FileBrowser</li>
+                  <li><b>Image</b>: filebrowser/filebrowser</li>
+                  <li>
+                    <b>Manual network port publishing</b>: Click on publish a
+                    new network port
+                  </li>
+                  <li><b>Host</b>: 8123</li>
+                  <li><b>Container</b>: 80</li>
+                  <li>
+                    Volume Tab
+                    <ol class="letras">
+                      <li>
+                        <b>Volume mapping</b>: Click on map additional volume X2
+                      </li>
+                      <li>Click on bind</li>
+                      <li><b>Container</b>: /srv</li>
+                      <li><b>Host</b>: /portainer/Downloads</li>
+                    </ol>
+                  </li>
+                  <li>
+                    Restart Policy tab
+                    <ul>
+                      <li>Set to never</li>
+                    </ul>
+                  </li>
+                  <li class="notes success">Deploy the container.</li>
+                </ol>
+              </li>
+              <li data-title="8. Access File Browser">
+                <ol>
+                  <li>Go to 192.168.1.250:8123</li>
+                  <li>Default login: admin & admin</li>
+                </ol>
+              </li>
               <li data-title="9. Visual Explanation Of The Chapter">
                 <div class="video">
                   <iframe
-                    src="https://www.youtube.com/embed/cO2-gQ09Jj0"
+                    src="https://www.youtube.com/embed/30MYRgCObu8"
                     title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -900,16 +983,27 @@ services:
         <!-- End Ch4-->
         <div id="Part5" class="tabcontent">
           <h2>Chapter Five</h2>
-          <p class="ch-intro">In this Chapter we will learn how to</p>
+          <p class="ch-intro">
+            In this Chapter we will install "Transmission". It is a downloader
+            that works with your VPN. In other words, It is a Downloader tool
+            that use VPN.
+          </p>
           <section class="StepByStep">
             <h3>Step by step:</h3>
             <ul id="tabs-a" class="tabs">
-              <li data-title="1. "></li>
-              <li data-title="2. "></li>
+              <li
+                data-title="1. NO LO PUDE HACER PORQUE NO TENGO VPN INSTALADO EN EL MOMENTO"
+              >
+                Lo unico que hice fue agregar el APP template link en portainer.
+                <br />
+                lo inclui en la guia de la parte 1.
+              </li>
+              <li data-title=""></li>
+              <li data-title=""></li>
               <li data-title="3. Visual Explanation Of The Chapter">
                 <div class="video">
                   <iframe
-                    src="https://www.youtube.com/embed/cO2-gQ09Jj0"
+                    src="https://www.youtube.com/embed/tGLVEq913_4"
                     title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -923,16 +1017,48 @@ services:
         <!-- End Ch5-->
         <div id="Part6" class="tabcontent">
           <h2>Chapter Six</h2>
+
           <p class="ch-intro">In this Chapter we will learn how to</p>
+
           <section class="StepByStep">
             <h3>Step by step:</h3>
             <ul id="tabs-a" class="tabs">
-              <li data-title="1. "></li>
-              <li data-title="2. "></li>
-              <li data-title="3. Visual Explanation Of The Chapter">
+              <li data-title="1. Update Portainer">
+                <ol class="letras">
+                  Take the image and re-Created
+                  <li>Go to Portainer > container > Portainer image</li>
+                  <li>Stop the container</li>
+                  <li>Delete the image</li>
+                  <li>
+                    Re-download the image with the same setting as before.
+                  </li>
+                </ol>
+                <p class="notes info">This method wont delete anything.</p>
+              </li>
+              <li data-title="2. Update using a Script">
+                <p>Use the Script as presented in the video</p>
+                <xmp class="codebox"
+>cd /Downloads/pi-hosted
+.update_portainer.sh
+exit</xmp
+                >
+              </li>
+              <li data-title="3. Manual Update">
+                <ol>
+                  <li>Go to Portainer</li>
+                  <li>Open the container I want to update</li>
+                  <li>Stop container</li>
+                  <li>Recreate > Pull latest Image > Done</li>
+                  <li>Start</li>
+                </ol>
+              </li>
+              <li data-title="4. Automatic Updates">
+                <p>App Templates > search WatchTower <br />No need to setup</p>
+              </li>
+              <li data-title="5. Visual Explanation Of The Chapter">
                 <div class="video">
                   <iframe
-                    src="https://www.youtube.com/embed/cO2-gQ09Jj0"
+                    src="https://www.youtube.com/embed/q3wKqk8qVS8"
                     title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -946,16 +1072,133 @@ services:
         <!-- End Ch6-->
         <div id="Part7" class="tabcontent">
           <h2>Chapter Seven</h2>
-          <p class="ch-intro">In this Chapter we will learn how to</p>
+          <p class="ch-intro">
+            In this Chapter we will learn how to install RPI Monitor. A
+            monitoring solution for Docker hosts and containers with Prometheus,
+            Grafana, cAdvisor, NodeExporter.
+          </p>
+          <p>
+            <a
+              href="https://github.com/oijkn/Docker-Raspberry-PI-Monitoring"
+              target="_blank"
+              rel="noopener noreferrer"
+              >-more info-</a
+            >
+          </p>
+          <p>
+            <a
+              href="https://github.com/novaspirit/pi-hosted"
+              target="_blank"
+              rel="noopener noreferrer"
+              >-more info-</a
+            >
+          </p>
           <section class="StepByStep">
             <h3>Step by step:</h3>
             <ul id="tabs-a" class="tabs">
-              <li data-title="1. "></li>
-              <li data-title="2. "></li>
-              <li data-title="3. Visual Explanation Of The Chapter">
+              <li data-title="1. Run Script">
+                <ul>
+                  <li>Login to SSH</li>
+                  <li>
+                    Find the script folder
+                    <p>
+                      <xmp class="codebox"
+>1. cd pi-hosted/
+2. ls
+3. git pull //to update repo
+4. ls
+5. ./rpi_docker_monitor.sh   //run command
+6. exit</xmp
+                      >
+                    </p>
+                  </li>
+                </ul>
+              </li>
+              <li data-title="2. Run Container from APP Template">
+                <ol class="romanos">
+                  <li>Go to the Portainer</li>
+                  <li>App templates</li>
+                  <li>Search the rpi-Monitor app</li>
+                  <li>Deploy the Stack</li>
+                  <li>No setup needed.</li>
+                </ol>
+              </li>
+              <li
+                data-title="3. No need to Configure - Details can be found..."
+              >
+                <ol class="letras">
+                  <li>Go to Portainer</li>
+                  <li>Stack tab</li>
+                  <li>click on the <i>"raspberrypi-docker-monitor"</i></li>
+                </ol>
+              </li>
+              <li data-title="4. Check dashboard img">
+                <img src="#" alt="Dash_image" />
+              </li>
+              <li data-title="5. Setup Dashboard">
+                <ol>
+                  <li>
+                    Go to Rpi-Monitor page and setup Dashboard.
+                    <ul>
+                      <li>192.168.1.250:3000</li>
+                    </ul>
+                  </li>
+                  <li>login</li>
+                  <li>
+                    configure icone > Add data sources > prometheus > select
+                  </li>
+                  <li>
+                    Under HTTP, add the URL
+                    <ol class="letras">
+                      <li>To find the IP address, go to portainer</li>
+                      <li>
+                        Stack tab > click on the "raspberrypi-docker-monitor"
+                      </li>
+                      <li>
+                        scroll down and copy the IP for "monitoring-prometheus".
+                      </li>
+                      <li>in my case, it is 172.18.0.4</li>
+                      <li>add port 9090</li>
+                      <li>For the URL will be http://172.18.0.4:9090</li>
+                      <li>Save & Test</li>
+                    </ol>
+                  </li>
+                  <li>Add dashboard</li>
+                  <li>clicking the + tab > import</li>
+                  <li>
+                    Go to the github
+                    <ul>
+                      <li>
+                        <a
+                          href="https://github.com/novaspirit/pi-hosted"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          >URL</a
+                        >
+                      </li>
+                      <li>
+                        pi-hosted/pi-hosted_template/configs/dashboard_by_oijkn.json
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Copy
+                    <a
+                      href="https://github.com/oijkn/Docker-Raspberry-PI-Monitoring/blob/main/grafana/dashboard_by_oijkn.json"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >dashboard_by_oijkn.json</a
+                    >
+                    file
+                  </li>
+                  <li>Add copy file on under Import via json box</li>
+                  <li>Load > import</li>
+                </ol>
+              </li>
+              <li data-title="6. Visual Explanation Of The Chapter">
                 <div class="video">
                   <iframe
-                    src="https://www.youtube.com/embed/cO2-gQ09Jj0"
+                    src="https://www.youtube.com/embed/IoD3vFuep64"
                     title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -969,16 +1212,83 @@ services:
         <!-- End Ch7-->
         <div id="Part8" class="tabcontent">
           <h2>Chapter Eight</h2>
-          <p class="ch-intro">In this Chapter we will learn how to</p>
+          <p class="ch-intro">
+            In this Chapter we will learn how to Install NextCloud Pi on
+            raspberry pi on our Pi-Hosted Series using Docker / Portainer.
+          </p>
           <section class="StepByStep">
             <h3>Step by step:</h3>
             <ul id="tabs-a" class="tabs">
-              <li data-title="1. "></li>
-              <li data-title="2. "></li>
-              <li data-title="3. Visual Explanation Of The Chapter">
+              <li data-title="1. Install NextCloud Pi">
+                This version of NextCloud is made for raspberry pi and its
+                called NextCloudPi
+                <ol class="letras">
+                  <li>Login to Portainer</li>
+                  <li>App templates >search for NextCloudPi</li>
+                  <li>Deploy the Container.</li>
+                  <li>
+                    Click
+                    <a
+                      href="https://ownyourbits.com/nextcloudpi/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >here</a
+                    >
+                    to learn more about the NextCloudPi project
+                  </li>
+                </ol>
+              </li>
+              <li data-title="2. Login to NextCloud (admin)">
+                <ol class="letras">
+                  <li>Go to the URL: https://192.168.1.250:8443</li>
+                  <li>
+                    Save the admin and user password displaying on the screen.
+                  </li>
+                  <li>Open a new tab and go to https://192.168.1.250:8443</li>
+                  <li>
+                    Login using the admin credentials you previously saved.
+                    <ol class="romanos">
+                      <li>Username: ncp</li>
+                      <li>password: (adminPassword)</li>
+                    </ol>
+                  </li>
+                  <li>Next Cloud first run > run</li>
+                  <li>Under external access > No</li>
+                  <li>Finish > Go back to NextCloudPi web panel</li>
+                </ol>
+              </li>
+              <li data-title="3. Fix Untrusted domain error">
+                <ol class="letras">
+                  <li>Under configurations</li>
+                  <li>Click on nc-trusted-domains</li>
+                  <li>
+                    Add the Raspberry Pi IP address
+                    <ul>
+                      <li>192.168.1.250</li>
+                    </ul>
+                  </li>
+                  <li>Add the domain if you have one.</li>
+                  <li>Apply.</li>
+                </ol>
+              </li>
+              <li data-title="4. Login to NextCloud (user)">
+                <ol class="letras">
+                  <li>Go to the URL: https://192.168.1.250:8443</li>
+                  <li>The error is gone.</li>
+                  <li>
+                    Login with the second password previously stored.
+                    <ul>
+                      <li>Username: ncp</li>
+                      <li>password: second password.</li>
+                    </ul>
+                  </li>
+                  Enjoy NextCloud. Make sure to change the password
+                </ol>
+              </li>
+              <li data-title="5. Visual Explanation Of The Chapter">
                 <div class="video">
                   <iframe
-                    src="https://www.youtube.com/embed/cO2-gQ09Jj0"
+                    src="https://www.youtube.com/embed/E6IrT3g5Gqc"
                     title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
