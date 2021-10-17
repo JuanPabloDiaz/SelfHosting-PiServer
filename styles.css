@@ -97,6 +97,75 @@ div.content {
 }
 /*  END  tabs Menu*/
 
+/*Accordion tabs
+
+  Tabs become responsive (accordion) at 840px
+    Source on Github:
+      Https://github.com/aboutwp/vanilla-tabs-js"
+*/
+.tabs {
+  list-style: none;
+  margin: 0 0 30px 0;
+  padding: 0;
+}
+.tabs__nav_link {
+  cursor: pointer;
+  text-decoration: none;
+}
+.tabs__content {
+  display: block;
+  transition: opacity 0.2s;
+}
+.tabs.style__accordion,
+.tabs.is__responsive {
+  display: block;
+}
+.tabs.style__accordion .tabs__nav,
+.tabs.is__responsive .tabs__nav {
+  display: none;
+}
+.tabs.style__accordion .tabs__nav_link,
+.tabs.is__responsive .tabs__nav_link,
+.tabs.style__accordion .tabs__content .tabs__nav_link,
+.tabs.is__responsive .tabs__content .tabs__nav_link {
+  display: block;
+  padding: 18px;
+  margin: -18px;
+}
+.tabs.style__accordion .tabs__nav_link.is__active,
+.tabs.is__responsive .tabs__nav_link.is__active {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.tabs.style__accordion .tabs__content,
+.tabs.is__responsive .tabs__content {
+  border: 1px solid #ccc;
+  padding: 18px;
+  background: #fff;
+  margin: 0 0 15px 0 0;
+  display: block;
+  height: auto;
+  flex: none;
+  opacity: 1;
+  visibility: visible;
+  overflow: auto;
+  width: auto;
+}
+.tabs.style__accordion .tabs__content_wrapper,
+.tabs.is__responsive .tabs__content_wrapper {
+  height: 0;
+  transform: scaleY(0);
+  overflow: hidden;
+  transition: transform 0.2s;
+  transform-origin: top left;
+}
+.tabs.style__accordion .tabs__content.is__active .tabs__content_wrapper,
+.tabs.is__responsive .tabs__content.is__active .tabs__content_wrapper {
+  height: auto;
+  transform: scaleY(1);
+}
+
+/* END Accordion tabs */
 /* Style By Jp */
 header,
 footer {
