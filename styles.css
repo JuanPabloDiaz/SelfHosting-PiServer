@@ -60,6 +60,7 @@ div.content {
 }
 
 /* tabs Menu*/
+
 /* Style the tab */
 .tab {
   overflow: hidden;
@@ -196,6 +197,18 @@ footer {
 #code {
   font-family: "Nanum Gothic Coding", monospace;
 }
+
+.codebox {
+  border: 1px solid rgb(131, 121, 121);
+  border-radius: 3%;
+  background-color: #eeeeff;
+  white-space: pre-line;
+  padding: 10px;
+  font-size: 0.9em;
+  display: inline-block;
+}
+
+/*  END JP Styling*/
 /*  images & videos */
 figure {
   display: flex;

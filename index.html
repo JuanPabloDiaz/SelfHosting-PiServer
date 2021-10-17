@@ -143,15 +143,18 @@
         <div id="Part1" class="tabcontent">
           <h4>Chapter One</h4>
           <h3>Pi-Hosted</h3>
-
-          <h3>Hardware I used:</h3>
-          <ul>
-            <li>Pi 4</li>
-            <li>SD → To config Usb bootloader</li>
-            <li>SSD or USB or HDD</li>
-            <li>Pi Imager > RPI Desktop OS</li>
-            <li>HDMI cord</li>
+          <ul id="tabs-a" class="tabs">
+            <li data-title="Hardware I used">
+              <ul>
+                <li>Pi 4</li>
+                <li>SD → To config Usb bootloader</li>
+                <li>SSD or USB or HDD</li>
+                <li>Pi Imager > RPI Desktop OS</li>
+                <li>HDMI cord</li>
+              </ul>
+            </li>
           </ul>
+
           <section class="StepByStep">
             <h3>Step by step:</h3>
             <section class="prep">
@@ -172,7 +175,11 @@
                 <li>I had to setup the Pi following **Video until minute 9:</li>
               </ul>
               <div>
-                <h5>SSD Boot for Raspberry Pi4 (Setup)</h5>
+                <ul id="tabs-a" class="tabs">
+                  <li data-title="SSD Boot for Raspberry Pi4 (Setup)"></li>
+                  <li data-title="Segunda"></li>
+                  <li data-title="Third tab"></li>
+                </ul>
                 <p><strong>issues:</strong></p>
                 <p>
                   lo hice y sirvio pero tuve problemas...el dia siguiente
@@ -200,7 +207,7 @@
                 <div>
                   <h4>Comands I used:</h4>
                   <p>Commands used before Software update</p>
-                  <p class="code">
+                  <code class="codebox">
                     Change the password on the desktop or using SSH with:<br />
                     passwd<br />
 
@@ -236,7 +243,7 @@
                     from SD(dev/mmcblk) to SSD<br />
 
                     remove the SD and boot from SSD<br />
-                  </p>
+                  </code>
                   <h5>Notes:</h5>
                   <ul>
                     <li>Make sure to format the SD and the SSD before.</li>
@@ -264,7 +271,7 @@
                   </ul>
                   <div>
                     <h5>Over the network:</h5>
-                    <p class="code">
+                    <code class="codebox">
                       Accessing the pi over the network and launching the clone
                       utility via ssh: <br />
 
@@ -293,50 +300,59 @@
                       sudo dbus-launch piclone<br />
                       sudo fdisk -l<br />
                       sudo shutdown -h now
-                    </p>
+                    </code>
                   </div>
                   <div>
                     <h4>issue:</h4>
-                    <h5>Nasty error trying to SSH</h5>
-                    <p class="code">
-                      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-                      <br />
-                      @ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! @<br />
-                      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br />
-                      IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!<br />
-                      Someone could be eavesdropping on you right now
-                      (man-in-the-middle attack)!<br />
-                      It is also possible that the RSA host key has just been
-                      changed.<br />
-                      The fingerprint for the RSA key sent by the remote host
-                      is<br />
-                      5c:9b:16:56:a6:cd:11:10:3a:cd:1b:a2:91:cd:e5:1c.<br />
-                      Please contact your system administrator.<br />
-                      Add correct host key in /home/user/.ssh/known_hosts to get
-                      rid of this message.<br />
-                      Offending key in /home/user/.ssh/known_hosts:1<br />
-                      RSA host key for ras.mydomain.com has changed and you have
-                      requested strict checking.<br />
-                      Host key verification failed.
-                    </p>
-                    <h4>Solution:</h4>
-                    <p>
-                      <b
-                        >I fix it by Getting Rid of an individual known hosts
-                      </b>
-                    </p>
-                    <p class="code">c:\users\juand\.ssh\known_hosts</p>
-                    <p>
-                      In my case, I have to delete the IP or the raspberry
-                      instance that was not letting me in.
-                    </p>
-                    <p>
-                      For more details click
-                      <a
-                        href="https://www.rit.edu/researchcomputing/instructions/Clearing-the-known_hosts-SSH-File"
-                        >here</a
-                      >.
-                    </p>
+                    <ul id="tabs-a" class="tabs">
+                      <li data-title="Nasty error trying to SSH">
+                        <code class="codebox">
+                          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                          <br />
+                          @ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!
+                          @<br />
+                          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br />
+                          IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING
+                          NASTY!<br />
+                          Someone could be eavesdropping on you right now
+                          (man-in-the-middle attack)!<br />
+                          It is also possible that the RSA host key has just
+                          been changed.<br />
+                          The fingerprint for the RSA key sent by the remote
+                          host is<br />
+                          5c:9b:16:56:a6:cd:11:10:3a:cd:1b:a2:91:cd:e5:1c.<br />
+                          Please contact your system administrator.<br />
+                          Add correct host key in /home/user/.ssh/known_hosts to
+                          get rid of this message.<br />
+                          Offending key in /home/user/.ssh/known_hosts:1<br />
+                          RSA host key for ras.mydomain.com has changed and you
+                          have requested strict checking.<br />
+                          Host key verification failed.
+                        </code>
+                      </li>
+                      <li data-title="Solution">
+                        <p>
+                          <b
+                            >I fix it by Getting Rid of an individual known
+                            hosts
+                          </b>
+                        </p>
+                        <code class="codebox"
+                          >c:\users\juand\.ssh\known_hosts</code
+                        >
+                        <p>
+                          In my case, I have to delete the IP or the raspberry
+                          instance that was not letting me in.
+                        </p>
+                        <p>
+                          For more details click
+                          <a
+                            href="https://www.rit.edu/researchcomputing/instructions/Clearing-the-known_hosts-SSH-File"
+                            >here</a
+                          >.
+                        </p>
+                      </li>
+                    </ul>
                   </div>
                   <hr />
                   <div>
@@ -345,74 +361,78 @@
                       How do I fix a "cannot open display" error when opening an
                       X program after ssh'ing with X11 forwarding enabled?
                     </h5>
-                    <p>ERROR:</p>
-                    <p class="code">
-                      ".xauthority" does not exist on raspberry pi 4
-                    </p>
-                    <h4>Solution:</h4>
-                    <p>
-                      This
-                      <a href="https://www.youtube.com/watch?v=FlHVuA_98SA"
-                        >video</a
-                      >
-                      help me resolved the issue. I had to install putty and
-                      Xmings to X11 apss on windows.
-                    </p>
-                  </div>
-                  <div>
-                    <p><b>the X-apps include:</b></p>
-                    <p>
-                      This package provides a miscellaneous assortment of X
-                      applications that ship with the X Window System,
-                      including:
-                    </p>
-                    <p class="code">
-                      - atobm, bitmap, and bmtoa, tools for manipulating bitmap
-                      images; <br />
-                      - ico, a demo program animating polyhedrons;<br />
-                      - oclock and xclock, graphical clocks;<br />
-                      - rendercheck, a program to test render extension
-                      implementations;<br />
-                      - transset, a tool to set opacity property on a window;<br />
-                      - xbiff, a tool which tells you when you have new
-                      email;<br />
-                      - xcalc, a scientific calculator desktop accessory;<br />
-                      - xclipboard, a tool to manage cut-and-pasted text
-                      selections;<br />
-                      - xconsole, which monitors system console messages;<br />
-                      - xcursorgen, a tool for creating X cursor files from
-                      PNGs;<br />
-                      - xditview, a viewer for ditroff output;<br />
-                      - xedit, a simple text editor for X;<br />
-                      - xeyes, a demo program in which a pair of eyes track the
-                      pointer;<br />
-                      - xgc, a graphics demo;<br />
-                      - xload, a monitor for the system load average;<br />
-                      - xlogo, a demo program that displays the X logo;<br />
-                      - xmag, which magnifies parts of the X screen;<br />
-                      - xman, a manual page browser;<br />
-                      - xmore, a text pager;<br />
-                      - xwd, a utility for taking window dumps ("screenshots")
-                      of the X session;<br />
-                      - xwud, a viewer for window dumps created by xwd;<br />
-                      - Xmark, x11perf, and x11perfcomp, tools for benchmarking
-                      graphical<br />
-                      operations under the X Window System;
-                    </p>
-                    <figure>
-                      <img
-                        src="https://i.redd.it/jqzp400eq0a51.png"
-                        alt="x11"
-                        width="60%"
-                      />
-                      <figcaption>Example of X11 apps</figcaption>
-                    </figure>
+                    <ul id="tabs-a" class="tabs">
+                      <li data-title="Error">
+                        <code class="codebox">
+                          ".xauthority" does not exist on raspberry pi 4
+                        </code>
+                      </li>
+                      <li data-title="Solution">
+                        <p>
+                          This
+                          <a href="https://www.youtube.com/watch?v=FlHVuA_98SA"
+                            >video</a
+                          >
+                          help me resolved the issue. I had to install putty and
+                          Xmings to X11 apss on windows.
+                        </p>
+                      </li>
+                      <li data-title="The X-apps include">
+                        <p>
+                          This package provides a miscellaneous assortment of X
+                          applications that ship with the X Window System,
+                          including:
+                        </p>
+                        <code class="codebox">
+                          - atobm, bitmap, and bmtoa, tools for manipulating
+                          bitmap images; <br />
+                          - ico, a demo program animating polyhedrons;<br />
+                          - oclock and xclock, graphical clocks;<br />
+                          - rendercheck, a program to test render extension
+                          implementations;<br />
+                          - transset, a tool to set opacity property on a
+                          window;<br />
+                          - xbiff, a tool which tells you when you have new
+                          email;<br />
+                          - xcalc, a scientific calculator desktop accessory;<br />
+                          - xclipboard, a tool to manage cut-and-pasted text
+                          selections;<br />
+                          - xconsole, which monitors system console messages;<br />
+                          - xcursorgen, a tool for creating X cursor files from
+                          PNGs;<br />
+                          - xditview, a viewer for ditroff output;<br />
+                          - xedit, a simple text editor for X;<br />
+                          - xeyes, a demo program in which a pair of eyes track
+                          the pointer;<br />
+                          - xgc, a graphics demo;<br />
+                          - xload, a monitor for the system load average;<br />
+                          - xlogo, a demo program that displays the X logo;<br />
+                          - xmag, which magnifies parts of the X screen;<br />
+                          - xman, a manual page browser;<br />
+                          - xmore, a text pager;<br />
+                          - xwd, a utility for taking window dumps
+                          ("screenshots") of the X session;<br />
+                          - xwud, a viewer for window dumps created by xwd;<br />
+                          - Xmark, x11perf, and x11perfcomp, tools for
+                          benchmarking graphical<br />
+                          operations under the X Window System;
+                        </code>
+                        <figure>
+                          <img
+                            src="https://i.redd.it/jqzp400eq0a51.png"
+                            alt="x11"
+                            width="60%"
+                          />
+                          <figcaption>Example of X11 apps</figcaption>
+                        </figure>
 
-                    <p>
-                      <a href="https://packages.debian.org/stretch/x11-apps"
-                        >more info</a
-                      >
-                    </p>
+                        <p>
+                          <a href="https://packages.debian.org/stretch/x11-apps"
+                            >more info</a
+                          >
+                        </p>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -448,28 +468,29 @@
                 </h4>
               </div>
               <div>
-                <h5>Enable VNC in the Pi</h5>
-                <p>Interface menu > VNC > enable. Using the code below:</p>
-                <p class="code">sudo raspi-config</p>
+                <ul id="tabs-a" class="tabs">
+                  <li data-title="Enable VNC in the Pi">
+                    <p>Interface menu > VNC > enable. Using the code below:</p>
+                    <code class="codebox">sudo raspi-config</code>
+                  </li>
+                  <li data-title="Setup a Static IP address">
+                    Go to the Router and assign an IP.
+                  </li>
+                  <li data-title="Docker install">
+                    <ol>
+                      <li>5:46 — Docker Explained</li>
+                      <li>6:32 — Install Docker</li>
+                      <li>Install <b>git</b></li>
+                      <li>
+                        commands
+                        <ul>
+                          <li class="codebox">Sudo apt install git</li>
+                        </ul>
+                      </li>
+                    </ol>
+                  </li>
+                </ul>
               </div>
-            </section>
-            <section class="staticIP">
-              <h4>Setup a Static IP address</h4>
-              <p>Go to the Router and assign an IP.</p>
-            </section>
-            <section>
-              <h4>Docker install</h4>
-              <ol>
-                <li>5:46 — Docker Explained</li>
-                <li>6:32 — Install Docker</li>
-                <li>Install <b>git</b></li>
-                <li>
-                  commands
-                  <ul>
-                    <li class="code">Sudo apt install git</li>
-                  </ul>
-                </li>
-              </ol>
             </section>
           </section>
           <div class="video">
@@ -486,26 +507,32 @@
         <div id="Part2" class="tabcontent">
           <h4>Part Two</h4>
           <h3>Pi-Hosted</h3>
-          <div class="LogoApps">
-            <img
-              src="https://www.docker.com/assets/logo-files/Docker-Logo-White-RGB_Moby.png"
-              alt="docker"
-            />
-            <img
-              src="https://cdn.worldvectorlogo.com/logos/portainer.svg"
-              alt="portainer"
-            />
-            <img
-              src="https://daveden.files.wordpress.com/2013/02/tux_inverted.jpg"
-              alt="LINUX"
-            />
-            <img
-              src="https://git-scm.com/images/logos/downloads/Git-Icon-White.png"
-              alt="git"
-            />
-            <img src="" alt="" />
-            <img src="" alt="" />
-          </div>
+          <ul id="tabs-a" class="tabs">
+            <li data-title="Logos">
+              <div class="LogoApps">
+                <img
+                  src="https://www.docker.com/assets/logo-files/Docker-Logo-White-RGB_Moby.png"
+                  alt="docker"
+                />
+                <img
+                  src="https://cdn.worldvectorlogo.com/logos/portainer.svg"
+                  alt="portainer"
+                />
+                <img
+                  src="https://daveden.files.wordpress.com/2013/02/tux_inverted.jpg"
+                  alt="LINUX"
+                />
+                <img
+                  src="https://git-scm.com/images/logos/downloads/Git-Icon-White.png"
+                  alt="git"
+                />
+                <img src="" alt="" />
+                <img src="" alt="" />
+              </div>
+            </li>
+            <li data-title="Segunda"></li>
+            <li data-title="Third tab"></li>
+          </ul>
         </div>
         <div id="Part3" class="tabcontent">
           <h4>Part Three</h4>
@@ -550,476 +577,43 @@
         <div id="Part4" class="tabcontent">
           <h4>Part Four</h4>
           <h3>Pi-Hosted</h3>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis,
-            at repellendus molestiae modi culpa illum sunt! Qui, non. Quia fugit
-            eos consequatur corporis libero harum quis ducimus aut placeat
-            ipsum? Suscipit doloribus ab fugiat aspernatur corporis autem
-            ducimus id quam ipsam laboriosam laudantium, beatae nulla? Esse
-            tempora officiis quasi, vitae officia molestias tempore rerum
-            distinctio obcaecati dolores illo. Tempora, quae. Accusantium qui
-            vitae laudantium harum, ex voluptates hic sequi totam quae ut nihil
-            a nam dolores exercitationem veniam sed ipsum perferendis at sunt
-            quis maxime placeat dolore alias. Quidem, inventore. Omnis,
-            doloremque eaque illo eligendi quos dicta quis laborum!
-            Reprehenderit, commodi aspernatur fugit cupiditate earum beatae
-            minus perspiciatis autem dignissimos id, amet pariatur. Cupiditate
-            autem odio animi maiores magnam commodi. Nemo corrupti quaerat
-            beatae quam veritatis sapiente ad, vel veniam ducimus expedita
-            alias, recusandae quibusdam vitae, magnam saepe! Voluptates dolorum
-            voluptatem iusto quibusdam facere est quo voluptas provident quos
-            fuga. Velit beatae molestiae, fuga obcaecati laborum veniam iure
-            magnam possimus repudiandae! Officia cupiditate animi voluptates
-            neque quaerat tempore non perferendis voluptatum consequatur. Eaque
-            ipsa dolor maiores est corrupti tempora eum. Libero eaque soluta
-            dignissimos illum ad repellat, mollitia aliquam. Dolore nisi totam
-            repudiandae reprehenderit. Quidem delectus itaque exercitationem
-            quia earum eligendi nisi neque repudiandae, odit, dolore accusantium
-            quis, ad atque! Debitis autem vitae, et eaque hic aspernatur
-            inventore voluptatibus atque in unde neque, earum placeat nemo,
-            numquam praesentium corrupti eos? Aperiam, iusto consectetur fugiat
-            impedit incidunt iure repellat sapiente. Ex? Nobis ducimus, alias
-            facere dignissimos repellat est nisi modi dicta. Corrupti officiis
-            delectus incidunt optio natus quaerat possimus consectetur
-            reiciendis nesciunt hic libero atque voluptates quibusdam, quidem
-            quae velit! Eveniet? Obcaecati dolores recusandae perspiciatis
-            quaerat, ipsum sint. Qui iure ipsum possimus. Ipsam quas eligendi
-            maiores accusantium doloribus architecto dolor quibusdam. Ipsa
-            maiores nobis dicta aliquid esse? Aspernatur cupiditate sunt esse!
-          </p>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis,
-            at repellendus molestiae modi culpa illum sunt! Qui, non. Quia fugit
-            eos consequatur corporis libero harum quis ducimus aut placeat
-            ipsum? Suscipit doloribus ab fugiat aspernatur corporis autem
-            ducimus id quam ipsam laboriosam laudantium, beatae nulla? Esse
-            tempora officiis quasi, vitae officia molestias tempore rerum
-            distinctio obcaecati dolores illo. Tempora, quae. Accusantium qui
-            vitae laudantium harum, ex voluptates hic sequi totam quae ut nihil
-            a nam dolores exercitationem veniam sed ipsum perferendis at sunt
-            quis maxime placeat dolore alias. Quidem, inventore. Omnis,
-            doloremque eaque illo eligendi quos dicta quis laborum!
-            Reprehenderit, commodi aspernatur fugit cupiditate earum beatae
-            minus perspiciatis autem dignissimos id, amet pariatur. Cupiditate
-            autem odio animi maiores magnam commodi. Nemo corrupti quaerat
-            beatae quam veritatis sapiente ad, vel veniam ducimus expedita
-            alias, recusandae quibusdam vitae, magnam saepe! Voluptates dolorum
-            voluptatem iusto quibusdam facere est quo voluptas provident quos
-            fuga. Velit beatae molestiae, fuga obcaecati laborum veniam iure
-            magnam possimus repudiandae! Officia cupiditate animi voluptates
-            neque quaerat tempore non perferendis voluptatum consequatur. Eaque
-            ipsa dolor maiores est corrupti tempora eum. Libero eaque soluta
-            dignissimos illum ad repellat, mollitia aliquam. Dolore nisi totam
-            repudiandae reprehenderit. Quidem delectus itaque exercitationem
-            quia earum eligendi nisi neque repudiandae, odit, dolore accusantium
-            quis, ad atque! Debitis autem vitae, et eaque hic aspernatur
-            inventore voluptatibus atque in unde neque, earum placeat nemo,
-            numquam praesentium corrupti eos? Aperiam, iusto consectetur fugiat
-            impedit incidunt iure repellat sapiente. Ex? Nobis ducimus, alias
-            facere dignissimos repellat est nisi modi dicta. Corrupti officiis
-            delectus incidunt optio natus quaerat possimus consectetur
-            reiciendis nesciunt hic libero atque voluptates quibusdam, quidem
-            quae velit! Eveniet? Obcaecati dolores recusandae perspiciatis
-            quaerat, ipsum sint. Qui iure ipsum possimus. Ipsam quas eligendi
-            maiores accusantium doloribus architecto dolor quibusdam. Ipsa
-            maiores nobis dicta aliquid esse? Aspernatur cupiditate sunt esse!
-          </p>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis,
-            at repellendus molestiae modi culpa illum sunt! Qui, non. Quia fugit
-            eos consequatur corporis libero harum quis ducimus aut placeat
-            ipsum? Suscipit doloribus ab fugiat aspernatur corporis autem
-            ducimus id quam ipsam laboriosam laudantium, beatae nulla? Esse
-            tempora officiis quasi, vitae officia molestias tempore rerum
-            distinctio obcaecati dolores illo. Tempora, quae. Accusantium qui
-            vitae laudantium harum, ex voluptates hic sequi totam quae ut nihil
-            a nam dolores exercitationem veniam sed ipsum perferendis at sunt
-            quis maxime placeat dolore alias. Quidem, inventore. Omnis,
-            doloremque eaque illo eligendi quos dicta quis laborum!
-            Reprehenderit, commodi aspernatur fugit cupiditate earum beatae
-            minus perspiciatis autem dignissimos id, amet pariatur. Cupiditate
-            autem odio animi maiores magnam commodi. Nemo corrupti quaerat
-            beatae quam veritatis sapiente ad, vel veniam ducimus expedita
-            alias, recusandae quibusdam vitae, magnam saepe! Voluptates dolorum
-            voluptatem iusto quibusdam facere est quo voluptas provident quos
-            fuga. Velit beatae molestiae, fuga obcaecati laborum veniam iure
-            magnam possimus repudiandae! Officia cupiditate animi voluptates
-            neque quaerat tempore non perferendis voluptatum consequatur. Eaque
-            ipsa dolor maiores est corrupti tempora eum. Libero eaque soluta
-            dignissimos illum ad repellat, mollitia aliquam. Dolore nisi totam
-            repudiandae reprehenderit. Quidem delectus itaque exercitationem
-            quia earum eligendi nisi neque repudiandae, odit, dolore accusantium
-            quis, ad atque! Debitis autem vitae, et eaque hic aspernatur
-            inventore voluptatibus atque in unde neque, earum placeat nemo,
-            numquam praesentium corrupti eos? Aperiam, iusto consectetur fugiat
-            impedit incidunt iure repellat sapiente. Ex? Nobis ducimus, alias
-            facere dignissimos repellat est nisi modi dicta. Corrupti officiis
-            delectus incidunt optio natus quaerat possimus consectetur
-            reiciendis nesciunt hic libero atque voluptates quibusdam, quidem
-            quae velit! Eveniet? Obcaecati dolores recusandae perspiciatis
-            quaerat, ipsum sint. Qui iure ipsum possimus. Ipsam quas eligendi
-            maiores accusantium doloribus architecto dolor quibusdam. Ipsa
-            maiores nobis dicta aliquid esse? Aspernatur cupiditate sunt esse!
-          </p>
+          <ul id="tabs-a" class="tabs">
+            <li data-title="Primera"></li>
+            <li data-title="Segunda"></li>
+            <li data-title="Third tab"></li>
+          </ul>
         </div>
         <div id="Part5" class="tabcontent">
           <h4>Part Five</h4>
           <h3>Pi-Hosted</h3>
           <div>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis,
-              at repellendus molestiae modi culpa illum sunt! Qui, non. Quia
-              fugit eos consequatur corporis libero harum quis ducimus aut
-              placeat ipsum? Suscipit doloribus ab fugiat aspernatur corporis
-              autem ducimus id quam ipsam laboriosam laudantium, beatae nulla?
-              Esse tempora officiis quasi, vitae officia molestias tempore rerum
-              distinctio obcaecati dolores illo. Tempora, quae. Accusantium qui
-              vitae laudantium harum, ex voluptates hic sequi totam quae ut
-              nihil a nam dolores exercitationem veniam sed ipsum perferendis at
-              sunt quis maxime placeat dolore alias. Quidem, inventore. Omnis,
-              doloremque eaque illo eligendi quos dicta quis laborum!
-              Reprehenderit, commodi aspernatur fugit cupiditate earum beatae
-              minus perspiciatis autem dignissimos id, amet pariatur. Cupiditate
-              autem odio animi maiores magnam commodi. Nemo corrupti quaerat
-              beatae quam veritatis sapiente ad, vel veniam ducimus expedita
-              alias, recusandae quibusdam vitae, magnam saepe! Voluptates
-              dolorum voluptatem iusto quibusdam facere est quo voluptas
-              provident quos fuga. Velit beatae molestiae, fuga obcaecati
-              laborum veniam iure magnam possimus repudiandae! Officia
-              cupiditate animi voluptates neque quaerat tempore non perferendis
-              voluptatum consequatur. Eaque ipsa dolor maiores est corrupti
-              tempora eum. Libero eaque soluta dignissimos illum ad repellat,
-              mollitia aliquam. Dolore nisi totam repudiandae reprehenderit.
-              Quidem delectus itaque exercitationem quia earum eligendi nisi
-              neque repudiandae, odit, dolore accusantium quis, ad atque!
-              Debitis autem vitae, et eaque hic aspernatur inventore
-              voluptatibus atque in unde neque, earum placeat nemo, numquam
-              praesentium corrupti eos? Aperiam, iusto consectetur fugiat
-              impedit incidunt iure repellat sapiente. Ex? Nobis ducimus, alias
-              facere dignissimos repellat est nisi modi dicta. Corrupti officiis
-              delectus incidunt optio natus quaerat possimus consectetur
-              reiciendis nesciunt hic libero atque voluptates quibusdam, quidem
-              quae velit! Eveniet? Obcaecati dolores recusandae perspiciatis
-              quaerat, ipsum sint. Qui iure ipsum possimus. Ipsam quas eligendi
-              maiores accusantium doloribus architecto dolor quibusdam. Ipsa
-              maiores nobis dicta aliquid esse? Aspernatur cupiditate sunt esse!
-            </p>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis,
-              at repellendus molestiae modi culpa illum sunt! Qui, non. Quia
-              fugit eos consequatur corporis libero harum quis ducimus aut
-              placeat ipsum? Suscipit doloribus ab fugiat aspernatur corporis
-              autem ducimus id quam ipsam laboriosam laudantium, beatae nulla?
-              Esse tempora officiis quasi, vitae officia molestias tempore rerum
-              distinctio obcaecati dolores illo. Tempora, quae. Accusantium qui
-              vitae laudantium harum, ex voluptates hic sequi totam quae ut
-              nihil a nam dolores exercitationem veniam sed ipsum perferendis at
-              sunt quis maxime placeat dolore alias. Quidem, inventore. Omnis,
-              doloremque eaque illo eligendi quos dicta quis laborum!
-              Reprehenderit, commodi aspernatur fugit cupiditate earum beatae
-              minus perspiciatis autem dignissimos id, amet pariatur. Cupiditate
-              autem odio animi maiores magnam commodi. Nemo corrupti quaerat
-              beatae quam veritatis sapiente ad, vel veniam ducimus expedita
-              alias, recusandae quibusdam vitae, magnam saepe! Voluptates
-              dolorum voluptatem iusto quibusdam facere est quo voluptas
-              provident quos fuga. Velit beatae molestiae, fuga obcaecati
-              laborum veniam iure magnam possimus repudiandae! Officia
-              cupiditate animi voluptates neque quaerat tempore non perferendis
-              voluptatum consequatur. Eaque ipsa dolor maiores est corrupti
-              tempora eum. Libero eaque soluta dignissimos illum ad repellat,
-              mollitia aliquam. Dolore nisi totam repudiandae reprehenderit.
-              Quidem delectus itaque exercitationem quia earum eligendi nisi
-              neque repudiandae, odit, dolore accusantium quis, ad atque!
-              Debitis autem vitae, et eaque hic aspernatur inventore
-              voluptatibus atque in unde neque, earum placeat nemo, numquam
-              praesentium corrupti eos? Aperiam, iusto consectetur fugiat
-              impedit incidunt iure repellat sapiente. Ex? Nobis ducimus, alias
-              facere dignissimos repellat est nisi modi dicta. Corrupti officiis
-              delectus incidunt optio natus quaerat possimus consectetur
-              reiciendis nesciunt hic libero atque voluptates quibusdam, quidem
-              quae velit! Eveniet? Obcaecati dolores recusandae perspiciatis
-              quaerat, ipsum sint. Qui iure ipsum possimus. Ipsam quas eligendi
-              maiores accusantium doloribus architecto dolor quibusdam. Ipsa
-              maiores nobis dicta aliquid esse? Aspernatur cupiditate sunt esse!
-            </p>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis,
-              at repellendus molestiae modi culpa illum sunt! Qui, non. Quia
-              fugit eos consequatur corporis libero harum quis ducimus aut
-              placeat ipsum? Suscipit doloribus ab fugiat aspernatur corporis
-              autem ducimus id quam ipsam laboriosam laudantium, beatae nulla?
-              Esse tempora officiis quasi, vitae officia molestias tempore rerum
-              distinctio obcaecati dolores illo. Tempora, quae. Accusantium qui
-              vitae laudantium harum, ex voluptates hic sequi totam quae ut
-              nihil a nam dolores exercitationem veniam sed ipsum perferendis at
-              sunt quis maxime placeat dolore alias. Quidem, inventore. Omnis,
-              doloremque eaque illo eligendi quos dicta quis laborum!
-              Reprehenderit, commodi aspernatur fugit cupiditate earum beatae
-              minus perspiciatis autem dignissimos id, amet pariatur. Cupiditate
-              autem odio animi maiores magnam commodi. Nemo corrupti quaerat
-              beatae quam veritatis sapiente ad, vel veniam ducimus expedita
-              alias, recusandae quibusdam vitae, magnam saepe! Voluptates
-              dolorum voluptatem iusto quibusdam facere est quo voluptas
-              provident quos fuga. Velit beatae molestiae, fuga obcaecati
-              laborum veniam iure magnam possimus repudiandae! Officia
-              cupiditate animi voluptates neque quaerat tempore non perferendis
-              voluptatum consequatur. Eaque ipsa dolor maiores est corrupti
-              tempora eum. Libero eaque soluta dignissimos illum ad repellat,
-              mollitia aliquam. Dolore nisi totam repudiandae reprehenderit.
-              Quidem delectus itaque exercitationem quia earum eligendi nisi
-              neque repudiandae, odit, dolore accusantium quis, ad atque!
-              Debitis autem vitae, et eaque hic aspernatur inventore
-              voluptatibus atque in unde neque, earum placeat nemo, numquam
-              praesentium corrupti eos? Aperiam, iusto consectetur fugiat
-              impedit incidunt iure repellat sapiente. Ex? Nobis ducimus, alias
-              facere dignissimos repellat est nisi modi dicta. Corrupti officiis
-              delectus incidunt optio natus quaerat possimus consectetur
-              reiciendis nesciunt hic libero atque voluptates quibusdam, quidem
-              quae velit! Eveniet? Obcaecati dolores recusandae perspiciatis
-              quaerat, ipsum sint. Qui iure ipsum possimus. Ipsam quas eligendi
-              maiores accusantium doloribus architecto dolor quibusdam. Ipsa
-              maiores nobis dicta aliquid esse? Aspernatur cupiditate sunt esse!
-            </p>
+            <ul id="tabs-a" class="tabs">
+              <li data-title="Primera"></li>
+              <li data-title="Segunda"></li>
+              <li data-title="Third tab"></li>
+            </ul>
           </div>
         </div>
         <div id="Part6" class="tabcontent">
           <h4>Part Six</h4>
           <h3>Pi-Hosted</h3>
           <div>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis,
-              at repellendus molestiae modi culpa illum sunt! Qui, non. Quia
-              fugit eos consequatur corporis libero harum quis ducimus aut
-              placeat ipsum? Suscipit doloribus ab fugiat aspernatur corporis
-              autem ducimus id quam ipsam laboriosam laudantium, beatae nulla?
-              Esse tempora officiis quasi, vitae officia molestias tempore rerum
-              distinctio obcaecati dolores illo. Tempora, quae. Accusantium qui
-              vitae laudantium harum, ex voluptates hic sequi totam quae ut
-              nihil a nam dolores exercitationem veniam sed ipsum perferendis at
-              sunt quis maxime placeat dolore alias. Quidem, inventore. Omnis,
-              doloremque eaque illo eligendi quos dicta quis laborum!
-              Reprehenderit, commodi aspernatur fugit cupiditate earum beatae
-              minus perspiciatis autem dignissimos id, amet pariatur. Cupiditate
-              autem odio animi maiores magnam commodi. Nemo corrupti quaerat
-              beatae quam veritatis sapiente ad, vel veniam ducimus expedita
-              alias, recusandae quibusdam vitae, magnam saepe! Voluptates
-              dolorum voluptatem iusto quibusdam facere est quo voluptas
-              provident quos fuga. Velit beatae molestiae, fuga obcaecati
-              laborum veniam iure magnam possimus repudiandae! Officia
-              cupiditate animi voluptates neque quaerat tempore non perferendis
-              voluptatum consequatur. Eaque ipsa dolor maiores est corrupti
-              tempora eum. Libero eaque soluta dignissimos illum ad repellat,
-              mollitia aliquam. Dolore nisi totam repudiandae reprehenderit.
-              Quidem delectus itaque exercitationem quia earum eligendi nisi
-              neque repudiandae, odit, dolore accusantium quis, ad atque!
-              Debitis autem vitae, et eaque hic aspernatur inventore
-              voluptatibus atque in unde neque, earum placeat nemo, numquam
-              praesentium corrupti eos? Aperiam, iusto consectetur fugiat
-              impedit incidunt iure repellat sapiente. Ex? Nobis ducimus, alias
-              facere dignissimos repellat est nisi modi dicta. Corrupti officiis
-              delectus incidunt optio natus quaerat possimus consectetur
-              reiciendis nesciunt hic libero atque voluptates quibusdam, quidem
-              quae velit! Eveniet? Obcaecati dolores recusandae perspiciatis
-              quaerat, ipsum sint. Qui iure ipsum possimus. Ipsam quas eligendi
-              maiores accusantium doloribus architecto dolor quibusdam. Ipsa
-              maiores nobis dicta aliquid esse? Aspernatur cupiditate sunt esse!
-            </p>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis,
-              at repellendus molestiae modi culpa illum sunt! Qui, non. Quia
-              fugit eos consequatur corporis libero harum quis ducimus aut
-              placeat ipsum? Suscipit doloribus ab fugiat aspernatur corporis
-              autem ducimus id quam ipsam laboriosam laudantium, beatae nulla?
-              Esse tempora officiis quasi, vitae officia molestias tempore rerum
-              distinctio obcaecati dolores illo. Tempora, quae. Accusantium qui
-              vitae laudantium harum, ex voluptates hic sequi totam quae ut
-              nihil a nam dolores exercitationem veniam sed ipsum perferendis at
-              sunt quis maxime placeat dolore alias. Quidem, inventore. Omnis,
-              doloremque eaque illo eligendi quos dicta quis laborum!
-              Reprehenderit, commodi aspernatur fugit cupiditate earum beatae
-              minus perspiciatis autem dignissimos id, amet pariatur. Cupiditate
-              autem odio animi maiores magnam commodi. Nemo corrupti quaerat
-              beatae quam veritatis sapiente ad, vel veniam ducimus expedita
-              alias, recusandae quibusdam vitae, magnam saepe! Voluptates
-              dolorum voluptatem iusto quibusdam facere est quo voluptas
-              provident quos fuga. Velit beatae molestiae, fuga obcaecati
-              laborum veniam iure magnam possimus repudiandae! Officia
-              cupiditate animi voluptates neque quaerat tempore non perferendis
-              voluptatum consequatur. Eaque ipsa dolor maiores est corrupti
-              tempora eum. Libero eaque soluta dignissimos illum ad repellat,
-              mollitia aliquam. Dolore nisi totam repudiandae reprehenderit.
-              Quidem delectus itaque exercitationem quia earum eligendi nisi
-              neque repudiandae, odit, dolore accusantium quis, ad atque!
-              Debitis autem vitae, et eaque hic aspernatur inventore
-              voluptatibus atque in unde neque, earum placeat nemo, numquam
-              praesentium corrupti eos? Aperiam, iusto consectetur fugiat
-              impedit incidunt iure repellat sapiente. Ex? Nobis ducimus, alias
-              facere dignissimos repellat est nisi modi dicta. Corrupti officiis
-              delectus incidunt optio natus quaerat possimus consectetur
-              reiciendis nesciunt hic libero atque voluptates quibusdam, quidem
-              quae velit! Eveniet? Obcaecati dolores recusandae perspiciatis
-              quaerat, ipsum sint. Qui iure ipsum possimus. Ipsam quas eligendi
-              maiores accusantium doloribus architecto dolor quibusdam. Ipsa
-              maiores nobis dicta aliquid esse? Aspernatur cupiditate sunt esse!
-            </p>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis,
-              at repellendus molestiae modi culpa illum sunt! Qui, non. Quia
-              fugit eos consequatur corporis libero harum quis ducimus aut
-              placeat ipsum? Suscipit doloribus ab fugiat aspernatur corporis
-              autem ducimus id quam ipsam laboriosam laudantium, beatae nulla?
-              Esse tempora officiis quasi, vitae officia molestias tempore rerum
-              distinctio obcaecati dolores illo. Tempora, quae. Accusantium qui
-              vitae laudantium harum, ex voluptates hic sequi totam quae ut
-              nihil a nam dolores exercitationem veniam sed ipsum perferendis at
-              sunt quis maxime placeat dolore alias. Quidem, inventore. Omnis,
-              doloremque eaque illo eligendi quos dicta quis laborum!
-              Reprehenderit, commodi aspernatur fugit cupiditate earum beatae
-              minus perspiciatis autem dignissimos id, amet pariatur. Cupiditate
-              autem odio animi maiores magnam commodi. Nemo corrupti quaerat
-              beatae quam veritatis sapiente ad, vel veniam ducimus expedita
-              alias, recusandae quibusdam vitae, magnam saepe! Voluptates
-              dolorum voluptatem iusto quibusdam facere est quo voluptas
-              provident quos fuga. Velit beatae molestiae, fuga obcaecati
-              laborum veniam iure magnam possimus repudiandae! Officia
-              cupiditate animi voluptates neque quaerat tempore non perferendis
-              voluptatum consequatur. Eaque ipsa dolor maiores est corrupti
-              tempora eum. Libero eaque soluta dignissimos illum ad repellat,
-              mollitia aliquam. Dolore nisi totam repudiandae reprehenderit.
-              Quidem delectus itaque exercitationem quia earum eligendi nisi
-              neque repudiandae, odit, dolore accusantium quis, ad atque!
-              Debitis autem vitae, et eaque hic aspernatur inventore
-              voluptatibus atque in unde neque, earum placeat nemo, numquam
-              praesentium corrupti eos? Aperiam, iusto consectetur fugiat
-              impedit incidunt iure repellat sapiente. Ex? Nobis ducimus, alias
-              facere dignissimos repellat est nisi modi dicta. Corrupti officiis
-              delectus incidunt optio natus quaerat possimus consectetur
-              reiciendis nesciunt hic libero atque voluptates quibusdam, quidem
-              quae velit! Eveniet? Obcaecati dolores recusandae perspiciatis
-              quaerat, ipsum sint. Qui iure ipsum possimus. Ipsam quas eligendi
-              maiores accusantium doloribus architecto dolor quibusdam. Ipsa
-              maiores nobis dicta aliquid esse? Aspernatur cupiditate sunt esse!
-            </p>
+            <ul id="tabs-a" class="tabs">
+              <li data-title="Primera"></li>
+              <li data-title="Segunda"></li>
+              <li data-title="Third tab"></li>
+            </ul>
           </div>
         </div>
         <div id="Part7" class="tabcontent">
           <h4>Part Seven</h4>
           <h3>Pi-Hosted</h3>
           <div>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis,
-              at repellendus molestiae modi culpa illum sunt! Qui, non. Quia
-              fugit eos consequatur corporis libero harum quis ducimus aut
-              placeat ipsum? Suscipit doloribus ab fugiat aspernatur corporis
-              autem ducimus id quam ipsam laboriosam laudantium, beatae nulla?
-              Esse tempora officiis quasi, vitae officia molestias tempore rerum
-              distinctio obcaecati dolores illo. Tempora, quae. Accusantium qui
-              vitae laudantium harum, ex voluptates hic sequi totam quae ut
-              nihil a nam dolores exercitationem veniam sed ipsum perferendis at
-              sunt quis maxime placeat dolore alias. Quidem, inventore. Omnis,
-              doloremque eaque illo eligendi quos dicta quis laborum!
-              Reprehenderit, commodi aspernatur fugit cupiditate earum beatae
-              minus perspiciatis autem dignissimos id, amet pariatur. Cupiditate
-              autem odio animi maiores magnam commodi. Nemo corrupti quaerat
-              beatae quam veritatis sapiente ad, vel veniam ducimus expedita
-              alias, recusandae quibusdam vitae, magnam saepe! Voluptates
-              dolorum voluptatem iusto quibusdam facere est quo voluptas
-              provident quos fuga. Velit beatae molestiae, fuga obcaecati
-              laborum veniam iure magnam possimus repudiandae! Officia
-              cupiditate animi voluptates neque quaerat tempore non perferendis
-              voluptatum consequatur. Eaque ipsa dolor maiores est corrupti
-              tempora eum. Libero eaque soluta dignissimos illum ad repellat,
-              mollitia aliquam. Dolore nisi totam repudiandae reprehenderit.
-              Quidem delectus itaque exercitationem quia earum eligendi nisi
-              neque repudiandae, odit, dolore accusantium quis, ad atque!
-              Debitis autem vitae, et eaque hic aspernatur inventore
-              voluptatibus atque in unde neque, earum placeat nemo, numquam
-              praesentium corrupti eos? Aperiam, iusto consectetur fugiat
-              impedit incidunt iure repellat sapiente. Ex? Nobis ducimus, alias
-              facere dignissimos repellat est nisi modi dicta. Corrupti officiis
-              delectus incidunt optio natus quaerat possimus consectetur
-              reiciendis nesciunt hic libero atque voluptates quibusdam, quidem
-              quae velit! Eveniet? Obcaecati dolores recusandae perspiciatis
-              quaerat, ipsum sint. Qui iure ipsum possimus. Ipsam quas eligendi
-              maiores accusantium doloribus architecto dolor quibusdam. Ipsa
-              maiores nobis dicta aliquid esse? Aspernatur cupiditate sunt esse!
-            </p>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis,
-              at repellendus molestiae modi culpa illum sunt! Qui, non. Quia
-              fugit eos consequatur corporis libero harum quis ducimus aut
-              placeat ipsum? Suscipit doloribus ab fugiat aspernatur corporis
-              autem ducimus id quam ipsam laboriosam laudantium, beatae nulla?
-              Esse tempora officiis quasi, vitae officia molestias tempore rerum
-              distinctio obcaecati dolores illo. Tempora, quae. Accusantium qui
-              vitae laudantium harum, ex voluptates hic sequi totam quae ut
-              nihil a nam dolores exercitationem veniam sed ipsum perferendis at
-              sunt quis maxime placeat dolore alias. Quidem, inventore. Omnis,
-              doloremque eaque illo eligendi quos dicta quis laborum!
-              Reprehenderit, commodi aspernatur fugit cupiditate earum beatae
-              minus perspiciatis autem dignissimos id, amet pariatur. Cupiditate
-              autem odio animi maiores magnam commodi. Nemo corrupti quaerat
-              beatae quam veritatis sapiente ad, vel veniam ducimus expedita
-              alias, recusandae quibusdam vitae, magnam saepe! Voluptates
-              dolorum voluptatem iusto quibusdam facere est quo voluptas
-              provident quos fuga. Velit beatae molestiae, fuga obcaecati
-              laborum veniam iure magnam possimus repudiandae! Officia
-              cupiditate animi voluptates neque quaerat tempore non perferendis
-              voluptatum consequatur. Eaque ipsa dolor maiores est corrupti
-              tempora eum. Libero eaque soluta dignissimos illum ad repellat,
-              mollitia aliquam. Dolore nisi totam repudiandae reprehenderit.
-              Quidem delectus itaque exercitationem quia earum eligendi nisi
-              neque repudiandae, odit, dolore accusantium quis, ad atque!
-              Debitis autem vitae, et eaque hic aspernatur inventore
-              voluptatibus atque in unde neque, earum placeat nemo, numquam
-              praesentium corrupti eos? Aperiam, iusto consectetur fugiat
-              impedit incidunt iure repellat sapiente. Ex? Nobis ducimus, alias
-              facere dignissimos repellat est nisi modi dicta. Corrupti officiis
-              delectus incidunt optio natus quaerat possimus consectetur
-              reiciendis nesciunt hic libero atque voluptates quibusdam, quidem
-              quae velit! Eveniet? Obcaecati dolores recusandae perspiciatis
-              quaerat, ipsum sint. Qui iure ipsum possimus. Ipsam quas eligendi
-              maiores accusantium doloribus architecto dolor quibusdam. Ipsa
-              maiores nobis dicta aliquid esse? Aspernatur cupiditate sunt esse!
-            </p>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis,
-              at repellendus molestiae modi culpa illum sunt! Qui, non. Quia
-              fugit eos consequatur corporis libero harum quis ducimus aut
-              placeat ipsum? Suscipit doloribus ab fugiat aspernatur corporis
-              autem ducimus id quam ipsam laboriosam laudantium, beatae nulla?
-              Esse tempora officiis quasi, vitae officia molestias tempore rerum
-              distinctio obcaecati dolores illo. Tempora, quae. Accusantium qui
-              vitae laudantium harum, ex voluptates hic sequi totam quae ut
-              nihil a nam dolores exercitationem veniam sed ipsum perferendis at
-              sunt quis maxime placeat dolore alias. Quidem, inventore. Omnis,
-              doloremque eaque illo eligendi quos dicta quis laborum!
-              Reprehenderit, commodi aspernatur fugit cupiditate earum beatae
-              minus perspiciatis autem dignissimos id, amet pariatur. Cupiditate
-              autem odio animi maiores magnam commodi. Nemo corrupti quaerat
-              beatae quam veritatis sapiente ad, vel veniam ducimus expedita
-              alias, recusandae quibusdam vitae, magnam saepe! Voluptates
-              dolorum voluptatem iusto quibusdam facere est quo voluptas
-              provident quos fuga. Velit beatae molestiae, fuga obcaecati
-              laborum veniam iure magnam possimus repudiandae! Officia
-              cupiditate animi voluptates neque quaerat tempore non perferendis
-              voluptatum consequatur. Eaque ipsa dolor maiores est corrupti
-              tempora eum. Libero eaque soluta dignissimos illum ad repellat,
-              mollitia aliquam. Dolore nisi totam repudiandae reprehenderit.
-              Quidem delectus itaque exercitationem quia earum eligendi nisi
-              neque repudiandae, odit, dolore accusantium quis, ad atque!
-              Debitis autem vitae, et eaque hic aspernatur inventore
-              voluptatibus atque in unde neque, earum placeat nemo, numquam
-              praesentium corrupti eos? Aperiam, iusto consectetur fugiat
-              impedit incidunt iure repellat sapiente. Ex? Nobis ducimus, alias
-              facere dignissimos repellat est nisi modi dicta. Corrupti officiis
-              delectus incidunt optio natus quaerat possimus consectetur
-              reiciendis nesciunt hic libero atque voluptates quibusdam, quidem
-              quae velit! Eveniet? Obcaecati dolores recusandae perspiciatis
-              quaerat, ipsum sint. Qui iure ipsum possimus. Ipsam quas eligendi
-              maiores accusantium doloribus architecto dolor quibusdam. Ipsa
-              maiores nobis dicta aliquid esse? Aspernatur cupiditate sunt esse!
-            </p>
+            <ul id="tabs-a" class="tabs">
+              <li data-title="Primera"></li>
+              <li data-title="Segunda"></li>
+              <li data-title="Third tab"></li>
+            </ul>
           </div>
         </div>
       </div>
