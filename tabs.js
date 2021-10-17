@@ -21,6 +21,7 @@ document.getElementById("defaultOpen").click();
 /* --------------------------------------------------------------------------- */
 
 // accordion Tabs
+// https://www.cssscript.com/demo/responsive-tabs-accordion/
 document.addEventListener("DOMContentLoaded", () => {
   // createaccordion
   new VanillaTabs({
