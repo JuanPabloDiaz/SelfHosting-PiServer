@@ -672,7 +672,9 @@
               <li data-title="1. Guacamole">
                 <b>Go to Docker hub and download Guacamole</b>
                 <ul>
-                  <li class="notes warning">Make sure to use one that support X64 & ARM</li>
+                  <li class="notes warning">
+                    Make sure to use one that support X64 & ARM
+                  </li>
                   <ul>
                     <li>
                       <a
@@ -694,45 +696,69 @@
                 </ul>
               </li>
               <li data-title="2. Template">
-                <p><code class="codebox">docker run \ <br>
-                  -p 8080:8080 \ <br>
-                  -v </path/to/config>:/config \ <br>
-                  -e "EXTENSIONS=auth-ldap,auth-duo" <br>
-                  oznu/guacamole</code></p>
+                <p>
+                  <xmp class="codebox"
+>docker run \
+  -p 8080:8080 \
+  -v <=[/path/to/config]:/config \
+  -e "EXTENSIONS=auth-ldap,auth-duo"
+  oznu/guacamole</xmp
+                  >
+                </p>
               </li>
               <li data-title="3. Add To Portainer">
-                <p class="notes info"><strong>Note</strong>: Basado en el template de arriba es q se configura la info de abajo:</p>
-              <ol>
-                <li>Containers > Add Container</li>
-                <li><b>Name</b>: Guacamole</li>
-                <li><b>Image</b>: oznu/guacamole:armhf</li>
-                <li><b>Manual network port publishing</b>: Click on publish a new network port</li>
-                <li><b>Host</b>: 9100       /avoid using port 8080 on host. it is really common.</li>
-                <li><b>Container</b>: 8080</li>
-                <li>Volume Tab
-                  <ol class="letras"><li><b>Volume mapping</b>: Click on map additional volume</li>
-                  <li><b>Container</b>:  /config</li>
-                  <li>Click on bind</li>
-                  <li><b>host</b>: /portainer/Files/AppData/Config/guacamole</li></ol>
-                </li>
-                <li>Restart Policy tab
-                  <ul>
-                    <li>Set to  Unless Stopped</li>
-                  </ul>
-                </li>
-                <li class="notes success">Deploy the container.</li>
-              </ol>
+                <p class="notes info">
+                  <strong>Note</strong>: Basado en el template de arriba es q se
+                  configura la info de abajo:
+                </p>
+                <ol>
+                  <li>Containers > Add Container</li>
+                  <li><b>Name</b>: Guacamole</li>
+                  <li><b>Image</b>: oznu/guacamole:armhf</li>
+                  <li>
+                    <b>Manual network port publishing</b>: Click on publish a
+                    new network port
+                  </li>
+                  <li>
+                    <b>Host</b>: 9100 /avoid using port 8080 on host. it is
+                    really common.
+                  </li>
+                  <li><b>Container</b>: 8080</li>
+                  <li>
+                    Volume Tab
+                    <ol class="letras">
+                      <li>
+                        <b>Volume mapping</b>: Click on map additional volume
+                      </li>
+                      <li><b>Container</b>: /config</li>
+                      <li>Click on bind</li>
+                      <li>
+                        <b>host</b>: /portainer/Files/AppData/Config/guacamole
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    Restart Policy tab
+                    <ul>
+                      <li>Set to Unless Stopped</li>
+                    </ul>
+                  </li>
+                  <li class="notes success">Deploy the container.</li>
+                </ol>
               </li>
               <li data-title="4. Setup Guacamole">
                 <ol>
                   <li>Go to 192.168.1.250:9100</li>
-                  <li>Login
+                  <li>
+                    Login
                     <ul>
-                      <li>default user/passw: guacadmin</li>
+                      <li>Default user/passw: guacadmin</li>
                     </ul>
                   </li>
-                  <li>settings > preference > change password</li>
-                  <li>setting > add new configuration > pero no tengo servers</li>
+                  <li>Settings > preference > change password</li>
+                  <li>
+                    Setting > add new configuration > pero no tengo servers
+                  </li>
                 </ol>
               </li>
               <li data-title="5. Visual Explanation Of The Chapter">
@@ -753,14 +779,111 @@
         <div id="Part4" class="tabcontent">
           <h2>Chapter Four</h2>
           <p class="ch-intro">
-            In this Chapter we will install two apps. A downloader manager and a file browser GUI on our Pi.
+            In this Chapter we will install two apps. A downloader manager and a
+            file browser GUI on our Pi.
           </p>
           <section class="StepByStep">
             <h3>Step by step:</h3>
             <ul id="tabs-a" class="tabs">
-              <li data-title="1. "></li>
-              <li data-title="2. "></li>
-              <li data-title="3. Visual Explanation Of The Chapter">
+              <li data-title="1. JDownloader">
+                Go to Docker hub and download JDownloader
+                <ol class="letras">
+                  <li>Make sure to use one that support X64 & ARM</li>
+                  <li>Name:</li>
+                  <li>
+                    <a
+                      href="https://hub.docker.com/r/jaymoulin/jdownloader"
+                      target="_blank"
+                      >Docker Hub</a
+                    >
+                  </li>
+                </ol>
+              </li>
+              <li data-title="2. Docker Compose">
+                <xmp class="codebox"
+>
+services:
+  jdownloader:
+  image: jaymoulin/jdownloader
+  container_name: jdownloader
+  restart: always
+  user: 1001:100
+  volumes:
+      - [/path/to/appdata/config]:/opt/JDownloader/cfg
+      - [/path/to/downloads]:/opt/JDownloader/Downloads
+      - [/path/to/appdata/logs]:/opt/JDownloader/logs #optional
+      - /etc/localtime:/etc/localtime:ro #optional
+  environment:
+          MYJD_USER: email@email.com #optional (see [Identify](https://github.com/jaymoulin/docker-jdownloader#identify))
+          MYJD_PASSWORD: bar #optional (see [Identify](https://github.com/jaymoulin/docker-jdownloader#identify))
+          MYJD_DEVICE_NAME: goofy #optional
+          XDG_DOWNLOAD_DIR: /opt/JDownloader/Downloads #optional
+  ports:
+      - 3129:3129
+                </xmp>
+              </li>
+              <li data-title="3. Add To Portainer">
+                <p class="notes info">
+                  Note: Basado en el Docker Compose de arriba es q se configura
+                  la info de abajo:
+                </p>
+                <ol>
+                  <li>Containers > Add Container</li>
+                  <li><b>Name</b>: JDownloader</li>
+                  <li><b>Image</b>: jaymoulin/jdownloader:1.4.3-armhf</li>
+                  <li>
+                    <b>Manual network port publishing</b>: Click on publish a
+                    new network port
+                  </li>
+                  <li><b>Host</b>: 3129</li>
+                  <li><b>Container</b>: 3129</li>
+                  <li>
+                    Volume Tab
+                    <ol class="letras">
+                      <li>
+                        <b>Volume mapping</b>: Click on map additional volume X2
+                      </li>
+                      <li>Click on bind for both</li>
+                      <li><b>Container</b>: /opt/JDownloader/cfg</li>
+                      <li>
+                        <b>Host</b>: /portainer/Files/AppData/Config/JDownloader
+                      </li>
+                      <li><b>Container</b>: /opt/JDownloader/Downloads</li>
+                      <li><b>Host</b>: /portainer/Downloads</li>
+                    </ol>
+                  </li>
+                  <li>
+                    Environment tab
+                    <ol class="romanos">
+                      <li>Click 3 times on Add environment variable.</li>
+                      <li>
+                        <b>Names</b>:
+                        <ol class="letras">
+                          <li>MYJD_USER</li>
+                          <li>MYJD_PASSWORD</li>
+                          <li>MYJD_DEVICE_NAME</li>
+                        </ol>
+                      </li>
+                      <li>
+                        <b>Values</b>:
+                        <ol class="letras">
+                          <li>my usuario@tutanota.com</li>
+                          <li>my clave de jdownloader</li>
+                          <li>RaspberryPi</li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                  <li>Restart Policy tab</li>
+                  <li class="notes success">Deploy the container.</li>
+                </ol>
+              </li>
+              <li data-title="4. Access JDownloader"></li>
+              <li data-title="5. File Browser"></li>
+              <li data-title="6. Docker Compose"></li>
+              <li data-title="7. Add To Portainer"></li>
+              <li data-title="8. Access File Browser"></li>
+              <li data-title="9. Visual Explanation Of The Chapter">
                 <div class="video">
                   <iframe
                     src="https://www.youtube.com/embed/cO2-gQ09Jj0"
@@ -777,9 +900,7 @@
         <!-- End Ch4-->
         <div id="Part5" class="tabcontent">
           <h2>Chapter Five</h2>
-          <p class="ch-intro">
-            In this Chapter we will learn how to
-          </p>
+          <p class="ch-intro">In this Chapter we will learn how to</p>
           <section class="StepByStep">
             <h3>Step by step:</h3>
             <ul id="tabs-a" class="tabs">
@@ -802,9 +923,7 @@
         <!-- End Ch5-->
         <div id="Part6" class="tabcontent">
           <h2>Chapter Six</h2>
-          <p class="ch-intro">
-            In this Chapter we will learn how to
-          </p>
+          <p class="ch-intro">In this Chapter we will learn how to</p>
           <section class="StepByStep">
             <h3>Step by step:</h3>
             <ul id="tabs-a" class="tabs">
@@ -827,9 +946,7 @@
         <!-- End Ch6-->
         <div id="Part7" class="tabcontent">
           <h2>Chapter Seven</h2>
-          <p class="ch-intro">
-            In this Chapter we will learn how to
-          </p>
+          <p class="ch-intro">In this Chapter we will learn how to</p>
           <section class="StepByStep">
             <h3>Step by step:</h3>
             <ul id="tabs-a" class="tabs">
@@ -852,9 +969,7 @@
         <!-- End Ch7-->
         <div id="Part8" class="tabcontent">
           <h2>Chapter Eight</h2>
-          <p class="ch-intro">
-            In this Chapter we will learn how to
-          </p>
+          <p class="ch-intro">In this Chapter we will learn how to</p>
           <section class="StepByStep">
             <h3>Step by step:</h3>
             <ul id="tabs-a" class="tabs">
