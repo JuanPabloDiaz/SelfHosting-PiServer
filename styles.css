@@ -168,6 +168,10 @@ div.content {
 
 /* END Accordion tabs */
 /* Style By Jp */
+/*JP Marca:*/
+.jpLogo {
+  width: 25%;
+}
 header,
 footer {
   background-color: rgba(0, 0, 0, 0.562);
