@@ -92,25 +92,76 @@
       <div class="chapters">
         <div id="intro" class="tabcontent">
           <h2>My Own Server At Home</h2>
+          <div class="about">
+            <h3>About this website</h3>
+            <p>
+              When you visit my website, you are connecting directly to my
+              self-hosted home server: a Raspberry Pi 4. All the files needed to
+              make the website work are stored on it using docker containers.
+            </p>
+            <p>
+              For those who does not know, a
+              <a
+                href="https://www.raspberrypi.org/help/what-%20is-a-raspberry-pi/
+                rel="noopener noreferrer"
+                >Raspberry Pi</a
+              >
+              is a single-board computers of the size of a credit-card. It is a
+              low cost device developed in the UK.
+            </p>
 
-          <p>
-            This website is hosted in Github at the moment. However, I am
-            planning on self-host it in my own server at home using a Raspberry
-            P 4. For those who does not know, a Raspberry Pi is a single-board
-            computers of the size of a credit-card. It is a low cost device
-            developed in UK
-          </p>
-          <p>
-            The Raspberry Pi foundation is a project originally leaned towards
-            the promotion of teaching basic computer science in schools and in
-            developing countries
-          </p>
-          <p>
-            <a
-              href="https://www.raspberrypi.org/help/what-%20is-a-raspberry-pi/"
-              >- more info -
-            </a>
-          </p>
+          </div>
+          <div class="how">
+            <h3>How is it built?</h3>
+            <p>
+              Visit my GitHub
+              <a href="http://" target="_blank" rel="noopener noreferrer"
+                >repository</a
+              >
+              to see all the source code for this project.
+            </p>
+            <p>
+              The structure and documentation is saved on an HTML file, the
+              design on a CSS file and the user's interface on a Javascript
+              file.
+            </p>
+            <p>
+              All files are served through <a href="https://www.nginx.com/" target="_blank" rel="noopener noreferrer">NGINX</a>, which runs in a wonderful
+              <a href="https://github.com/linuxserver/docker-letsencrypt" target="_blank" rel="noopener noreferrer">docker container</a> that is used as a reverse proxy with other
+              private access services that are also runinng on the Raspberry:
+              ( <a href="https://nextcloud.com/" target="_blank" rel="noopener noreferrer">Nextcloud</a>, <a href="https://portainer.com" target="_blank" rel="noopener noreferrer">Portainer</a>, <a href="https://hub.docker.com/r/b4bz/homer" target="_blank" rel="noopener noreferrer">Homer</a>, <a href="https://pi-hole.net/" target="_blank" rel="noopener noreferrer">Pi-hole</a>, <a href="https://github.com/linuxserver/docker-qbittorrent" target="_blank" rel="noopener noreferrer">qBittorrent</a>, <a href="https://fleet.linuxserver.io/image?name=linuxserver/jackett" target="_blank" rel="noopener noreferrer">Jackett</a>…).
+            </p>
+          </div>
+          <div class="projectIdea">
+            <h3>Why?</h3>
+            <p>The idea of this project is:</p>
+            <ul>
+              <li>To learn the magic behind self-hosting.</li>
+              <li>
+                To learn how to use the command line in Linux and move around my
+                server as a pro.
+              </li>
+              <li>To learn Docker and Docker Compose.</li>
+              <li>
+                To deploy containers and learn how to use Portainer and many
+                other self-hosted apps.
+              </li>
+              <li>
+                To force myself to document all the projects I develop, and more
+                importantly, finish them.
+              </li>
+              <li>
+                To build my first blog/website from scratch with usefull
+                information about the process and be able to go back in time and
+                recreate the project if needed it.
+              </li>
+              <li>To Develope frontEnd and BackEnd skills</li>
+              <li>
+                To sufil my needs of having to store private information. a
+                centralize storage unit.
+              </li>
+            </ul>
+          </div>
           <br />
           <div>
             <img
@@ -124,30 +175,8 @@
               width="200px"
             />
           </div>
-          <div class="projectIdea"></div>
-          <ul id="tabs-a" class="tabs">
-            <li data-title="The idea of this project is:">
-              <ul>
-                <li>To learn the magic behind self-hosting.</li>
-                <li>
-                  To learn how to use the command line in Linux and move around
-                  my server as a pro.
-                </li>
-                <li>To learn Git & github.</li>
-                <li>To learn Docker and Docker Compose.</li>
-                <li>To deploy containers and learn how to use Portainer.</li>
-                <li>
-                  To build my first Blog. To document the process and be able to
-                  go back in time and recreate the project in need it.
-                </li>
-                <li>To Develope frontEnd and BackEnd skills</li>
-                <li>
-                  To sufil my needs of having to store private information. a
-                  centralize storage unit.
-                </li>
-              </ul>
-            </li>
 
+          <ul id="tabs-a" class="tabs">
             <li data-title="Logos">
               <div class="LogoApps">
                 <img
