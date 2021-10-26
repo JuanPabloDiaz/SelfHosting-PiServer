@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pi Server</title>
     <link rel="stylesheet" href="styles.css" />
@@ -8,104 +9,77 @@
 
     <!--code style:-->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet" />
     <!--icon-->
-    <link
-      rel="icon"
-      href="https://icon-library.com/images/raspberry-pi-icon/raspberry-pi-icon-23.jpg"
-      type="image/icon type"
-    />
-  </head>
-  <body>
+    <link rel="icon" href="https://icon-library.com/images/raspberry-pi-icon/raspberry-pi-icon-23.jpg" type="image/icon type" />
+</head>
+
+<body>
     <nav>
-      <ul class="sidenav">
-        <li>
-          <a href="#home"
-            ><img
-              class="jpLogo"
-              src="JuanDiazLogo/logo_JuanDiazButtonNoBg.png"
-              alt="Juan Diaz"
-          /></a>
-        </li>
-        <li><a class="active" href="#Project">Pi-Hosted</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li class="right"><a href="hojaDeVida-jp.html">About Me</a></li>
-      </ul>
+        <ul class="sidenav">
+            <li>
+                <a href="#home"><img class="jpLogo" src="/JuanPabloDiaz/JuanDiazLogo/logo_JuanDiaz.PNG" alt="Juan Diaz" /></a>
+            </li>
+            <li><a class="active" href="#Project">Pi-Hosted</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="right"><a href="/JuanPabloDiaz/hojaDeVida-jp.html">About Me</a></li>
+        </ul>
     </nav>
 
     <div class="content">
-      <header>
-        <img
-          class="logo"
-          src="http://cdn.onlinewebfonts.com/svg/img_569193.png"
-          alt="Logo"
-        />
-        <h1>Pi Server</h1>
-        <img
-          class="logo"
-          src="https://static.thenounproject.com/png/1278470-200.png"
-          alt="Logo"
-        />
-      </header>
-      <!-- Pi-hosted tabs -->
-      <p>
-        The project is divided in sections/chapters. Please click on the buttons
-        inside the tabbed menu to navegate betweeen chapters:
-      </p>
+        <header>
+            <img class="logo" src="http://cdn.onlinewebfonts.com/svg/img_569193.png" alt="Logo" />
+            <h1>Pi Server</h1>
+            <img class="logo" src="https://static.thenounproject.com/png/1278470-200.png" alt="Logo" />
+        </header>
+        <!-- Pi-hosted tabs -->
+        <p>
+            The project is divided in sections/chapters. Please click on the buttons inside the tabbed menu to navegate betweeen chapters:
+        </p>
 
-      <div class="tab">
-        <button
-          class="tablinks"
-          onclick="openCity(event, 'intro')"
-          id="defaultOpen"
-        >
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'intro')" id="defaultOpen">
           Intro
         </button>
-        <button class="tablinks" onclick="openCity(event, 'Part1')">One</button>
-        <button class="tablinks" onclick="openCity(event, 'Part2')">Two</button>
-        <button class="tablinks" onclick="openCity(event, 'Part3')">
+            <button class="tablinks" onclick="openCity(event, 'Part1')">One</button>
+            <button class="tablinks" onclick="openCity(event, 'Part2')">Two</button>
+            <button class="tablinks" onclick="openCity(event, 'Part3')">
           Three
         </button>
-        <button class="tablinks" onclick="openCity(event, 'Part4')">
+            <button class="tablinks" onclick="openCity(event, 'Part4')">
           Four
         </button>
-        <button class="tablinks" onclick="openCity(event, 'Part5')">
+            <button class="tablinks" onclick="openCity(event, 'Part5')">
           Five
         </button>
-        <button class="tablinks" onclick="openCity(event, 'Part6')">Six</button>
-        <button class="tablinks" onclick="openCity(event, 'Part7')">
+            <button class="tablinks" onclick="openCity(event, 'Part6')">Six</button>
+            <button class="tablinks" onclick="openCity(event, 'Part7')">
           Seven
         </button>
-        <button class="tablinks" onclick="openCity(event, 'Part8')">
+            <button class="tablinks" onclick="openCity(event, 'Part8')">
           Eight
         </button>
-        <button class="tablinks" onclick="openCity(event, 'Part9')">
+            <button class="tablinks" onclick="openCity(event, 'Part9')">
           Nine
         </button>
-        <button class="tablinks" onclick="openCity(event, 'Part10')">
+            <button class="tablinks" onclick="openCity(event, 'Part10')">
           Ten
         </button>
-      </div>
-      <div class="chapters">
-        <div id="intro" class="tabcontent">
-          <h2>My Own Server At Home</h2>
-          <div class="about">
-            <!-- inspiracion salio de:
+        </div>
+        <div class="chapters">
+            <div id="intro" class="tabcontent">
+                <h2>My Own Server At Home</h2>
+                <div class="about">
+                    <!-- inspiracion salio de:
             https://marcalv.com/-->
-            <h3>About this website</h3>
-            <p>
-              When you visit my website, you are connecting directly to my
-              self-hosted home server: a Raspberry Pi 4. All the files needed to
-              make the website work are stored on it using docker containers.
-            </p>
-            <p>
-              For those who does not know, a
-              <a
-                href="https://www.raspberrypi.org/help/what-%20is-a-raspberry-pi/
-                rel="noopener noreferrer"
+                    <h3>About this website</h3>
+                    <p>
+                        When you visit my website, you are connecting directly to my self-hosted home server: a Raspberry Pi 4. All the files needed to make the website work are stored on it using docker containers.
+                    </p>
+                    <p>
+                        For those who does not know, a
+                        <a href="https://www.raspberrypi.org/help/what-%20is-a-raspberry-pi/
+                rel=" noopener noreferrer "
                 >Raspberry Pi</a
               >
               is a single-board computers of the size of a credit-card. It is a
@@ -113,11 +87,11 @@
             </p>
 
           </div>
-          <div class="how">
+          <div class="how ">
             <h3>How is it built?</h3>
             <p>
               Visit my GitHub
-              <a href="http://" target="_blank" rel="noopener noreferrer"
+              <a href="http:// " target="_blank " rel="noopener noreferrer "
                 >repository</a
               >
               to see all the source code for this project.
@@ -128,13 +102,15 @@
               file.
             </p>
             <p>
-              All files are served through <a href="https://www.nginx.com/" target="_blank" rel="noopener noreferrer">NGINX</a>, which runs in a wonderful
-              <a href="https://github.com/linuxserver/docker-letsencrypt" target="_blank" rel="noopener noreferrer">docker container</a> that is used as a reverse proxy with other
+              All files are served through <a href="https://www.nginx.com/ " target="_blank " rel="noopener noreferrer ">NGINX</a>, which runs in a wonderful
+              <a href="https://github.com/linuxserver/docker-letsencrypt " target="_blank " rel="noopener noreferrer ">docker container</a> that is used as a reverse proxy with other
               private access services that are also runinng on the Raspberry:
-              ( <a href="https://nextcloud.com/" target="_blank" rel="noopener noreferrer">Nextcloud</a>, <a href="https://portainer.com" target="_blank" rel="noopener noreferrer">Portainer</a>, <a href="https://hub.docker.com/r/b4bz/homer" target="_blank" rel="noopener noreferrer">Homer</a>, <a href="https://pi-hole.net/" target="_blank" rel="noopener noreferrer">Pi-hole</a>, <a href="https://github.com/linuxserver/docker-qbittorrent" target="_blank" rel="noopener noreferrer">qBittorrent</a>, <a href="https://fleet.linuxserver.io/image?name=linuxserver/jackett" target="_blank" rel="noopener noreferrer">Jackett</a>…).
+              ( <a href="https://nextcloud.com/ " target="_blank " rel="noopener noreferrer ">Nextcloud</a>, <a href="https://portainer.com " target="_blank " rel="noopener noreferrer ">Portainer</a>, <a href="https://hub.docker.com/r/b4bz/homer
+                            " target="_blank " rel="noopener noreferrer ">Homer</a>, <a href="https://pi-hole.net/ " target="_blank " rel="noopener noreferrer ">Pi-hole</a>, <a href="https://github.com/linuxserver/docker-qbittorrent " target="_blank " rel="noopener
+                            noreferrer ">qBittorrent</a>, <a href="https://fleet.linuxserver.io/image?name=linuxserver/jackett " target="_blank " rel="noopener noreferrer ">Jackett</a>…).
             </p>
           </div>
-          <div class="projectIdea">
+          <div class="projectIdea ">
             <h3>Why?</h3>
             <p>The idea of this project is:</p>
             <ul>
@@ -167,54 +143,54 @@
           <br />
           <div>
             <img
-              src="https://www.circuitbasics.com/wp-content/uploads/2021/03/local_network.png"
-              alt="Logo"
-              width="30%"
+              src="https://www.circuitbasics.com/wp-content/uploads/2021/03/local_network.png "
+              alt="Logo "
+              width="30% "
             />
             <img
-              src="http://www.acadecap.org/wp-content/uploads/2020/06/raspberry-pi.png"
-              alt="board"
-              width="200px"
+              src="http://www.acadecap.org/wp-content/uploads/2020/06/raspberry-pi.png "
+              alt="board "
+              width="200px "
             />
           </div>
 
-          <ul id="tabs-a" class="tabs">
-            <li data-title="Logos">
-              <div class="LogoApps">
+          <ul id="tabs-a " class="tabs ">
+            <li data-title="Logos ">
+              <div class="LogoApps ">
                 <img
-                  src="https://www.docker.com/assets/logo-files/Docker-Logo-White-RGB_Moby.png"
-                  alt="docker"
+                  src="https://www.docker.com/assets/logo-files/Docker-Logo-White-RGB_Moby.png "
+                  alt="docker "
                 />
                 <img
-                  src="https://cdn.worldvectorlogo.com/logos/portainer.svg"
-                  alt="portainer"
+                  src="https://cdn.worldvectorlogo.com/logos/portainer.svg "
+                  alt="portainer "
                 />
                 <img
-                  src="https://daveden.files.wordpress.com/2013/02/tux_inverted.jpg"
-                  alt="LINUX"
+                  src="https://daveden.files.wordpress.com/2013/02/tux_inverted.jpg "
+                  alt="LINUX "
                 />
                 <img
-                  src="https://git-scm.com/images/logos/downloads/Git-Icon-White.png"
-                  alt="git"
+                  src="https://git-scm.com/images/logos/downloads/Git-Icon-White.png "
+                  alt="git "
                 />
-                <img src="" alt="" />
-                <img src="" alt="" />
+                <img src=" " alt=" " />
+                <img src=" " alt=" " />
               </div>
             </li>
-            <li data-title="Something else I am Missing..."></li>
+            <li data-title="Something else I am Missing... "></li>
           </ul>
         </div>
         <!-- End intro-->
-        <div id="Part1" class="tabcontent">
+        <div id="Part1 " class="tabcontent ">
           <h2>Chapter One</h2>
           <h3>SetUp</h3>
-          <p class="ch-intro">
+          <p class="ch-intro ">
             In this Chapter we will setup the RPI. <br />
             Raspberry Pi 4 Server Setup, Docker Install, Portainer Install,
             Shell In A Box
           </p>
-          <ul id="tabs-a" class="tabs">
-            <li data-title="Hardware I used">
+          <ul id="tabs-a " class="tabs ">
+            <li data-title="Hardware I used ">
               <ul>
                 <li>Pi 4</li>
                 <li>SD → To config Usb bootloader</li>
@@ -225,9 +201,9 @@
             </li>
           </ul>
 
-          <section class="StepByStep">
+          <section class="StepByStep ">
             <h3>Step by step:</h3>
-            <section class="prep">
+            <section class="prep ">
               <h4>Prep the Pi</h4>
               <p>issues:</p>
               <p>
@@ -245,11 +221,11 @@
                 <li>I had to setup the Pi following **Video until minute 9:</li>
               </ul>
               <div>
-                <ul id="tabs-a" class="tabs">
-                  <li data-title="SSD Boot for Raspberry Pi4 (Setup)">
+                <ul id="tabs-a " class="tabs ">
+                  <li data-title="SSD Boot for Raspberry Pi4 (Setup) ">
                     <h4>Comands I used:</h4>
                     <p>Commands used before Software update</p>
-                    <code class="codebox">
+                    <code class="codebox ">
                       Change the password on the desktop or using SSH with:<br />
                       passwd<br />
 
@@ -289,9 +265,9 @@
                     <h5>Notes:</h5>
 
                     <div>
-                      <ul id="tabs-a" class="tabs">
-                        <li data-title=""></li>
-                        <li data-title="Notes">
+                      <ul id="tabs-a " class="tabs ">
+                        <li data-title=" "></li>
+                        <li data-title="Notes ">
                           <ul>
                             <li>
                               Make sure to format the SD and the SSD before.
@@ -320,8 +296,8 @@
                             </li>
                           </ul>
                         </li>
-                        <li data-title="Over the network (Code)">
-                          <code class="codebox">
+                        <li data-title="Over the network (Code) ">
+                          <code class="codebox ">
                             Accessing the pi over the network and launching the
                             clone utility via ssh: <br />
 
@@ -356,9 +332,9 @@
                     </div>
                     <div>
                       <h4>issue:</h4>
-                      <ul id="tabs-a" class="tabs">
-                        <li data-title="Nasty error trying to SSH">
-                          <code class="codebox">
+                      <ul id="tabs-a " class="tabs ">
+                        <li data-title="Nasty error trying to SSH ">
+                          <code class="codebox ">
                             @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
                             <br />
                             @ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!
@@ -382,14 +358,14 @@
                             Host key verification failed.
                           </code>
                         </li>
-                        <li data-title="Solution">
+                        <li data-title="Solution ">
                           <p>
                             <b
                               >I fix it by Getting Rid of an individual known
                               hosts
                             </b>
                           </p>
-                          <code class="codebox"
+                          <code class="codebox "
                             >c:\users\juand\.ssh\known_hosts</code
                           >
                           <p>
@@ -399,7 +375,7 @@
                           <p>
                             For more details click
                             <a
-                              href="https://www.rit.edu/researchcomputing/instructions/Clearing-the-known_hosts-SSH-File"
+                              href="https://www.rit.edu/researchcomputing/instructions/Clearing-the-known_hosts-SSH-File "
                               >here</a
                             >.
                           </p>
@@ -410,33 +386,33 @@
                     <div>
                       <h4>issue:</h4>
                       <h5>
-                        How do I fix a "cannot open display" error when opening
+                        How do I fix a "cannot open display " error when opening
                         an X program after ssh'ing with X11 forwarding enabled?
                       </h5>
-                      <ul id="tabs-a" class="tabs">
-                        <li data-title="Error">
-                          <code class="codebox">
-                            ".xauthority" does not exist on raspberry pi 4
+                      <ul id="tabs-a " class="tabs ">
+                        <li data-title="Error ">
+                          <code class="codebox ">
+                            ".xauthority " does not exist on raspberry pi 4
                           </code>
                         </li>
-                        <li data-title="Solution">
+                        <li data-title="Solution ">
                           <p>
                             This
                             <a
-                              href="https://www.youtube.com/watch?v=FlHVuA_98SA"
+                              href="https://www.youtube.com/watch?v=FlHVuA_98SA "
                               >video</a
                             >
                             help me resolved the issue. I had to install putty
                             and Xmings to X11 apss on windows.
                           </p>
                         </li>
-                        <li data-title="The X-apps include">
+                        <li data-title="The X-apps include ">
                           <p>
                             This package provides a miscellaneous assortment of
                             X applications that ship with the X Window System,
                             including:
                           </p>
-                          <code class="codebox">
+                          <code class="codebox ">
                             - atobm, bitmap, and bmtoa, tools for manipulating
                             bitmap images; <br />
                             - ico, a demo program animating polyhedrons;<br />
@@ -466,7 +442,7 @@
                             - xman, a manual page browser;<br />
                             - xmore, a text pager;<br />
                             - xwd, a utility for taking window dumps
-                            ("screenshots") of the X session;<br />
+                            ("screenshots ") of the X session;<br />
                             - xwud, a viewer for window dumps created by xwd;<br />
                             - Xmark, x11perf, and x11perfcomp, tools for
                             benchmarking graphical<br />
@@ -474,16 +450,16 @@
                           </code>
                           <figure>
                             <img
-                              src="https://i.redd.it/jqzp400eq0a51.png"
-                              alt="x11"
-                              width="60%"
+                              src="https://i.redd.it/jqzp400eq0a51.png "
+                              alt="x11 "
+                              width="60% "
                             />
                             <figcaption>Example of X11 apps</figcaption>
                           </figure>
 
                           <p>
                             <a
-                              href="https://packages.debian.org/stretch/x11-apps"
+                              href="https://packages.debian.org/stretch/x11-apps "
                               >more info</a
                             >
                           </p>
@@ -491,8 +467,8 @@
                       </ul>
                     </div>
                   </li>
-                  <li data-title=".."></li>
-                  <li data-title="..."></li>
+                  <li data-title=".. "></li>
+                  <li data-title="... "></li>
                 </ul>
                 <p><strong>issues:</strong></p>
                 <p>
@@ -508,23 +484,23 @@
                     issues which I will explain.
                   </p>
                   <a
-                    href="https://www.notion.so/SSD-Boot-for-Raspberry-Pi4-Setup-93bc1fe3e91f4fa0a5c65916ea5d6b92#d48146caf5f54a0bbaa2b25fbd6e632f"
+                    href="https://www.notion.so/SSD-Boot-for-Raspberry-Pi4-Setup-93bc1fe3e91f4fa0a5c65916ea5d6b92#d48146caf5f54a0bbaa2b25fbd6e632f "
                     >video</a
                   >
                   <p>
                     Alternative Video
-                    <a href="https://www.youtube.com/watch?v=pto45lMgH5w"
+                    <a href="https://www.youtube.com/watch?v=pto45lMgH5w "
                       >here</a
                     >.
                   </p>
                 </div>
               </div>
               <div>
-                <ul id="tabs-a" class="tabs">
-                  <li data-title="Flash RPi OS">
+                <ul id="tabs-a " class="tabs ">
+                  <li data-title="Flash RPi OS ">
                     <h5>
                       <a
-                        href="https://www.youtube.com/watch?v=cO2-gQ09Jj0&t=138s"
+                        href="https://www.youtube.com/watch?v=cO2-gQ09Jj0&t=138s "
                         >2:18</a
                       >
                       — Flash RPi Desktop(not lite as in video) OS (
@@ -549,22 +525,22 @@
               </div>
               <div>
                 <h4>
-                  <a href="https://www.youtube.com/watch?v=cO2-gQ09Jj0&t=264s"
+                  <a href="https://www.youtube.com/watch?v=cO2-gQ09Jj0&t=264s "
                     >4:24
                   </a>
                   — Update Raspberry Pi OS
                 </h4>
               </div>
               <div>
-                <ul id="tabs-a" class="tabs">
-                  <li data-title="Enable VNC in the Pi">
+                <ul id="tabs-a " class="tabs ">
+                  <li data-title="Enable VNC in the Pi ">
                     <p>Interface menu > VNC > enable. Using the code below:</p>
-                    <code class="codebox">sudo raspi-config</code>
+                    <code class="codebox ">sudo raspi-config</code>
                   </li>
-                  <li data-title="Setup a Static IP address">
+                  <li data-title="Setup a Static IP address ">
                     Go to the Router and assign an IP.
                   </li>
-                  <li data-title="Docker install">
+                  <li data-title="Docker install ">
                     <ol>
                       <li>5:46 — Docker Explained</li>
                       <li>6:32 — Install Docker</li>
@@ -572,18 +548,18 @@
                       <li>
                         commands
                         <ul>
-                          <li class="codebox">Sudo apt install git</li>
+                          <li class="codebox ">Sudo apt install git</li>
                         </ul>
                       </li>
                     </ol>
                   </li>
-                  <li data-title="Visual Explanation Of The Chapter">
-                    <div class="video">
+                  <li data-title="Visual Explanation Of The Chapter ">
+                    <div class="video ">
                       <iframe
-                        src="https://www.youtube.com/embed/cO2-gQ09Jj0"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        src="https://www.youtube.com/embed/cO2-gQ09Jj0 "
+                        title="YouTube video player "
+                        frameborder="0 "
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture "
                         allowfullscreen
                       ></iframe>
                     </div>
@@ -595,28 +571,28 @@
         </div>
         <!-- End Ch1-->
 
-        <div id="Part2" class="tabcontent">
+        <div id="Part2 " class="tabcontent ">
           <h2>Chapter Two</h2>
-          <p class="ch-intro">
+          <p class="ch-intro ">
             In this Chapter we will learn how to Install a <b>Dashboard</b> to
-            see all apps. We will be using "HOMER".
+            see all apps. We will be using "HOMER ".
           </p>
-          <section class="StepByStep">
+          <section class="StepByStep ">
             <h3>Step by step:</h3>
-            <ul id="tabs-a" class="tabs">
-              <li data-title="1. Homer install">
+            <ul id="tabs-a " class="tabs ">
+              <li data-title="1. Homer install ">
                 I installed it from Portainer.
                 <ul>
                   <li>apt templets > homer > deploy the container</li>
                 </ul>
               </li>
-              <li data-title="2. Configure Homer">
+              <li data-title="2. Configure Homer ">
                 <ol>
                   <li>
                     I can SSH or user Shell in a box
                     (https://192.168.1.250:4200/)
                     <p>
-                      <code class="codebox">
+                      <code class="codebox ">
                         cd /portainer/Files/AppData/Config/Homer <br />
                         ls <br />
                         cd assets <br />
@@ -627,29 +603,29 @@
                   </li>
                   <li>
                     Modify Homer page:
-                    <ol class="letras">
+                    <ol class="letras ">
                       <li>Change title and sub-title</li>
                       <li>
                         To change page color use a
                         <a
-                          href="https://coolors.co/deefb7-98dfaf-5fb49c-414288-682d63"
+                          href="https://coolors.co/deefb7-98dfaf-5fb49c-414288-682d63 "
                           >color generator web</a
                         >
                       </li>
                       <li>comment the optional message with #</li>
                       <li>
                         Go to services
-                        <ol class="romanos">
+                        <ol class="romanos ">
                           <li>modify the apps and add more...</li>
                         </ol>
                       </li>
                       <li>
                         Change images
-                        <ol class="romanos">
+                        <ol class="romanos ">
                           <li>
                             Find a nice png & copy the
                             <a
-                              href="https://banner2.cleanpng.com/20180705/txh/kisspng-bash-shell-script-command-line-interface-z-shell-5b3df571eaf1a4.5375084915307871859623.jpg"
+                              href="https://banner2.cleanpng.com/20180705/txh/kisspng-bash-shell-script-command-line-interface-z-shell-5b3df571eaf1a4.5375084915307871859623.jpg "
                               >url</a
                             >
                           </li>
@@ -658,7 +634,7 @@
                           <li>
                             wget (
                             <a
-                              href="https://banner2.cleanpng.com/20180705/txh/kisspng-bash-shell-script-command-line-interface-z-shell-5b3df571eaf1a4.5375084915307871859623.jpg"
+                              href="https://banner2.cleanpng.com/20180705/txh/kisspng-bash-shell-script-command-line-interface-z-shell-5b3df571eaf1a4.5375084915307871859623.jpg "
                               >url</a
                             >
                             link — from the image)
@@ -683,13 +659,13 @@
                   </li>
                 </ol>
               </li>
-              <li data-title="3. Visual Explanation Of The Chapter">
-                <div class="video">
+              <li data-title="3. Visual Explanation Of The Chapter ">
+                <div class="video ">
                   <iframe
-                    src="https://www.youtube.com/embed/_d3J88ootYo"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    src="https://www.youtube.com/embed/_d3J88ootYo "
+                    title="YouTube video player "
+                    frameborder="0 "
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture "
                     allowfullscreen
                   ></iframe>
                 </div>
@@ -698,54 +674,54 @@
           </section>
         </div>
         <!-- End Ch2-->
-        <div id="Part3" class="tabcontent">
+        <div id="Part3 " class="tabcontent ">
           <h2>Chapter Three</h2>
-          <p class="ch-intro">
+          <p class="ch-intro ">
             In this Chapter we will learn how to Manually install an app on the
             Pi if the app is not listed in the app template on Portainer.
           </p>
-          <section class="StepByStep">
+          <section class="StepByStep ">
             <h3>Step by step:</h3>
-            <ul id="tabs-a" class="tabs">
-              <li data-title="1. Guacamole">
+            <ul id="tabs-a " class="tabs ">
+              <li data-title="1. Guacamole ">
                 <b>Go to Docker hub and download Guacamole</b>
                 <ul>
-                  <li class="notes warning">
+                  <li class="notes warning ">
                     Make sure to use one that support X64 & ARM
                   </li>
                   <ul>
                     <li>
                       <a
-                        href="https://hub.docker.com/r/oznu/guacamole"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="https://hub.docker.com/r/oznu/guacamole "
+                        target="_blank "
+                        rel="noopener noreferrer "
                         >Docker Hub</a
                       >
                     </li>
                     <li>
                       <a
-                        href="https://guacamole.apache.org/"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="https://guacamole.apache.org/ "
+                        target="_blank "
+                        rel="noopener noreferrer "
                         >Guacamole Website</a
                       >
                     </li>
                   </ul>
                 </ul>
               </li>
-              <li data-title="2. Template">
+              <li data-title="2. Template ">
                 <p>
-                  <xmp class="codebox"
+                  <xmp class="codebox "
 >docker run \
   -p 8080:8080 \
   -v <=[/path/to/config]:/config \
-  -e "EXTENSIONS=auth-ldap,auth-duo"
+  -e "EXTENSIONS=auth-ldap,auth-duo "
   oznu/guacamole</xmp
                   >
                 </p>
               </li>
-              <li data-title="3. Add To Portainer">
-                <p class="notes info">
+              <li data-title="3. Add To Portainer ">
+                <p class="notes info ">
                   <strong>Note</strong>: Basado en el template de arriba es q se
                   configura la info de abajo:
                 </p>
@@ -764,7 +740,7 @@
                   <li><b>Container</b>: 8080</li>
                   <li>
                     Volume Tab
-                    <ol class="letras">
+                    <ol class="letras ">
                       <li>
                         <b>Volume mapping</b>: Click on map additional volume
                       </li>
@@ -781,10 +757,10 @@
                       <li>Set to Unless Stopped</li>
                     </ul>
                   </li>
-                  <li class="notes success">Deploy the container.</li>
+                  <li class="notes success ">Deploy the container.</li>
                 </ol>
               </li>
-              <li data-title="4. Setup Guacamole">
+              <li data-title="4. Setup Guacamole ">
                 <ol>
                   <li>Go to 192.168.1.250:9100</li>
                   <li>
@@ -799,13 +775,13 @@
                   </li>
                 </ol>
               </li>
-              <li data-title="5. Visual Explanation Of The Chapter">
-                <div class="video">
+              <li data-title="5. Visual Explanation Of The Chapter ">
+                <div class="video ">
                   <iframe
-                    src="https://www.youtube.com/embed/cKAhnf8X1lo"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    src="https://www.youtube.com/embed/cKAhnf8X1lo "
+                    title="YouTube video player "
+                    frameborder="0 "
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture "
                     allowfullscreen
                   ></iframe>
                 </div>
@@ -814,31 +790,31 @@
           </section>
         </div>
         <!-- End Ch3-->
-        <div id="Part4" class="tabcontent">
+        <div id="Part4 " class="tabcontent ">
           <h2>Chapter Four</h2>
-          <p class="ch-intro">
+          <p class="ch-intro ">
             In this Chapter we will install two apps. A downloader manager and a
             file browser GUI on our Pi.
           </p>
-          <section class="StepByStep">
+          <section class="StepByStep ">
             <h3>Step by step:</h3>
-            <ul id="tabs-a" class="tabs">
-              <li data-title="1. JDownloader">
+            <ul id="tabs-a " class="tabs ">
+              <li data-title="1. JDownloader ">
                 Go to Docker hub and download JDownloader
-                <ol class="letras">
+                <ol class="letras ">
                   <li>Make sure to use one that support X64 & ARM</li>
                   <li>Name:</li>
                   <li>
                     <a
-                      href="https://hub.docker.com/r/jaymoulin/jdownloader"
-                      target="_blank"
+                      href="https://hub.docker.com/r/jaymoulin/jdownloader "
+                      target="_blank "
                       >Docker Hub</a
                     >
                   </li>
                 </ol>
               </li>
-              <li data-title="2. Docker Compose">
-                <xmp class="codebox"
+              <li data-title="2. Docker Compose ">
+                <xmp class="codebox "
 >
 services:
   jdownloader:
@@ -860,8 +836,8 @@ services:
       - 3129:3129
                 </xmp>
               </li>
-              <li data-title="3. Add To Portainer">
-                <p class="notes info">
+              <li data-title="3. Add To Portainer ">
+                <p class="notes info ">
                   Note: Basado en el Docker Compose de arriba es q se configura
                   la info de abajo:
                 </p>
@@ -877,7 +853,7 @@ services:
                   <li><b>Container</b>: 3129</li>
                   <li>
                     Volume Tab
-                    <ol class="letras">
+                    <ol class="letras ">
                       <li>
                         <b>Volume mapping</b>: Click on map additional volume X2
                       </li>
@@ -892,11 +868,11 @@ services:
                   </li>
                   <li>
                     Environment tab
-                    <ol class="romanos">
+                    <ol class="romanos ">
                       <li>Click 3 times on Add environment variable.</li>
                       <li>
                         <b>Names</b>:
-                        <ol class="letras">
+                        <ol class="letras ">
                           <li>MYJD_USER</li>
                           <li>MYJD_PASSWORD</li>
                           <li>MYJD_DEVICE_NAME</li>
@@ -904,7 +880,7 @@ services:
                       </li>
                       <li>
                         <b>Values</b>:
-                        <ol class="letras">
+                        <ol class="letras ">
                           <li>my usuario@tutanota.com</li>
                           <li>my clave de jdownloader</li>
                           <li>RaspberryPi</li>
@@ -913,10 +889,10 @@ services:
                     </ol>
                   </li>
                   <li>Restart Policy tab</li>
-                  <li class="notes success">Deploy the container.</li>
+                  <li class="notes success ">Deploy the container.</li>
                 </ol>
               </li>
-              <li data-title="4. Access JDownloader">
+              <li data-title="4. Access JDownloader ">
                 <ol>
                   <li>Go to 192.168.1.250:3129</li>
                   <li>no me deja connectar</li>
@@ -928,27 +904,27 @@ services:
                   </li>
                 </ol>
               </li>
-              <li data-title="5. File Browser">
+              <li data-title="5. File Browser ">
                 Go to Docker hub and download File Browser
-                <ol class="letras">
+                <ol class="letras ">
                   <li>Make sure to use one that support X64 & ARM</li>
                   <li><b>Name</b>: filebrowser/filebrowser</li>
                   <li>
                     <a
-                      href="https://hub.docker.com/r/filebrowser/filebrowser"
-                      target="_blank"
+                      href="https://hub.docker.com/r/filebrowser/filebrowser "
+                      target="_blank "
                       >Docker Hub</a
                     >
                   </li>
                   <li>
-                    <a href="https://filebrowser.org/" target="_blank"
+                    <a href="https://filebrowser.org/ " target="_blank "
                       >File Browser website</a
                     >
                   </li>
                 </ol>
               </li>
-              <li data-title="6. Docker Compose">
-                <xmp class="codebox"
+              <li data-title="6. Docker Compose ">
+                <xmp class="codebox "
 >docker run \
     -v /path/to/root:/srv \
     -v /path/filebrowser.db:/database.db \
@@ -958,13 +934,13 @@ services:
     filebrowser/filebrowser</xmp
                 >
                 <p>
-                  <a href="https://filebrowser.org/installation" target="_blank"
+                  <a href="https://filebrowser.org/installation " target="_blank "
                     >-More details-</a
                   >
                 </p>
               </li>
-              <li data-title="7. Add To Portainer">
-                <p class="notes info">
+              <li data-title="7. Add To Portainer ">
+                <p class="notes info ">
                   Note: Basado en el Docker Compose de arriba es q se configura
                   la info de abajo:
                 </p>
@@ -980,7 +956,7 @@ services:
                   <li><b>Container</b>: 80</li>
                   <li>
                     Volume Tab
-                    <ol class="letras">
+                    <ol class="letras ">
                       <li>
                         <b>Volume mapping</b>: Click on map additional volume X2
                       </li>
@@ -995,22 +971,22 @@ services:
                       <li>Set to never</li>
                     </ul>
                   </li>
-                  <li class="notes success">Deploy the container.</li>
+                  <li class="notes success ">Deploy the container.</li>
                 </ol>
               </li>
-              <li data-title="8. Access File Browser">
+              <li data-title="8. Access File Browser ">
                 <ol>
                   <li>Go to 192.168.1.250:8123</li>
                   <li>Default login: admin & admin</li>
                 </ol>
               </li>
-              <li data-title="9. Visual Explanation Of The Chapter">
-                <div class="video">
+              <li data-title="9. Visual Explanation Of The Chapter ">
+                <div class="video ">
                   <iframe
-                    src="https://www.youtube.com/embed/30MYRgCObu8"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    src="https://www.youtube.com/embed/30MYRgCObu8 "
+                    title="YouTube video player "
+                    frameborder="0 "
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture "
                     allowfullscreen
                   ></iframe>
                 </div>
@@ -1019,32 +995,32 @@ services:
           </section>
         </div>
         <!-- End Ch4-->
-        <div id="Part5" class="tabcontent">
+        <div id="Part5 " class="tabcontent ">
           <h2>Chapter Five</h2>
-          <p class="ch-intro">
-            In this Chapter we will install "Transmission". It is a downloader
+          <p class="ch-intro ">
+            In this Chapter we will install "Transmission ". It is a downloader
             that works with your VPN. In other words, It is a Downloader tool
             that use VPN.
           </p>
-          <section class="StepByStep">
+          <section class="StepByStep ">
             <h3>Step by step:</h3>
-            <ul id="tabs-a" class="tabs">
+            <ul id="tabs-a " class="tabs ">
               <li
-                data-title="1. NO LO PUDE HACER PORQUE NO TENGO VPN INSTALADO EN EL MOMENTO"
+                data-title="1. NO LO PUDE HACER PORQUE NO TENGO VPN INSTALADO EN EL MOMENTO "
               >
                 Lo unico que hice fue agregar el APP template link en portainer.
                 <br />
                 lo inclui en la guia de la parte 1.
               </li>
-              <li data-title=""></li>
-              <li data-title=""></li>
-              <li data-title="3. Visual Explanation Of The Chapter">
-                <div class="video">
+              <li data-title=" "></li>
+              <li data-title=" "></li>
+              <li data-title="3. Visual Explanation Of The Chapter ">
+                <div class="video ">
                   <iframe
-                    src="https://www.youtube.com/embed/tGLVEq913_4"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    src="https://www.youtube.com/embed/tGLVEq913_4 "
+                    title="YouTube video player "
+                    frameborder="0 "
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture "
                     allowfullscreen
                   ></iframe>
                 </div>
@@ -1053,16 +1029,16 @@ services:
           </section>
         </div>
         <!-- End Ch5-->
-        <div id="Part6" class="tabcontent">
+        <div id="Part6 " class="tabcontent ">
           <h2>Chapter Six</h2>
 
-          <p class="ch-intro">In this Chapter we will learn how to</p>
+          <p class="ch-intro ">In this Chapter we will learn how to</p>
 
-          <section class="StepByStep">
+          <section class="StepByStep ">
             <h3>Step by step:</h3>
-            <ul id="tabs-a" class="tabs">
-              <li data-title="1. Update Portainer">
-                <ol class="letras">
+            <ul id="tabs-a " class="tabs ">
+              <li data-title="1. Update Portainer ">
+                <ol class="letras ">
                   Take the image and re-Created
                   <li>Go to Portainer > container > Portainer image</li>
                   <li>Stop the container</li>
@@ -1071,17 +1047,17 @@ services:
                     Re-download the image with the same setting as before.
                   </li>
                 </ol>
-                <p class="notes info">This method wont delete anything.</p>
+                <p class="notes info ">This method wont delete anything.</p>
               </li>
-              <li data-title="2. Update using a Script">
+              <li data-title="2. Update using a Script ">
                 <p>Use the Script as presented in the video</p>
-                <xmp class="codebox"
+                <xmp class="codebox "
 >cd /Downloads/pi-hosted
 .update_portainer.sh
 exit</xmp
                 >
               </li>
-              <li data-title="3. Manual Update">
+              <li data-title="3. Manual Update ">
                 <ol>
                   <li>Go to Portainer</li>
                   <li>Open the container I want to update</li>
@@ -1090,16 +1066,16 @@ exit</xmp
                   <li>Start</li>
                 </ol>
               </li>
-              <li data-title="4. Automatic Updates">
+              <li data-title="4. Automatic Updates ">
                 <p>App Templates > search WatchTower <br />No need to setup</p>
               </li>
-              <li data-title="5. Visual Explanation Of The Chapter">
-                <div class="video">
+              <li data-title="5. Visual Explanation Of The Chapter ">
+                <div class="video ">
                   <iframe
-                    src="https://www.youtube.com/embed/q3wKqk8qVS8"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    src="https://www.youtube.com/embed/q3wKqk8qVS8 "
+                    title="YouTube video player "
+                    frameborder="0 "
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture "
                     allowfullscreen
                   ></iframe>
                 </div>
@@ -1108,39 +1084,39 @@ exit</xmp
           </section>
         </div>
         <!-- End Ch6-->
-        <div id="Part7" class="tabcontent">
+        <div id="Part7 " class="tabcontent ">
           <h2>Chapter Seven</h2>
-          <p class="ch-intro">
+          <p class="ch-intro ">
             In this Chapter we will learn how to install RPI Monitor. A
             monitoring solution for Docker hosts and containers with Prometheus,
             Grafana, cAdvisor, NodeExporter.
           </p>
           <p>
             <a
-              href="https://github.com/oijkn/Docker-Raspberry-PI-Monitoring"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="https://github.com/oijkn/Docker-Raspberry-PI-Monitoring "
+              target="_blank "
+              rel="noopener noreferrer "
               >-more info-</a
             >
           </p>
           <p>
             <a
-              href="https://github.com/novaspirit/pi-hosted"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="https://github.com/novaspirit/pi-hosted "
+              target="_blank "
+              rel="noopener noreferrer "
               >-more info-</a
             >
           </p>
-          <section class="StepByStep">
+          <section class="StepByStep ">
             <h3>Step by step:</h3>
-            <ul id="tabs-a" class="tabs">
-              <li data-title="1. Run Script">
+            <ul id="tabs-a " class="tabs ">
+              <li data-title="1. Run Script ">
                 <ul>
                   <li>Login to SSH</li>
                   <li>
                     Find the script folder
                     <p>
-                      <xmp class="codebox"
+                      <xmp class="codebox "
 >1. cd pi-hosted/
 2. ls
 3. git pull //to update repo
@@ -1152,8 +1128,8 @@ exit</xmp
                   </li>
                 </ul>
               </li>
-              <li data-title="2. Run Container from APP Template">
-                <ol class="romanos">
+              <li data-title="2. Run Container from APP Template ">
+                <ol class="romanos ">
                   <li>Go to the Portainer</li>
                   <li>App templates</li>
                   <li>Search the rpi-Monitor app</li>
@@ -1162,18 +1138,18 @@ exit</xmp
                 </ol>
               </li>
               <li
-                data-title="3. No need to Configure - Details can be found..."
+                data-title="3. No need to Configure - Details can be found... "
               >
-                <ol class="letras">
+                <ol class="letras ">
                   <li>Go to Portainer</li>
                   <li>Stack tab</li>
-                  <li>click on the <i>"raspberrypi-docker-monitor"</i></li>
+                  <li>click on the <i>"raspberrypi-docker-monitor "</i></li>
                 </ol>
               </li>
-              <li data-title="4. Check dashboard img">
-                <img src="#" alt="Dash_image" />
+              <li data-title="4. Check dashboard img ">
+                <img src="# " alt="Dash_image " />
               </li>
-              <li data-title="5. Setup Dashboard">
+              <li data-title="5. Setup Dashboard ">
                 <ol>
                   <li>
                     Go to Rpi-Monitor page and setup Dashboard.
@@ -1187,13 +1163,13 @@ exit</xmp
                   </li>
                   <li>
                     Under HTTP, add the URL
-                    <ol class="letras">
+                    <ol class="letras ">
                       <li>To find the IP address, go to portainer</li>
                       <li>
-                        Stack tab > click on the "raspberrypi-docker-monitor"
+                        Stack tab > click on the "raspberrypi-docker-monitor "
                       </li>
                       <li>
-                        scroll down and copy the IP for "monitoring-prometheus".
+                        scroll down and copy the IP for "monitoring-prometheus ".
                       </li>
                       <li>in my case, it is 172.18.0.4</li>
                       <li>add port 9090</li>
@@ -1208,9 +1184,9 @@ exit</xmp
                     <ul>
                       <li>
                         <a
-                          href="https://github.com/novaspirit/pi-hosted"
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          href="https://github.com/novaspirit/pi-hosted "
+                          target="_blank "
+                          rel="noopener noreferrer "
                           >URL</a
                         >
                       </li>
@@ -1222,9 +1198,9 @@ exit</xmp
                   <li>
                     Copy
                     <a
-                      href="https://github.com/oijkn/Docker-Raspberry-PI-Monitoring/blob/main/grafana/dashboard_by_oijkn.json"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href="https://github.com/oijkn/Docker-Raspberry-PI-Monitoring/blob/main/grafana/dashboard_by_oijkn.json "
+                      target="_blank "
+                      rel="noopener noreferrer "
                       >dashboard_by_oijkn.json</a
                     >
                     file
@@ -1233,13 +1209,13 @@ exit</xmp
                   <li>Load > import</li>
                 </ol>
               </li>
-              <li data-title="6. Visual Explanation Of The Chapter">
-                <div class="video">
+              <li data-title="6. Visual Explanation Of The Chapter ">
+                <div class="video ">
                   <iframe
-                    src="https://www.youtube.com/embed/IoD3vFuep64"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    src="https://www.youtube.com/embed/IoD3vFuep64 "
+                    title="YouTube video player "
+                    frameborder="0 "
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture "
                     allowfullscreen
                   ></iframe>
                 </div>
@@ -1248,36 +1224,36 @@ exit</xmp
           </section>
         </div>
         <!-- End Ch7-->
-        <div id="Part8" class="tabcontent">
+        <div id="Part8 " class="tabcontent ">
           <h2>Chapter Eight</h2>
-          <p class="ch-intro">
+          <p class="ch-intro ">
             In this Chapter we will learn how to Install NextCloud Pi on
             raspberry pi on our Pi-Hosted Series using Docker / Portainer.
           </p>
-          <section class="StepByStep">
+          <section class="StepByStep ">
             <h3>Step by step:</h3>
-            <ul id="tabs-a" class="tabs">
-              <li data-title="1. Install NextCloud Pi">
+            <ul id="tabs-a " class="tabs ">
+              <li data-title="1. Install NextCloud Pi ">
                 This version of NextCloud is made for raspberry pi and its
                 called NextCloudPi
-                <ol class="letras">
+                <ol class="letras ">
                   <li>Login to Portainer</li>
                   <li>App templates >search for NextCloudPi</li>
                   <li>Deploy the Container.</li>
                   <li>
                     Click
                     <a
-                      href="https://ownyourbits.com/nextcloudpi/"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href="https://ownyourbits.com/nextcloudpi/ "
+                      target="_blank "
+                      rel="noopener noreferrer "
                       >here</a
                     >
                     to learn more about the NextCloudPi project
                   </li>
                 </ol>
               </li>
-              <li data-title="2. Login to NextCloud (admin)">
-                <ol class="letras">
+              <li data-title="2. Login to NextCloud (admin) ">
+                <ol class="letras ">
                   <li>Go to the URL: https://192.168.1.250:8443</li>
                   <li>
                     Save the admin and user password displaying on the screen.
@@ -1285,7 +1261,7 @@ exit</xmp
                   <li>Open a new tab and go to https://192.168.1.250:8443</li>
                   <li>
                     Login using the admin credentials you previously saved.
-                    <ol class="romanos">
+                    <ol class="romanos ">
                       <li>Username: ncp</li>
                       <li>password: (adminPassword)</li>
                     </ol>
@@ -1295,8 +1271,8 @@ exit</xmp
                   <li>Finish > Go back to NextCloudPi web panel</li>
                 </ol>
               </li>
-              <li data-title="3. Fix Untrusted domain error">
-                <ol class="letras">
+              <li data-title="3. Fix Untrusted domain error ">
+                <ol class="letras ">
                   <li>Under configurations</li>
                   <li>Click on nc-trusted-domains</li>
                   <li>
@@ -1309,8 +1285,8 @@ exit</xmp
                   <li>Apply.</li>
                 </ol>
               </li>
-              <li data-title="4. Login to NextCloud (user)">
-                <ol class="letras">
+              <li data-title="4. Login to NextCloud (user) ">
+                <ol class="letras ">
                   <li>Go to the URL: https://192.168.1.250:8443</li>
                   <li>The error is gone.</li>
                   <li>
@@ -1323,13 +1299,13 @@ exit</xmp
                   Enjoy NextCloud. Make sure to change the password
                 </ol>
               </li>
-              <li data-title="5. Visual Explanation Of The Chapter">
-                <div class="video">
+              <li data-title="5. Visual Explanation Of The Chapter ">
+                <div class="video ">
                   <iframe
-                    src="https://www.youtube.com/embed/E6IrT3g5Gqc"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    src="https://www.youtube.com/embed/E6IrT3g5Gqc "
+                    title="YouTube video player "
+                    frameborder="0 "
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture "
                     allowfullscreen
                   ></iframe>
                 </div>
@@ -1342,12 +1318,12 @@ exit</xmp
       <!-- END of Chapters-->
       <footer>
         &copy;
-        <script type="text/javascript">
+        <script type="text/javascript ">
           document.write(new Date().getFullYear());
         </script>
         - Juan Diaz
       </footer>
-      <script src="tabs.js"></script>
+      <script src="tabs.js "></script>
     </div>
   </body>
 </html>
