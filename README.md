@@ -6,11 +6,14 @@ Setup a home server using a Raspberry Pi.
 Self-hosting has been always something I would love to have and now it is posible with Docker on a Rpi. You can host multiple applications using docker containers.  All files are served through NGINX, which runs in a wonderful docker container that is used as a reverse proxy with other private access services that are also runinng on the Raspberry: ( Nextcloud, Portainer, Homer, Pi-hole, qBittorrent, Jackett…).
 
 ## Getting Started
+for more logos and emojis, visit * [:link:](https://gist.github.com/rxaviers/7360908)
 
 ### Dependencies
 
 * Describe any prerequisites, libraries, OS version, etc., needed before installing program.
 * ex. Windows 10
+
+:warning:
 
 ### Installing
 
