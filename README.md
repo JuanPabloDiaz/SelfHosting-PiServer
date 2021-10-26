@@ -1,10 +1,9 @@
 # Pi-Home-Server
 
-Simple overview of use/purpose.
-
+Setup a home server using a Raspberry Pi.
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+Self-hosting has been always something I would love to have and now it is posible with Docker on a Rpi. You can host multiple applications using docker containers.  All files are served through NGINX, which runs in a wonderful docker container that is used as a reverse proxy with other private access services that are also runinng on the Raspberry: ( Nextcloud, Portainer, Homer, Pi-hole, qBittorrent, Jackett…).
 
 ## Getting Started
 
