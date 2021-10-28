@@ -28,7 +28,7 @@ ul.sidenav {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 25%;
+  width: 20%;
   background-color: var(--Nav-Bg);
   position: fixed;
   height: 100%;
@@ -54,7 +54,7 @@ ul.sidenav li a:hover:not(.active) {
 }
 
 div.content {
-  margin-left: 25%;
+  margin-left: 20%;
   padding: 1px 16px;
   height: 1000px;
 }
@@ -214,18 +214,20 @@ footer {
 
 /*  END JP Styling*/
 /*  images & videos */
+
 figure {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  float: right;
+  width: 30%;
+  text-align: center;
+  font-style: italic;
+  font-size: smaller;
+  text-indent: 0;
+  border: thin silver solid;
+  margin: 0.5em;
+  padding: 0.5em;
 }
 figure img {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-}
-figcaption {
-  background-color: red;
+  width: 80%;
 }
 .LogoApps {
   background-color: black;

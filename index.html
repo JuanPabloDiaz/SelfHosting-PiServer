@@ -147,11 +147,6 @@
               alt="Logo"
               width="30%"
             />
-            <img
-              src="http://www.acadecap.org/wp-content/uploads/2020/06/raspberry-pi.png"
-              alt="board"
-              width="200px"
-            />
           </div>
 
           <ul id="tabs-a" class="tabs">
@@ -160,10 +155,6 @@
                 <img
                   src="https://www.docker.com/assets/logo-files/Docker-Logo-White-RGB_Moby.png"
                   alt="docker"
-                />
-                <img
-                  src="https://cdn.worldvectorlogo.com/logos/portainer.svg"
-                  alt="portainer"
                 />
                 <img
                   src="https://daveden.files.wordpress.com/2013/02/tux_inverted.jpg"
@@ -183,390 +174,147 @@
         <!-- End intro-->
         <div id="Part1" class="tabcontent">
           <h2>Chapter One</h2>
-          <h3>SetUp</h3>
           <p class="ch-intro">
             In this Chapter we will install the OS and setup the Raspberry Pi to boot from USB. Then, we will install <i>Docker</i>, install <i>Portainer</i>, and install <i>Shell In A Box</i>.
-
           </p>
           <ul id="tabs-a" class="tabs">
-            <li data-title="Hardware I used">
+            <li data-title="Hardware Required For This Project">
               <ul>
                 <li>Pi 4</li>
                 <li>SD → To config Usb bootloader</li>
                 <li>SSD or USB or HDD</li>
-                <li>Pi Imager > RPI Desktop OS</li>
                 <li>HDMI cord</li>
               </ul>
             </li>
           </ul>
+          <figure class="sideImg">
+            <img
+              src="https://miro.medium.com/max/1198/1*6MtVE9HXB8yDglp8i4ZfBQ.png"
+              alt="docker + pi"
+              width="400px"
+            />
+            <figcaption>Docker on Raspberry Pi</figcaption>
+        </figure>
 
-          <section class="StepByStep">
-            <h3>Step by step:</h3>
-            <section class="prep">
-              <h4>Prep the Pi</h4>
-              <p>issues:</p>
-              <p>
-                I had some issues following this particular video since he skip
-                the step and flash the OS on the HDD instead of doing it on a SD
-                and then copy everything from the SD to the SSD from the pi.
-              </p>
-              <ul>
-                <li>
-                  I had some issues following this particular video since he
-                  skip the step and flash the OS on the HDD instead of doing it
-                  on a SD and then copy everything from the SD to the SSD from
-                  the pi.
-                </li>
-                <li>I had to setup the Pi following **Video until minute 9:</li>
-              </ul>
-              <div>
-                <ul id="tabs-a" class="tabs">
-                  <li data-title="SSD Boot for Raspberry Pi4 (Setup)">
-                    <h4>Comands I used:</h4>
-                    <p>Commands used before Software update</p>
-                    <code class="codebox">
-                      Change the password on the desktop or using SSH with:<br />
-                      passwd<br />
+        <figure class="sideImg">
+          <img
+                  src="https://cdn.worldvectorlogo.com/logos/portainer.svg"
+                  alt="portainer"
+                />
+          <figcaption>Docker on Raspberry Pi</figcaption>
+      </figure>
+      <section class="StepByStep">
+        <h3>Step by step:</h3>
+        <ul id="tabs-a" class="tabs">
+          <li data-title="1. Install the OS">
+            <h3>Flash RPi OS</h3>
+            <h5>
+              <a
+              href="https://www.youtube.com/watch?v=cO2-gQ09Jj0&t=138s"
+              >2:18</a
+              >
+              — Flash RPi Desktop(not lite as in video) OS (
+              <b> Ctrl + Shift + x</b> → Advance options)
+            </h5>
+            <ol>
+              <li>
+              Remember to use the <b> Ctrl + Shift + x</b> to see the
+              Advance options.
+              </li>
+              <li>Disable <b>overscan</b></li>
+              <li>set hostname: <b>rpi-srv</b></li>
+              <li>Enable <b>SSH</b></li>
+              <li>Set <b>Password</b></li>
+              <li>Set Configure <b>WIFI & country</b></li>
+              <li>Set <b>Local</b> & <b>Keyboard</b> Layout</li>
+              <li><b>Skip </b> first-run Wizard.</li>
+              <li><b>Disable</b> Telemetry.</li>
+            </ol>
+          </li>
+          <li data-title="2. Boot from USB SSD for the Rasp Pi4 (Setup)">
+            <p>Commands used before Software update</p>
+            <code class="codebox">
+              Change the password on the desktop or using SSH with:<br />
+              passwd<br />
 
-                      set a time zone and a location<br />
+              set a time zone and a location<br />
 
-                      Here are the commands used to upgrade the Software and
-                      Eeprom:<br />
+              Here are the commands used to upgrade the Software and
+              Eeprom:<br />
 
-                      How to Update EEPROM on Raspberry Pi 4 For USB Boot...<br />
+              How to Update EEPROM on Raspberry Pi 4 For USB Boot...<br />
 
-                      sudo apt update<br />
-                      sudo apt full-upgrade<br />
-                      sudo rpi-update<br />
-                      sudo reboot<br />
+              sudo apt update<br />
+              sudo apt full-upgrade<br />
+              sudo rpi-update<br />
+              sudo reboot<br />
 
-                      sudo rpi-eeprom-update -d -a<br />
+              sudo rpi-eeprom-update -d -a<br />
 
-                      sudo raspi-config<br />
-                      advance options > boot order > USB<br />
-                      advance options > bootloader Version > E1 - last version
-                      ROM<br />
-                      display options > Resolution > MODE 82 - 16:9<br />
+              sudo raspi-config<br />
+              advance options > boot order > USB<br />
+              advance options > bootloader Version > E1 - last version
+              ROM<br />
+              display options > Resolution > MODE 82 - 16:9<br />
 
-                      sudo poweroff y listo. <br />
-                      Remove SD.<br />
+              sudo poweroff y listo. <br />
+              Remove SD.<br />
 
-                      Ahora ya puedo usar a USB or SSD on my Pi.<br />
+              Ahora ya puedo usar a USB or SSD on my Pi.<br />
 
-                      however, my SSD did not boot from my pi.<br />
+              however, my SSD did not boot from my pi.<br />
 
-                      I had to copy the SD Image to my SSD.<br />
-                      menu > accessories > SD card copy.<br />
-                      from SD(dev/mmcblk) to SSD<br />
+              I had to copy the SD Image to my SSD.<br />
+              menu > accessories > SD card copy.<br />
+              from SD(dev/mmcblk) to SSD<br />
 
-                      remove the SD and boot from SSD<br />
-                    </code>
-                    <h5>Notes:</h5>
+              remove the SD and boot from SSD<br />
+            </code>
 
-                    <div>
-                      <ul id="tabs-a" class="tabs">
-                        <li data-title=""></li>
-                        <li data-title="Notes">
-                          <ul>
-                            <li>
-                              Make sure to format the SD and the SSD before.
-                            </li>
-                            <li>
-                              Make sure to install the Visual OS and
-                              <b>NOT the LITE OS</b>. This is to setup the boot
-                              loader order. Which enable USB boot.
-                            </li>
-                            <ul>
-                              <li>
-                                Yo segui el video y No encontre la forma de
-                                copiar al SSD usando solo lite OS.
-                              </li>
-                            </ul>
-                            <li>
-                              <b>Follow video until minute 9.</b>
-                              <ul>
-                                <li>
-                                  After that is the SSH version, using only the
-                                  command which I already tried but got stuck at
-                                  the end since I was able to run the piclone in
-                                  the terminal.
-                                </li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </li>
-                        <li data-title="Over the network (Code)">
-                          <code class="codebox">
-                            Accessing the pi over the network and launching the
-                            clone utility via ssh: <br />
-
-                            from a linux terminal:<br />
-                            ssh -X -Y pi[at]raspberrypi<br />
-
-                            (you can also launch this from Windows if you have
-                            xming + putty installed)<br />
-
-                            sudo apt install x11-apps<br />
-                            xclock<br />
-                            xeyes<br />
-                            xauth list<br />
-                            sudo bash<br /><br />
-
-                            Then as root:<br />
-
-                            touch .Xauthority<br />
-                            xauth add raspberrypi/unix:10 MIT-MAGIC-COOKIE-1
-                            bc6d1590cbf9f933c08cbfeb63b41<br /><br />
-
-                            Then as pi:<br />
-
-                            sudo xeyes<br />
-                            sudo piclone<br />
-                            sudo dbus-launch piclone<br />
-                            sudo fdisk -l<br />
-                            sudo shutdown -h now
-                          </code>
-                        </li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4>issue:</h4>
-                      <ul id="tabs-a" class="tabs">
-                        <li data-title="Nasty error trying to SSH">
-                          <code class="codebox">
-                            @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-                            <br />
-                            @ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!
-                            @<br />
-                            @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br />
-                            IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING
-                            NASTY!<br />
-                            Someone could be eavesdropping on you right now
-                            (man-in-the-middle attack)!<br />
-                            It is also possible that the RSA host key has just
-                            been changed.<br />
-                            The fingerprint for the RSA key sent by the remote
-                            host is<br />
-                            5c:9b:16:56:a6:cd:11:10:3a:cd:1b:a2:91:cd:e5:1c.<br />
-                            Please contact your system administrator.<br />
-                            Add correct host key in /home/user/.ssh/known_hosts
-                            to get rid of this message.<br />
-                            Offending key in /home/user/.ssh/known_hosts:1<br />
-                            RSA host key for ras.mydomain.com has changed and
-                            you have requested strict checking.<br />
-                            Host key verification failed.
-                          </code>
-                        </li>
-                        <li data-title="Solution">
-                          <p>
-                            <b
-                              >I fix it by Getting Rid of an individual known
-                              hosts
-                            </b>
-                          </p>
-                          <code class="codebox"
-                            >c:\users\juand\.ssh\known_hosts</code
-                          >
-                          <p>
-                            In my case, I have to delete the IP or the raspberry
-                            instance that was not letting me in.
-                          </p>
-                          <p>
-                            For more details click
-                            <a
-                              href="https://www.rit.edu/researchcomputing/instructions/Clearing-the-known_hosts-SSH-File"
-                              >here</a
-                            >.
-                          </p>
-                        </li>
-                      </ul>
-                    </div>
-                    <hr />
-                    <div>
-                      <h4>issue:</h4>
-                      <h5>
-                        How do I fix a"cannot open display" error when opening
-                        an X program after ssh'ing with X11 forwarding enabled?
-                      </h5>
-                      <ul id="tabs-a" class="tabs">
-                        <li data-title="Error">
-                          <code class="codebox">
-                           ".xauthority" does not exist on raspberry pi 4
-                          </code>
-                        </li>
-                        <li data-title="Solution">
-                          <p>
-                            This
-                            <a
-                              href="https://www.youtube.com/watch?v=FlHVuA_98SA"
-                              >video</a
-                            >
-                            help me resolved the issue. I had to install putty
-                            and Xmings to X11 apss on windows.
-                          </p>
-                        </li>
-                        <li data-title="The X-apps include">
-                          <p>
-                            This package provides a miscellaneous assortment of
-                            X applications that ship with the X Window System,
-                            including:
-                          </p>
-                          <code class="codebox">
-                            - atobm, bitmap, and bmtoa, tools for manipulating
-                            bitmap images; <br />
-                            - ico, a demo program animating polyhedrons;<br />
-                            - oclock and xclock, graphical clocks;<br />
-                            - rendercheck, a program to test render extension
-                            implementations;<br />
-                            - transset, a tool to set opacity property on a
-                            window;<br />
-                            - xbiff, a tool which tells you when you have new
-                            email;<br />
-                            - xcalc, a scientific calculator desktop
-                            accessory;<br />
-                            - xclipboard, a tool to manage cut-and-pasted text
-                            selections;<br />
-                            - xconsole, which monitors system console
-                            messages;<br />
-                            - xcursorgen, a tool for creating X cursor files
-                            from PNGs;<br />
-                            - xditview, a viewer for ditroff output;<br />
-                            - xedit, a simple text editor for X;<br />
-                            - xeyes, a demo program in which a pair of eyes
-                            track the pointer;<br />
-                            - xgc, a graphics demo;<br />
-                            - xload, a monitor for the system load average;<br />
-                            - xlogo, a demo program that displays the X logo;<br />
-                            - xmag, which magnifies parts of the X screen;<br />
-                            - xman, a manual page browser;<br />
-                            - xmore, a text pager;<br />
-                            - xwd, a utility for taking window dumps
-                            ("screenshots") of the X session;<br />
-                            - xwud, a viewer for window dumps created by xwd;<br />
-                            - Xmark, x11perf, and x11perfcomp, tools for
-                            benchmarking graphical<br />
-                            operations under the X Window System;
-                          </code>
-                          <figure>
-                            <img
-                              src="https://i.redd.it/jqzp400eq0a51.png"
-                              alt="x11"
-                              width="60%"
-                            />
-                            <figcaption>Example of X11 apps</figcaption>
-                          </figure>
-
-                          <p>
-                            <a
-                              href="https://packages.debian.org/stretch/x11-apps"
-                              >more info</a
-                            >
-                          </p>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li data-title=".."></li>
-                  <li data-title="..."></li>
+<h3>Enable VNC in the Pi</h3>
+              <p>Interface menu > VNC > enable. Using the code below:</p>
+              <code class="codebox">sudo raspi-config</code>
+          </li>
+          <li data-title="3. Static IP ">
+            <p>To setup a Static IP address</p>
+            <p>
+              Go to the Router and assign an IP.
+            </p>
+          </li>
+          <li data-title="4. Install Docker">
+            <ol>
+              <li>5:46 — Docker Explained</li>
+              <li>6:32 — Install Docker</li>
+              <li>Install <b>git</b></li>
+              <li>
+                commands
+                <ul>
+                  <li class="codebox">Sudo apt install git</li>
                 </ul>
-                <p><strong>issues:</strong></p>
-                <p>
-                  lo hice y sirvio pero tuve problemas...el dia siguiente
-                  encontre un Video_Serie q me encanto. Format my drive and
-                  start over. However, I had to go back and do this setup from
-                  SSD since the Pi-hosted video did not boot my pi correctly.
-                </p>
-                <hr />
-                <div>
-                  <p>
-                    I follow the steps in the video below but I run into some
-                    issues which I will explain.
-                  </p>
-                  <a
-                    href="https://www.notion.so/SSD-Boot-for-Raspberry-Pi4-Setup-93bc1fe3e91f4fa0a5c65916ea5d6b92#d48146caf5f54a0bbaa2b25fbd6e632f"
-                    >video</a
-                  >
-                  <p>
-                    Alternative Video
-                    <a href="https://www.youtube.com/watch?v=pto45lMgH5w"
-                      >here</a
-                    >.
-                  </p>
-                </div>
-              </div>
-              <div>
-                <ul id="tabs-a" class="tabs">
-                  <li data-title="Flash RPi OS">
-                    <h5>
-                      <a
-                        href="https://www.youtube.com/watch?v=cO2-gQ09Jj0&t=138s"
-                        >2:18</a
-                      >
-                      — Flash RPi Desktop(not lite as in video) OS (
-                      <b> Ctrl + Shift + x</b> → Advance options)
-                    </h5>
-                    <ol>
-                      <li>
-                        Remember to use the <b> Ctrl + Shift + x</b> to see the
-                        Advance options.
-                      </li>
-                      <li>Disable <b>overscan</b></li>
-                      <li>set hostname: <b>rpi-srv</b></li>
-                      <li>Enable <b>SSH</b></li>
-                      <li>Set <b>Password</b></li>
-                      <li>Set Configure <b>WIFI & country</b></li>
-                      <li>Set <b>Local</b> & <b>Keyboard</b> Layout</li>
-                      <li><b>Skip </b> first-run Wizard.</li>
-                      <li><b>Disable</b> Telemetry.</li>
-                    </ol>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h4>
-                  <a href="https://www.youtube.com/watch?v=cO2-gQ09Jj0&t=264s"
-                    >4:24
-                  </a>
-                  — Update Raspberry Pi OS
-                </h4>
-              </div>
-              <div>
-                <ul id="tabs-a" class="tabs">
-                  <li data-title="Enable VNC in the Pi">
-                    <p>Interface menu > VNC > enable. Using the code below:</p>
-                    <code class="codebox">sudo raspi-config</code>
-                  </li>
-                  <li data-title="Setup a Static IP address">
-                    Go to the Router and assign an IP.
-                  </li>
-                  <li data-title="Docker install">
-                    <ol>
-                      <li>5:46 — Docker Explained</li>
-                      <li>6:32 — Install Docker</li>
-                      <li>Install <b>git</b></li>
-                      <li>
-                        commands
-                        <ul>
-                          <li class="codebox">Sudo apt install git</li>
-                        </ul>
-                      </li>
-                    </ol>
-                  </li>
-                  <li data-title="Visual Explanation Of The Chapter">
-                    <div class="video">
-                      <iframe
-                        src="https://www.youtube.com/embed/cO2-gQ09Jj0"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
-                      ></iframe>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </section>
-          </section>
+              </li>
+            </ol>
+          </li>
+          <li data-title="5. Install Portainer">
+          </li>
+          <li data-title="6. Install Shell In A Box">
+          </li>
+          <li data-title="Visual Explanation Of The Chapter">
+            <div class="video">
+              <iframe
+                src="https://www.youtube.com/embed/cO2-gQ09Jj0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+
+
+
         </div>
         <!-- End Ch1-->
 
@@ -1313,7 +1061,263 @@ exit</xmp
           </section>
         </div>
         <!-- End Ch8-->
+        <div id="Part9" class="tabcontent">
+          <h2>Chapter Eight</h2>
+          <p class="ch-intro">
+            In this Chapter we will learn how to Install <i>NextCloud_Pi</i> on the
+            Raspberry Pi using Docker and Portainer.
+          </p>
+
+          <section class="StepByStep">
+            <h3>Step by step:</h3>
+            <section class="prep">
+              <h4>Prep the Pi</h4>
+
+              <p>issues:</p>
+              <p>
+                I had some issues following this particular video since he skip
+                the step and flash the OS on the HDD instead of doing it on a SD
+                and then copy everything from the SD to the SSD from the pi.
+              </p>
+              <ul>
+                <li>
+                  I had some issues following this particular video since he
+                  skip the step and flash the OS on the HDD instead of doing it
+                  on a SD and then copy everything from the SD to the SSD from
+                  the pi.
+                </li>
+                <li>I had to setup the Pi following **Video until minute 9:</li>
+              </ul>
+              <div>
+                <ul id="tabs-a" class="tabs">
+                  <li data-title="SSD issue">
+                    <h4>Comands I used:</h4>
+
+                    <h5>Notes:</h5>
+
+                    <div>
+                      <ul id="tabs-a" class="tabs">
+                        <li data-title=""></li>
+                        <li data-title="Notes">
+                          <ul>
+                            <li>
+                              Make sure to format the SD and the SSD before.
+                            </li>
+                            <li>
+                              Make sure to install the Visual OS and
+                              <b>NOT the LITE OS</b>. This is to setup the boot
+                              loader order. Which enable USB boot.
+                            </li>
+                            <ul>
+                              <li>
+                                Yo segui el video y No encontre la forma de
+                                copiar al SSD usando solo lite OS.
+                              </li>
+                            </ul>
+                            <li>
+                              <b>Follow video until minute 9.</b>
+                              <ul>
+                                <li>
+                                  After that is the SSH version, using only the
+                                  command which I already tried but got stuck at
+                                  the end since I was able to run the piclone in
+                                  the terminal.
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-title="Over the network (Code)">
+                          <code class="codebox">
+                            Accessing the pi over the network and launching the
+                            clone utility via ssh: <br />
+
+                            from a linux terminal:<br />
+                            ssh -X -Y pi[at]raspberrypi<br />
+
+                            (you can also launch this from Windows if you have
+                            xming + putty installed)<br />
+
+                            sudo apt install x11-apps<br />
+                            xclock<br />
+                            xeyes<br />
+                            xauth list<br />
+                            sudo bash<br /><br />
+
+                            Then as root:<br />
+
+                            touch .Xauthority<br />
+                            xauth add raspberrypi/unix:10 MIT-MAGIC-COOKIE-1
+                            bc6d1590cbf9f933c08cbfeb63b41<br /><br />
+
+                            Then as pi:<br />
+
+                            sudo xeyes<br />
+                            sudo piclone<br />
+                            sudo dbus-launch piclone<br />
+                            sudo fdisk -l<br />
+                            sudo shutdown -h now
+                          </code>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4>issue:</h4>
+                      <ul id="tabs-a" class="tabs">
+                        <li data-title="Nasty error trying to SSH">
+                          <code class="codebox">
+                            @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                            <br />
+                            @ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!
+                            @<br />
+                            @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br />
+                            IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING
+                            NASTY!<br />
+                            Someone could be eavesdropping on you right now
+                            (man-in-the-middle attack)!<br />
+                            It is also possible that the RSA host key has just
+                            been changed.<br />
+                            The fingerprint for the RSA key sent by the remote
+                            host is<br />
+                            5c:9b:16:56:a6:cd:11:10:3a:cd:1b:a2:91:cd:e5:1c.<br />
+                            Please contact your system administrator.<br />
+                            Add correct host key in /home/user/.ssh/known_hosts
+                            to get rid of this message.<br />
+                            Offending key in /home/user/.ssh/known_hosts:1<br />
+                            RSA host key for ras.mydomain.com has changed and
+                            you have requested strict checking.<br />
+                            Host key verification failed.
+                          </code>
+                        </li>
+                        <li data-title="Solution">
+                          <p>
+                            <b
+                              >I fix it by Getting Rid of an individual known
+                              hosts
+                            </b>
+                          </p>
+                          <code class="codebox"
+                            >c:\users\juand\.ssh\known_hosts</code
+                          >
+                          <p>
+                            In my case, I have to delete the IP or the raspberry
+                            instance that was not letting me in.
+                          </p>
+                          <p>
+                            For more details click
+                            <a
+                              href="https://www.rit.edu/researchcomputing/instructions/Clearing-the-known_hosts-SSH-File"
+                              >here</a
+                            >.
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                    <hr />
+                    <div>
+                      <h4>issue:</h4>
+                      <h5>
+                        How do I fix a"cannot open display" error when opening
+                        an X program after ssh'ing with X11 forwarding enabled?
+                      </h5>
+                      <ul id="tabs-a" class="tabs">
+                        <li data-title="Error">
+                          <code class="codebox">
+                           ".xauthority" does not exist on raspberry pi 4
+                          </code>
+                        </li>
+                        <li data-title="Solution">
+                          <p>
+                            This
+                            <a
+                              href="https://www.youtube.com/watch?v=FlHVuA_98SA"
+                              >video</a
+                            >
+                            help me resolved the issue. I had to install putty
+                            and Xmings to X11 apss on windows.
+                          </p>
+                        </li>
+                        <li data-title="The X-apps include">
+                          <p>
+                            This package provides a miscellaneous assortment of
+                            X applications that ship with the X Window System,
+                            including:
+                          </p>
+                          <code class="codebox">
+                            - atobm, bitmap, and bmtoa, tools for manipulating
+                            bitmap images; <br />
+                            - ico, a demo program animating polyhedrons;<br />
+                            - oclock and xclock, graphical clocks;<br />
+                            - rendercheck, a program to test render extension
+                            implementations;<br />
+                            - transset, a tool to set opacity property on a
+                            window;<br />
+                            - xbiff, a tool which tells you when you have new
+                            email;<br />
+                            - xcalc, a scientific calculator desktop
+                            accessory;<br />
+                            - xclipboard, a tool to manage cut-and-pasted text
+                            selections;<br />
+                            - xconsole, which monitors system console
+                            messages;<br />
+                            - xcursorgen, a tool for creating X cursor files
+                            from PNGs;<br />
+                            - xditview, a viewer for ditroff output;<br />
+                            - xedit, a simple text editor for X;<br />
+                            - xeyes, a demo program in which a pair of eyes
+                            track the pointer;<br />
+                            - xgc, a graphics demo;<br />
+                            - xload, a monitor for the system load average;<br />
+                            - xlogo, a demo program that displays the X logo;<br />
+                            - xmag, which magnifies parts of the X screen;<br />
+                            - xman, a manual page browser;<br />
+                            - xmore, a text pager;<br />
+                            - xwd, a utility for taking window dumps
+                            ("screenshots") of the X session;<br />
+                            - xwud, a viewer for window dumps created by xwd;<br />
+                            - Xmark, x11perf, and x11perfcomp, tools for
+                            benchmarking graphical<br />
+                            operations under the X Window System;
+                          </code>
+                          <figure>
+                            <img
+                              src="https://i.redd.it/jqzp400eq0a51.png"
+                              alt="x11"
+                              width="60%"
+                            />
+                            <figcaption>Example of X11 apps</figcaption>
+                          </figure>
+
+                          <p>
+                            <a
+                              href="https://packages.debian.org/stretch/x11-apps"
+                              >more info</a
+                            >
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li data-title=".."></li>
+                  <li data-title="..."></li>
+                </ul>
+              </div>
+                <p><strong>issues:</strong></p>
+                <p>
+                  lo hice y sirvio pero tuve problemas...el dia siguiente
+                  encontre un Video_Serie q me encanto. Format my drive and
+                  start over. However, I had to go back and do this setup from
+                  SSD since the Pi-hosted video did not boot my pi correctly.
+                </p>
+                <hr />
+            </section>
+          </section>
+
+        </div>
+
+        <!-- End Ch8-->
       </div>
+
       <!-- END of Chapters-->
       <footer>
         &copy;
