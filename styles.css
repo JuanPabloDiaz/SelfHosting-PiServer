@@ -229,17 +229,23 @@ figure {
 figure img {
   width: 80%;
 }
-.LogoApps {
+
+#outerImg {
   background-color: black;
-}
-.LogoApps img {
-  width: 100%;
-  max-width: 100px;
-  height: auto;
+
+  width: 90%;/* demo*/
+  margin: auto;/* demo*/
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
 }
+#outerImg>div {flex:1;}
+#outerImg>div>img {
+  width:100%;
+  height: 100px;
+  min-width:50px;/* demo*/
+}
+
+
 .video {
   display: flex;
   justify-content: center;
