@@ -1,17 +1,18 @@
 /* responsible page: https://www.w3schools.com/css/css_navbar_horizontal.asp */
 /* VARIABLES: */
 :root {
-  --bannerBg: #;
+  /* --bannerBg: #715A67; */
+  --bannerBg: rgba(0, 0, 0, 0.562);
   --bannerText: #;
-  --Nav-Bg: #f1f1f1;
-  --Nav-Text: #868c7c;
-  --Nav-ActiveBG: #c1b4b0;
-  --Nav-ActiveText: #e4f0d0;
-  --Nav-HoverBg: #555;
-  --Nav-HoverText: white;
-  --Tabs-Bg: #f1f1f1;
-  --Tabs-ActiveText: #ccc;
-  --Tabs-HoverBG: #ddd;
+  --Nav-y-Tab-Bg: #F1F1F1;
+  --Nav-y-Tab-Text: #5c5f72;
+  --ActiveBG: #c1b4b0;
+  --ActiveText: #C75000;
+  /* --ActiveText: #e4f0d0; */
+  --HoverBg: #555;
+  --HoverText: #F1F1F1;
+  --Link-text: #C75000;
+  --Link-text-active: #6B7D7D;
   --sm: 14px;
   --md: 16px;
   --lg: 18px;
@@ -29,7 +30,7 @@ ul.sidenav {
   margin: 0;
   padding: 0;
   width: 20%;
-  background-color: var(--Nav-Bg);
+  background-color: var(--Nav-y-Tab-Bg);
   position: fixed;
   height: 100%;
   overflow: auto;
@@ -37,20 +38,20 @@ ul.sidenav {
 
 ul.sidenav li a {
   display: block;
-  color: var(--Nav-Text);
+  color: var(--Nav-y-Tab-Text);
   padding: 8px 16px;
   text-decoration: none;
   font-weight: bold;
 }
 
 ul.sidenav li a.active {
-  background-color: var(--Nav-ActiveBG);
-  color: var(--Nav-ActiveText);
+  background-color: var(--ActiveBG);
+  color: var(--ActiveText);
 }
 
 ul.sidenav li a:hover:not(.active) {
-  background-color: var(--Nav-HoverBg);
-  color: var(--Nav-HoverText);
+  background-color: var(--HoverBg);
+  color: var(--HoverText);
 }
 
 div.content {
@@ -63,12 +64,13 @@ div.content {
 /* Style the tab */
 .tab {
   overflow: hidden;
-  background-color: var(--Tabs-Bg);
+  background-color: var(--Nav-y-Tab-Bg);
 }
 
 /* Style the buttons inside the tab */
 .tab button {
   background-color: inherit;
+  color: var(--Nav-y-Tab-Text);
   float: left;
   border: none;
   outline: none;
@@ -76,23 +78,28 @@ div.content {
   padding: 14px 16px;
   transition: 0.3s;
   font-size: 17px;
+  font-weight: bold;
+
 }
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-  background-color: var(--Tabs-HoverBG);
+  background-color:var(--HoverBg);
+  color:var(--HoverText);
 }
 
 /* Create an active/current tablink class */
 .tab button.active {
-  background-color: var(--Tabs-ActiveText);
+  background-color: var(--ActiveBG);
+  color: var(--ActiveText);
 }
+
 
 /* Style the tab content */
 .tabcontent {
   display: none;
   padding: 15px 12px;
-  border: 1px solid rgb(160, 95, 95);
+  /* border: 1px solid rgb(160, 95, 95); */
   border-top: none;
 }
 /*  END  tabs Menu*/
@@ -173,7 +180,7 @@ div.content {
 }
 header,
 footer {
-  background-color: rgba(0, 0, 0, 0.562);
+  background-color: var(--bannerBg);
   /*center the text*/
   display: flex;
   justify-content: center;
@@ -210,6 +217,14 @@ footer {
   font-size: 0.9em;
   display: inline-block;
 }
+a {
+  color: var(--Link-text);
+  text-decoration: none;
+  font-weight: lighter;
+}
+a:hover {
+  color: var(--Link-text-active);
+}
 
 /*  END JP Styling*/
 /*  images & videos */
@@ -231,7 +246,6 @@ figure img {
 
 #outerImg {
   background-color: black;
-
   width: 90%;/* demo*/
   margin: auto;/* demo*/
   display: flex;

@@ -62,9 +62,13 @@
             <button class="tablinks" onclick="openCity(event, 'Part9')">
           Nine
         </button>
-            <button class="tablinks" onclick="openCity(event, 'Part10')">
-          Ten
-        </button>
+        <button class="tablinks" onclick="openCity(event, 'Part10')">
+      Ten
+    </button>
+    </button>
+    <button class="tablinks" onclick="openCity(event, 'Errors')">
+      Bugs
+</button>
         </div>
             <div id="intro" class="tabcontent">
                 <h2>My Own Server At Home</h2>
@@ -180,13 +184,14 @@
       </div>  <!-- END How -->
           <div class="projectIdea">
             <figure class="sideImg">
-              <img
+              <a href="https://www.circuitbasics.com/wp-content/uploads/2021/03/local_network.png" target="_blank" rel="noopener noreferrer"><img
                 src="https://www.circuitbasics.com/wp-content/uploads/2021/03/local_network.png"
                 alt="Logo"
-                width="30%"
-              />
+                width="30px"
+              /></a>
               <figcaption>LAN + Pi</figcaption>
           </figure>
+          <br>
             <h3>Why?</h3>
             <p>The idea of this project is:</p>
             <ul>
@@ -1167,260 +1172,218 @@ exit</xmp
           </section>
         </div>
         <!-- End Ch8-->
-        <div id="Part9" class="tabcontent">
-          <h2>Chapter Eight</h2>
+        <div id="Errors" class="tabcontent">
+          <h2>Errors & Bugs</h2>
           <p class="ch-intro">
-            In this Chapter we will learn how to Install <i>NextCloud_Pi</i> on the
-            Raspberry Pi using Docker and Portainer.
-          </p>
+            This section explain some of the errors you might get into during the project and how to troubleshoot them. Good luck!</p>
 
-          <section class="StepByStep">
-            <h3>Step by step:</h3>
-            <section class="prep">
-              <h4>Prep the Pi</h4>
+              <div> <!-- error 1 -->
+                <h4>SSH error:</h4>
+                <ul id="tabs-a" class="tabs">
+                  <li data-title="1. Nasty error">
+                    <p>"Nasty error" while trying to SSH into the Pi</p>
+                    <p>Once I change some things in the pi, I was not able to SSH again and got an error that looks like this:</p>
+                    <code class="codebox">
+                      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                      <br />
+                      @ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!
+                      @<br />
+                      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br />
+                      IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING
+                      NASTY!<br />
+                      Someone could be eavesdropping on you right now
+                      (man-in-the-middle attack)!<br />
+                      It is also possible that the RSA host key has just
+                      been changed.<br />
+                      The fingerprint for the RSA key sent by the remote
+                      host is<br />
+                      5c:9b:16:56:a6:cd:11:10:3a:cd:1b:a2:91:cd:e5:1c.<br />
+                      Please contact your system administrator.<br />
+                      Add correct host key in /home/user/.ssh/known_hosts
+                      to get rid of this message.<br />
+                      Offending key in /home/user/.ssh/known_hosts:1<br />
+                      RSA host key for ras.mydomain.com has changed and
+                      you have requested strict checking.<br />
+                      Host key verification failed.
+                    </code>
+                  </li>
+                  <li data-title="Solution">
+                    <p>
+                      <b
+                        >I fix it by getting rid of an individual known
+                        hosts
+                      </b>
+                    </p>
+                    <code class="codebox"
+                      >c:\users\juand\.ssh\known_hosts</code
+                    >
+                    <p>
+                      In my case, I have to delete the IP or the raspberry
+                      instance that was not letting me in.
+                    </p>
+                    <p>
+                      For more details click
+                      <a
+                        href="https://www.rit.edu/researchcomputing/instructions/Clearing-the-known_hosts-SSH-File"
+                        >here</a
+                      >.
+                    </p>
+                  </li>
+                </ul>
+              </div> <!-- END error 1 -->
+              <div> <!-- error 2 -->
+                <h4>issue:</h4>
+                <h5>
+                  How do I fix a"cannot open display" error when opening
+                  an X program after ssh'ing with X11 forwarding enabled?
+                </h5>
+                <ul id="tabs-a" class="tabs">
+                  <li data-title="Error">
+                    <code class="codebox">
+                     ".xauthority" does not exist on raspberry pi 4
+                    </code>
+                  </li>
+                  <li data-title="Solution">
+                    <p>
+                      This
+                      <a
+                        href="https://www.youtube.com/watch?v=FlHVuA_98SA"
+                        >video</a
+                      >
+                      help me resolved the issue. I had to install putty
+                      and Xmings to X11 apss on windows.
+                    </p>
+                  </li>
+                  <li data-title="The X-apps include">
+                    <p>
+                      This package provides a miscellaneous assortment of
+                      X applications that ship with the X Window System,
+                      including:
+                    </p>
+                    <code class="codebox">
+                      - atobm, bitmap, and bmtoa, tools for manipulating
+                      bitmap images; <br />
+                      - ico, a demo program animating polyhedrons;<br />
+                      - oclock and xclock, graphical clocks;<br />
+                      - rendercheck, a program to test render extension
+                      implementations;<br />
+                      - transset, a tool to set opacity property on a
+                      window;<br />
+                      - xbiff, a tool which tells you when you have new
+                      email;<br />
+                      - xcalc, a scientific calculator desktop
+                      accessory;<br />
+                      - xclipboard, a tool to manage cut-and-pasted text
+                      selections;<br />
+                      - xconsole, which monitors system console
+                      messages;<br />
+                      - xcursorgen, a tool for creating X cursor files
+                      from PNGs;<br />
+                      - xditview, a viewer for ditroff output;<br />
+                      - xedit, a simple text editor for X;<br />
+                      - xeyes, a demo program in which a pair of eyes
+                      track the pointer;<br />
+                      - xgc, a graphics demo;<br />
+                      - xload, a monitor for the system load average;<br />
+                      - xlogo, a demo program that displays the X logo;<br />
+                      - xmag, which magnifies parts of the X screen;<br />
+                      - xman, a manual page browser;<br />
+                      - xmore, a text pager;<br />
+                      - xwd, a utility for taking window dumps
+                      ("screenshots") of the X session;<br />
+                      - xwud, a viewer for window dumps created by xwd;<br />
+                      - Xmark, x11perf, and x11perfcomp, tools for
+                      benchmarking graphical<br />
+                      operations under the X Window System;
+                    </code>
+                    <figure>
+                      <img
+                        src="https://i.redd.it/jqzp400eq0a51.png"
+                        alt="x11"
+                        width="60%"
+                      />
+                      <figcaption>Example of X11 apps</figcaption>
+                    </figure>
 
-              <p>issues:</p>
-              <p>
-                I had some issues following this particular video since he skip
-                the step and flash the OS on the HDD instead of doing it on a SD
-                and then copy everything from the SD to the SSD from the pi.
-              </p>
-              <ul>
-                <li>
-                  I had some issues following this particular video since he
-                  skip the step and flash the OS on the HDD instead of doing it
-                  on a SD and then copy everything from the SD to the SSD from
-                  the pi.
-                </li>
-                <li>I had to setup the Pi following **Video until minute 9:</li>
-              </ul>
+                    <p>
+                      <a
+                        href="https://packages.debian.org/stretch/x11-apps"
+                        >more info</a
+                      >
+                    </p>
+                  </li>
+                </ul>
+              </div> <!-- END error 2 -->
+
               <div>
                 <ul id="tabs-a" class="tabs">
-                  <li data-title="SSD issue">
-                    <h4>Comands I used:</h4>
-
-                    <h5>Notes:</h5>
-
-                    <div>
-                      <ul id="tabs-a" class="tabs">
-                        <li data-title=""></li>
-                        <li data-title="Notes">
-                          <ul>
-                            <li>
-                              Make sure to format the SD and the SSD before.
-                            </li>
-                            <li>
-                              Make sure to install the Visual OS and
-                              <b>NOT the LITE OS</b>. This is to setup the boot
-                              loader order. Which enable USB boot.
-                            </li>
-                            <ul>
-                              <li>
-                                Yo segui el video y No encontre la forma de
-                                copiar al SSD usando solo lite OS.
-                              </li>
-                            </ul>
-                            <li>
-                              <b>Follow video until minute 9.</b>
-                              <ul>
-                                <li>
-                                  After that is the SSH version, using only the
-                                  command which I already tried but got stuck at
-                                  the end since I was able to run the piclone in
-                                  the terminal.
-                                </li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </li>
-                        <li data-title="Over the network (Code)">
-                          <code class="codebox">
-                            Accessing the pi over the network and launching the
-                            clone utility via ssh: <br />
-
-                            from a linux terminal:<br />
-                            ssh -X -Y pi[at]raspberrypi<br />
-
-                            (you can also launch this from Windows if you have
-                            xming + putty installed)<br />
-
-                            sudo apt install x11-apps<br />
-                            xclock<br />
-                            xeyes<br />
-                            xauth list<br />
-                            sudo bash<br /><br />
-
-                            Then as root:<br />
-
-                            touch .Xauthority<br />
-                            xauth add raspberrypi/unix:10 MIT-MAGIC-COOKIE-1
-                            bc6d1590cbf9f933c08cbfeb63b41<br /><br />
-
-                            Then as pi:<br />
-
-                            sudo xeyes<br />
-                            sudo piclone<br />
-                            sudo dbus-launch piclone<br />
-                            sudo fdisk -l<br />
-                            sudo shutdown -h now
-                          </code>
+                  <li data-title="Notes">
+                    <ul>
+                      <li>
+                        Make sure to format the SD and the SSD before.
+                      </li>
+                      <li>
+                        Make sure to install the Visual OS and
+                        <b>NOT the LITE OS</b>. This is to setup the boot
+                        loader order. Which enable USB boot.
+                      </li>
+                      <ul>
+                        <li>
+                          Yo segui el video y No encontre la forma de
+                          copiar al SSD usando solo lite OS.
                         </li>
                       </ul>
-                    </div>
-                    <div>
-                      <h4>issue:</h4>
-                      <ul id="tabs-a" class="tabs">
-                        <li data-title="Nasty error trying to SSH">
-                          <code class="codebox">
-                            @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-                            <br />
-                            @ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!
-                            @<br />
-                            @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br />
-                            IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING
-                            NASTY!<br />
-                            Someone could be eavesdropping on you right now
-                            (man-in-the-middle attack)!<br />
-                            It is also possible that the RSA host key has just
-                            been changed.<br />
-                            The fingerprint for the RSA key sent by the remote
-                            host is<br />
-                            5c:9b:16:56:a6:cd:11:10:3a:cd:1b:a2:91:cd:e5:1c.<br />
-                            Please contact your system administrator.<br />
-                            Add correct host key in /home/user/.ssh/known_hosts
-                            to get rid of this message.<br />
-                            Offending key in /home/user/.ssh/known_hosts:1<br />
-                            RSA host key for ras.mydomain.com has changed and
-                            you have requested strict checking.<br />
-                            Host key verification failed.
-                          </code>
-                        </li>
-                        <li data-title="Solution">
-                          <p>
-                            <b
-                              >I fix it by Getting Rid of an individual known
-                              hosts
-                            </b>
-                          </p>
-                          <code class="codebox"
-                            >c:\users\juand\.ssh\known_hosts</code
-                          >
-                          <p>
-                            In my case, I have to delete the IP or the raspberry
-                            instance that was not letting me in.
-                          </p>
-                          <p>
-                            For more details click
-                            <a
-                              href="https://www.rit.edu/researchcomputing/instructions/Clearing-the-known_hosts-SSH-File"
-                              >here</a
-                            >.
-                          </p>
-                        </li>
-                      </ul>
-                    </div>
-                    <hr />
-                    <div>
-                      <h4>issue:</h4>
-                      <h5>
-                        How do I fix a"cannot open display" error when opening
-                        an X program after ssh'ing with X11 forwarding enabled?
-                      </h5>
-                      <ul id="tabs-a" class="tabs">
-                        <li data-title="Error">
-                          <code class="codebox">
-                           ".xauthority" does not exist on raspberry pi 4
-                          </code>
-                        </li>
-                        <li data-title="Solution">
-                          <p>
-                            This
-                            <a
-                              href="https://www.youtube.com/watch?v=FlHVuA_98SA"
-                              >video</a
-                            >
-                            help me resolved the issue. I had to install putty
-                            and Xmings to X11 apss on windows.
-                          </p>
-                        </li>
-                        <li data-title="The X-apps include">
-                          <p>
-                            This package provides a miscellaneous assortment of
-                            X applications that ship with the X Window System,
-                            including:
-                          </p>
-                          <code class="codebox">
-                            - atobm, bitmap, and bmtoa, tools for manipulating
-                            bitmap images; <br />
-                            - ico, a demo program animating polyhedrons;<br />
-                            - oclock and xclock, graphical clocks;<br />
-                            - rendercheck, a program to test render extension
-                            implementations;<br />
-                            - transset, a tool to set opacity property on a
-                            window;<br />
-                            - xbiff, a tool which tells you when you have new
-                            email;<br />
-                            - xcalc, a scientific calculator desktop
-                            accessory;<br />
-                            - xclipboard, a tool to manage cut-and-pasted text
-                            selections;<br />
-                            - xconsole, which monitors system console
-                            messages;<br />
-                            - xcursorgen, a tool for creating X cursor files
-                            from PNGs;<br />
-                            - xditview, a viewer for ditroff output;<br />
-                            - xedit, a simple text editor for X;<br />
-                            - xeyes, a demo program in which a pair of eyes
-                            track the pointer;<br />
-                            - xgc, a graphics demo;<br />
-                            - xload, a monitor for the system load average;<br />
-                            - xlogo, a demo program that displays the X logo;<br />
-                            - xmag, which magnifies parts of the X screen;<br />
-                            - xman, a manual page browser;<br />
-                            - xmore, a text pager;<br />
-                            - xwd, a utility for taking window dumps
-                            ("screenshots") of the X session;<br />
-                            - xwud, a viewer for window dumps created by xwd;<br />
-                            - Xmark, x11perf, and x11perfcomp, tools for
-                            benchmarking graphical<br />
-                            operations under the X Window System;
-                          </code>
-                          <figure>
-                            <img
-                              src="https://i.redd.it/jqzp400eq0a51.png"
-                              alt="x11"
-                              width="60%"
-                            />
-                            <figcaption>Example of X11 apps</figcaption>
-                          </figure>
-
-                          <p>
-                            <a
-                              href="https://packages.debian.org/stretch/x11-apps"
-                              >more info</a
-                            >
-                          </p>
-                        </li>
-                      </ul>
-                    </div>
+                      <li>
+                        <b>Follow video until minute 9.</b>
+                        <ul>
+                          <li>
+                            After that is the SSH version, using only the
+                            command which I already tried but got stuck at
+                            the end since I was able to run the piclone in
+                            the terminal.
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
                   </li>
-                  <li data-title=".."></li>
-                  <li data-title="..."></li>
+                  <li data-title="Over the network (Code)">
+                    <code class="codebox">
+                      Accessing the pi over the network and launching the
+                      clone utility via ssh: <br />
+
+                      from a linux terminal:<br />
+                      ssh -X -Y pi[at]raspberrypi<br />
+
+                      (you can also launch this from Windows if you have
+                      xming + putty installed)<br />
+
+                      sudo apt install x11-apps<br />
+                      xclock<br />
+                      xeyes<br />
+                      xauth list<br />
+                      sudo bash<br /><br />
+
+                      Then as root:<br />
+
+                      touch .Xauthority<br />
+                      xauth add raspberrypi/unix:10 MIT-MAGIC-COOKIE-1
+                      bc6d1590cbf9f933c08cbfeb63b41<br /><br />
+
+                      Then as pi:<br />
+
+                      sudo xeyes<br />
+                      sudo piclone<br />
+                      sudo dbus-launch piclone<br />
+                      sudo fdisk -l<br />
+                      sudo shutdown -h now
+                    </code>
+                  </li>
                 </ul>
               </div>
-                <p><strong>issues:</strong></p>
-                <p>
-                  lo hice y sirvio pero tuve problemas...el dia siguiente
-                  encontre un Video_Serie q me encanto. Format my drive and
-                  start over. However, I had to go back and do this setup from
-                  SSD since the Pi-hosted video did not boot my pi correctly.
-                </p>
-                <hr />
-            </section>
-          </section>
+              <hr />
 
         </div>
-        <!-- End Ch9-->
+        <!-- End Errors-->
       </div>
       <!-- END of Chapters-->
       <footer>
