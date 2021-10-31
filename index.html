@@ -17,7 +17,8 @@
 <body>
     <nav>
         <ul class="sidenav">
-            <li>
+            <li class="brand">
+              <!-- <a href="#home"><img class="jpLogo" src="/SelfHosting-PiServer/JuanDiazLogo/juanDiazNombre.png" alt="Juan Diaz" /></a> -->
                 <a href="#home"><img class="jpLogo" src="/SelfHosting-PiServer/JuanDiazLogo/logo_JuanDiazButtonNoBg.png" alt="Juan Diaz" /></a>
             </li>
             <li><a class="active" href="">Pi-Hosted</a></li>
@@ -191,7 +192,6 @@
               /></a>
               <figcaption>LAN + Pi</figcaption>
           </figure>
-          <br>
             <h3>Why?</h3>
             <p>The idea of this project is:</p>
             <ul>
@@ -220,6 +220,8 @@
                 centralize storage unit.
               </li>
             </ul>
+            <h3>References</h3>
+            <p>I have to get credit to multiple youtubers and other sources that contribute in some form to this project. With that been said, I will be adding the links for those videos if you want to have a more visual idea. </p>
           </div> <!-- End projectIdea -->
         </div>
         <!-- End intro-->
@@ -242,73 +244,82 @@
         <h3>Step by step:</h3>
         <ul id="tabs-a" class="tabs">
           <li data-title="1. Install the OS">
-            <h3>Flash RPi OS</h3>
+            <ol>
+              <li>Make sure to <b>format</b> the SD and the SSD before.</li>
+              <li>Go to Rpi website to download and Install the "<a href="https://www.raspberrypi.com/software/" target="_blank" rel="noopener noreferrer">Pi Imager</a>"</li>
+              <li>Once it is installed, connect the SD card and flash Raspberry Desktop OS.
+                <p class="notes info">
+                  I suggest to flash the Pi with the RPi Desktop version instead of the Lite version (as suggested in the video) Other than that, I follow steps in minute <a
+                  href="https://www.youtube.com/watch?v=cO2-gQ09Jj0&t=138s"
+                  >2:18</a
+                  >.</p>
+                <ol class="romanos">
+                  <li>Access the Advance options for the OS setup</li>
+                  <li>
+                    Remember to use the <b> Ctrl + Shift + x</b> to see the
+                    Advance options.
+                    </li>
+                    <li>Disable <b>overscan</b></li>
+                    <li>Set hostname: <b>rpi-srv</b></li>
+                    <li>Enable <b>SSH</b></li>
+                    <li>Set <b>Password</b></li>
+                    <li>Set Configure <b>WIFI & country</b></li>
+                    <li>Set <b>Local</b> & <b>Keyboard</b> Layout</li>
+                    <li><b>Skip </b> first-run Wizard.</li>
+                    <li><b>Disable</b> Telemetry.</li>
+                </ol>
+              </li>
+            </ol>
+            <h4>Flash RPi OS</h4>
             <h5>
-              <a
-              href="https://www.youtube.com/watch?v=cO2-gQ09Jj0&t=138s"
-              >2:18</a
-              >
+
               — Flash RPi Desktop(not lite as in video) OS (
               <b> Ctrl + Shift + x</b> → Advance options)
             </h5>
             <ol>
-              <li>
-              Remember to use the <b> Ctrl + Shift + x</b> to see the
-              Advance options.
-              </li>
-              <li>Disable <b>overscan</b></li>
-              <li>set hostname: <b>rpi-srv</b></li>
-              <li>Enable <b>SSH</b></li>
-              <li>Set <b>Password</b></li>
-              <li>Set Configure <b>WIFI & country</b></li>
-              <li>Set <b>Local</b> & <b>Keyboard</b> Layout</li>
-              <li><b>Skip </b> first-run Wizard.</li>
-              <li><b>Disable</b> Telemetry.</li>
+
             </ol>
           </li>
           <li data-title="2. Boot from USB SSD for the Rasp Pi4 (Setup)">
-            <p>Commands used before Software update</p>
-            <code class="codebox">
-              Change the password on the desktop or using SSH with:<br />
-              passwd<br />
-
-              set a time zone and a location<br />
-
-              Here are the commands used to upgrade the Software and
-              Eeprom:<br />
-
-              How to Update EEPROM on Raspberry Pi 4 For USB Boot...<br />
-
-              sudo apt update<br />
-              sudo apt full-upgrade<br />
-              sudo rpi-update<br />
-              sudo reboot<br />
-
-              sudo rpi-eeprom-update -d -a<br />
-
-              sudo raspi-config<br />
-              advance options > boot order > USB<br />
-              advance options > bootloader Version > E1 - last version
-              ROM<br />
-              display options > Resolution > MODE 82 - 16:9<br />
-
-              sudo poweroff y listo. <br />
-              Remove SD.<br />
-
-              Ahora ya puedo usar a USB or SSD on my Pi.<br />
-
-              however, my SSD did not boot from my pi.<br />
-
-              I had to copy the SD Image to my SSD.<br />
-              menu > accessories > SD card copy.<br />
-              from SD(dev/mmcblk) to SSD<br />
-
-              remove the SD and boot from SSD<br />
-            </code>
-
-<h3>Enable VNC in the Pi</h3>
-              <p>Interface menu > VNC > enable. Using the code below:</p>
-              <code class="codebox">sudo raspi-config</code>
+            <p class="notes info">
+              Note: The Raspberry Pi needs to <b>Boot from USB</b>. Which means that we need to <b>Update EEPROM</b> on.
+            </p>
+            <p class="notes info">
+            Personal Note: I had some issues following this particular video since the video skip the step where you need to config the USB bootloader. Instead, in the video, they flash the OS on the HDD instead of doing it on a SD and then copy everything from the SD to the SSD from the pi.</p>
+            <p>Watch video: <a href="https://www.youtube.com/watch?v=pto45lMgH5w" target="_blank" rel="noopener noreferrer">How to Boot Raspberry Pi 4/400 From a USB SSD
+            </a></p>
+            <ol>
+              <li>Connect to Raspberry Pi over SSH</li>
+                <xmp class="codebox">ssh pi@YOUR_RPI_IP</xmp>
+                <p class="notes info">
+                  Default username is pi & password is: raspberry</p>
+                  <li>Update OS and firmware</li>
+                  <xmp class="codebox">sudo apt update && sudo apt full-upgrade
+sudo rpi-update</xmp>
+                  <li>Reboot Raspberry Pi</li>
+                  <xmp class="codebox">sudo reboot</xmp>
+                  <li>How to Update EEPROM on Raspberry Pi 4 For USB Boot... <br>Install latest bootloader</li>
+                  <xmp class="codebox">sudo rpi-eeprom-update -d -a</xmp>
+                  <li>Launch this tool for final configurations</li>
+                  <xmp class="codebox">sudo raspi-config
+    advance options > boot order > USB
+    advance options > bootloader Version > E1 - last version ROM
+    display options > Resolution > MODE 82 - 16:9</xmp>
+                  <li>Reboot Raspberry Pi</li>
+                  <xmp class="codebox">sudo reboot</xmp>
+                  <li>Copy SD to USB or SSD</li>
+                  <ol class="letras">
+                    <li>Connect to Pi using HDMI or VNC</li>
+                    <h3>Enable VNC in the Pi</h3>
+                    <p>Interface menu > VNC > enable. Using the code below:</p>
+                    <xmp class="codebox">sudo raspi-config</xmp>
+                    <li>Go to Menu > accessories > SD card copy.</li>
+                    <li>From SD (dev/mmcblk) to SSD</li>
+                    <xmp class="codebox">sudo reboot</xmp>
+                  </ol>
+                  <li>Once it Finish, Turn off the pi <br>Remove the SD and boot from SSD</li>
+                  <xmp class="codebox">sudo poweroff</xmp>
+            </ol>
           </li>
           <li data-title="3. Static IP ">
             <p>To setup a Static IP address</p>
@@ -329,12 +340,16 @@
               <li>5:46 — Docker Explained</li>
               <li>6:32 — Install Docker</li>
               <li>Install <b>git</b></li>
-              <li>
-                commands
-                <ul>
-                  <li class="codebox">Sudo apt install git</li>
-                </ul>
-              </li>
+              <xmp class="codebox">Sudo apt install git</xmp>
+              <li>Run Script</li>
+              <xmp class="codebox">1. cd Downloads
+2. git clone https://github.com/novaspirit/pi-hosted
+3. cd pi-hosted
+4. ls
+5.   ./install_docker.sh    #install docker
+6. exit   #logout
+7. login
+8. groups  #to check if docker is in the group</xmp>
             </ol>
           </li>
           <li data-title="5. Install Portainer">
@@ -345,7 +360,22 @@
                     />
               <figcaption>Portainer</figcaption>
           </figure>
-          </li>
+          <p>Run Script</p>
+              <xmp class="codebox">1. cd Downloads/pi-hosted
+2. ./install_portainer.sh       #install portainer
+3. cat install_portainer.sh        # to check what is in the script</xmp>
+                <p><a href="https://www.notion.so/Home-Server-Pi-Hosted-c939f84b89074f288899095731c72cf0#f54123ebe08c482c968de05070764e11" target="_blank" rel="noopener noreferrer">9:11</a> — Portainer Settings</p>
+                <p>Go to Endpoints or environments > local > change the public IP address with the actual IP from my Pi: 192.168.1.250</p>
+          <h4>Portainer App templet link</h4>
+          <p><a href="https://www.notion.so/Home-Server-Pi-Hosted-c939f84b89074f288899095731c72cf0#9626986879af43bdb3c296127cfb818a" target="_blank" rel="noopener noreferrer">10:51</a> — App Templates </p>
+          <ol>
+            <li>In Portainer add the link below</li>
+            <li>Portainer > settings > url (link below) > save settings</li>
+            <xmp class="codebox">https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Template/portainer-v2.json</xmp>
+            <xmp class="codebox">https://raw.githubusercontent.com/novaspirit/pi-hosted/master/pi-hosted_template/template/portainer-v2.json</xmp>
+            <p class="notes info">for more info go to <a href="https://github.com/SelfhostedPro/selfhosted_templates" target="_blank" rel="noopener noreferrer">github</a>            </p>
+          </ol>
+        </li>
           <li data-title="6. Install Shell In A Box">
             <figure class="sideImg">
               <img
@@ -354,7 +384,10 @@
                     />
               <figcaption>Shell In A Box</figcaption>
           </figure>
-          </li>
+          <p><a href="https://www.notion.so/Home-Server-Pi-Hosted-c939f84b89074f288899095731c72cf0#40eb67aedf56489e88c4de38b8845250" target="_blank" rel="noopener noreferrer">11:51</a> — Shell In A Box Install</p>
+          <xmp class="codebox">cd     # to go to root.
+sudo apt install shellinabox</xmp>
+        </li>
           <li data-title="Visual Explanation Of The Chapter">
             <div class="video">
               <iframe
@@ -368,10 +401,6 @@
           </li>
         </ul>
       </section>
-
-
-
-
         </div>
         <!-- End Ch1-->
         <div id="Part2" class="tabcontent">
@@ -401,13 +430,11 @@
                     I can SSH or user Shell in a box
                     (https://192.168.1.250:4200/)
                     <p>
-                      <code class="codebox">
-                        cd /portainer/Files/AppData/Config/Homer <br />
-                        ls <br />
-                        cd assets <br />
-                        ls <br />
-                        sudo nano config.yml //modify to change style
-                      </code>
+                      <xmp class="codebox">cd /portainer/Files/AppData/Config/Homer
+ls
+cd assets
+ls
+sudo nano config.yml //modify to change style</xmp>
                     </p>
                   </li>
                   <li>
@@ -527,13 +554,11 @@
               </li>
               <li data-title="2. Template">
                 <p>
-                  <xmp class="codebox"
->docker run \
+                  <xmp class="codebox">docker run \
   -p 8080:8080 \
-  -v <=[/path/to/config]:/config \
+  -v =[/path/to/config]:/config \
   -e"EXTENSIONS=auth-ldap,auth-duo"
-  oznu/guacamole</xmp
-                  >
+  oznu/guacamole</xmp>
                 </p>
               </li>
               <li data-title="3. Add To Portainer">
@@ -637,8 +662,7 @@
                 </ol>
               </li>
               <li data-title="2. Docker Compose">
-                <xmp class="codebox"
->
+                <xmp class="codebox">
 services:
   jdownloader:
   image: jaymoulin/jdownloader
@@ -988,10 +1012,15 @@ exit</xmp
                   <li>click on the <i>"raspberrypi-docker-monitor"</i></li>
                 </ol>
               </li>
-              <li data-title="4. Check dashboard img">
-                <img src="#" alt="Dash_image" />
-              </li>
-              <li data-title="5. Setup Dashboard">
+              <li data-title="4. Setup Dashboard">
+                <figure class="sideImg">
+                  <a href="https://camo.githubusercontent.com/40317b3c78f9ba75af54a2699db36161d8979cb28563f9c99955039fd18045bd/68747470733a2f2f692e696d6775722e636f6d2f65357a334b57562e706e67" target="_blank" rel="noopener noreferrer"><img
+                    src="https://camo.githubusercontent.com/40317b3c78f9ba75af54a2699db36161d8979cb28563f9c99955039fd18045bd/68747470733a2f2f692e696d6775722e636f6d2f65357a334b57562e706e67"
+                    alt="NextCloud Pi"
+                    width="600px"
+                  /></a>
+                  <figcaption>Dashboard example</figcaption>
+              </figure>
                 <ol>
                   <li>
                     Go to Rpi-Monitor page and setup Dashboard.
@@ -1051,7 +1080,7 @@ exit</xmp
                   <li>Load > import</li>
                 </ol>
               </li>
-              <li data-title="6. Visual Explanation Of The Chapter">
+              <li data-title="5. Visual Explanation Of The Chapter">
                 <div class="video">
                   <iframe
                     src="https://www.youtube.com/embed/IoD3vFuep64"
@@ -1183,8 +1212,8 @@ exit</xmp
                   <li data-title="1. Nasty error">
                     <p>"Nasty error" while trying to SSH into the Pi</p>
                     <p>Once I change some things in the pi, I was not able to SSH again and got an error that looks like this:</p>
-                    <code class="codebox">
-                      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                    <xmp class="codebox"
+                    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
                       <br />
                       @ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!
                       @<br />
@@ -1205,7 +1234,7 @@ exit</xmp
                       RSA host key for ras.mydomain.com has changed and
                       you have requested strict checking.<br />
                       Host key verification failed.
-                    </code>
+                  </xmp>
                   </li>
                   <li data-title="Solution">
                     <p>
@@ -1214,8 +1243,8 @@ exit</xmp
                         hosts
                       </b>
                     </p>
-                    <code class="codebox"
-                      >c:\users\juand\.ssh\known_hosts</code
+                    <xmp class="codebox"
+                      >c:\users\juand\.ssh\known_hosts</xmp
                     >
                     <p>
                       In my case, I have to delete the IP or the raspberry
@@ -1239,9 +1268,9 @@ exit</xmp
                 </h5>
                 <ul id="tabs-a" class="tabs">
                   <li data-title="Error">
-                    <code class="codebox">
+                    <xmp class="codebox">
                      ".xauthority" does not exist on raspberry pi 4
-                    </code>
+                    </xmp>
                   </li>
                   <li data-title="Solution">
                     <p>
@@ -1260,7 +1289,7 @@ exit</xmp
                       X applications that ship with the X Window System,
                       including:
                     </p>
-                    <code class="codebox">
+                    <xmp class="codebox">
                       - atobm, bitmap, and bmtoa, tools for manipulating
                       bitmap images; <br />
                       - ico, a demo program animating polyhedrons;<br />
@@ -1295,7 +1324,7 @@ exit</xmp
                       - Xmark, x11perf, and x11perfcomp, tools for
                       benchmarking graphical<br />
                       operations under the X Window System;
-                    </code>
+                    </xmp>
                     <figure>
                       <img
                         src="https://i.redd.it/jqzp400eq0a51.png"
@@ -1347,7 +1376,7 @@ exit</xmp
                     </ul>
                   </li>
                   <li data-title="Over the network (Code)">
-                    <code class="codebox">
+                    <xmp class="codebox">
                       Accessing the pi over the network and launching the
                       clone utility via ssh: <br />
 
@@ -1376,7 +1405,7 @@ exit</xmp
                       sudo dbus-launch piclone<br />
                       sudo fdisk -l<br />
                       sudo shutdown -h now
-                    </code>
+                    </xmp>
                   </li>
                 </ul>
               </div>

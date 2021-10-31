@@ -53,7 +53,17 @@ ul.sidenav li a:hover:not(.active) {
   background-color: var(--HoverBg);
   color: var(--HoverText);
 }
-
+/*JP Marca:*/
+ul.sidenav li.brand {
+  background-color: #0D1821;
+  /* text-align: center; */
+}
+ul.sidenav li.brand a {
+  padding: 0;
+}
+.jpLogo {
+  width: 100%;
+}
 div.content {
   margin-left: 20%;
   padding: 1px 16px;
@@ -174,10 +184,7 @@ div.content {
 
 /* END Accordion tabs */
 /* Style By Jp */
-/*JP Marca:*/
-.jpLogo {
-  width: 25%;
-}
+
 header,
 footer {
   background-color: var(--bannerBg);
@@ -245,7 +252,7 @@ figure img {
 }
 
 #outerImg {
-  background-color: black;
+  background-color: #0D1821;
   width: 90%;/* demo*/
   margin: auto;/* demo*/
   display: flex;
