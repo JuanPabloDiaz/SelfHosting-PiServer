@@ -311,11 +311,12 @@ figure img {
 
 /* inside the content */
 #outerImg {
-  background-color: #0d1821;
+  background-color: #7d82866b;
   width: 100%; /* demo*/
   margin: auto; /* demo*/
   display: flex;
   flex-wrap: wrap;
+  border-radius: 5%;
 }
 #outerImg > div {
   flex: 1;
