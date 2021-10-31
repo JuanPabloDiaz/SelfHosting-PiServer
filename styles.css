@@ -4,15 +4,15 @@
   /* --bannerBg: #715A67; */
   --bannerBg: rgba(0, 0, 0, 0.562);
   --bannerText: #;
-  --Nav-y-Tab-Bg: #F1F1F1;
+  --Nav-y-Tab-Bg: #f1f1f1;
   --Nav-y-Tab-Text: #5c5f72;
   --ActiveBG: #c1b4b0;
-  --ActiveText: #C75000;
+  --ActiveText: #c75000;
   /* --ActiveText: #e4f0d0; */
   --HoverBg: #555;
-  --HoverText: #F1F1F1;
-  --Link-text: #C75000;
-  --Link-text-active: #6B7D7D;
+  --HoverText: #f1f1f1;
+  --Link-text: #c75000;
+  --Link-text-active: #6b7d7d;
   --sm: 14px;
   --md: 16px;
   --lg: 18px;
@@ -55,7 +55,7 @@ ul.sidenav li a:hover:not(.active) {
 }
 /*JP Marca:*/
 ul.sidenav li.brand {
-  background-color: #0D1821;
+  background-color: #0d1821;
   /* text-align: center; */
 }
 ul.sidenav li.brand a {
@@ -89,13 +89,12 @@ div.content {
   transition: 0.3s;
   font-size: 17px;
   font-weight: bold;
-
 }
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-  background-color:var(--HoverBg);
-  color:var(--HoverText);
+  background-color: var(--HoverBg);
+  color: var(--HoverText);
 }
 
 /* Create an active/current tablink class */
@@ -103,7 +102,6 @@ div.content {
   background-color: var(--ActiveBG);
   color: var(--ActiveText);
 }
-
 
 /* Style the tab content */
 .tabcontent {
@@ -234,7 +232,7 @@ a:hover {
 }
 /*  END JP Styling*/
 
-/* ******************************************************************************************* */
+/* ****************************************** Intro ************************************************* */
 
 * {
   box-sizing: border-box;
@@ -243,9 +241,9 @@ a:hover {
 /* Header/Blog Title */
 .Ch-header {
   padding: 20px;
-  font-size: 30px;
+  /* font-size: 30px; */
   text-align: center;
-  background: rgb(139, 44, 44);
+  background: rgba(216, 206, 206, 0.5);
 }
 
 /* Create two unequal columns that floats next to each other */
@@ -258,8 +256,8 @@ a:hover {
 /* Right column */
 .rightcolumn {
   float: left;
-  width: 25%;
-  padding-left: 20px;
+  width: 30%;
+  /* padding-left: 20px; */
 }
 
 /* Fake image */
@@ -271,9 +269,10 @@ a:hover {
 
 /* Add a card effect for articles */
 .card {
-   background-color: white;
-   padding: 20px;
-   margin-top: 20px;
+  /* background-color: rgba(77, 133, 77, 0.267); */
+  padding: 20px;
+  margin-top: 15px;
+  text-align: justify;
 }
 
 /* Clear floats after the columns */
@@ -285,7 +284,8 @@ a:hover {
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
-  .leftcolumn, .rightcolumn {
+  .leftcolumn,
+  .rightcolumn {
     width: 100%;
     padding: 0;
   }
@@ -311,19 +311,20 @@ figure img {
 
 /* inside the content */
 #outerImg {
-  background-color: #0D1821;
-  width: 90%;/* demo*/
-  margin: auto;/* demo*/
+  background-color: #0d1821;
+  width: 100%; /* demo*/
+  margin: auto; /* demo*/
   display: flex;
   flex-wrap: wrap;
 }
-#outerImg>div {flex:1;}
-#outerImg>div>img {
-  width:100%;
-  height: 100px;
-  min-width:50px;/* demo*/
+#outerImg > div {
+  flex: 1;
 }
-
+#outerImg > div > img {
+  width: 100%;
+  height: 100px;
+  min-width: 50px; /* demo*/
+}
 
 .video {
   display: flex;
