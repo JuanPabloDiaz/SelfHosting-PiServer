@@ -1,5 +1,5 @@
 <div id="top"></div>
-<img align='right' src="https://media3.giphy.com/media/iIqmM5tTjmpOB9mpbn/giphy.gif?cid=ecf05e47gzy4xfa4dq1asdzb0xd7hp4w5g4tr178bgnwyw0f&rid=giphy.gif&ct=g" width="230">
+<img align='right' src="https://media3.giphy.com/media/iIqmM5tTjmpOB9mpbn/giphy.gif?cid=ecf05e47gzy4xfa4dq1asdzb0xd7hp4w5g4tr178bgnwyw0f&rid=giphy.gif&ct=g" width="235">
 
 # Pi-Home-Server
 
@@ -37,8 +37,6 @@ for more logos and emojis, visit \* [:link:](https://gist.github.com/rxaviers/73
 ```
 code blocks for commands
 ```
-
-<img align='right' src="https://media3.giphy.com/media/iIqmM5tTjmpOB9mpbn/giphy.gif?cid=ecf05e47gzy4xfa4dq1asdzb0xd7hp4w5g4tr178bgnwyw0f&rid=giphy.gif&ct=g" width="230">
 
 ## Help
 
