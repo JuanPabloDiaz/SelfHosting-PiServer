@@ -13,7 +13,9 @@ Self-hosting has been always something I would love to have and now it is posibl
 
 This project was developed in October 2021.
 
-## [Live Demo](https://self-hosting-pi-server.vercel.app/#) | [Repo](https://github.com/JuanPabloDiaz/SelfHosting-PiServer)
+## [Live Demo](https://pi.jpdiaz.dev) | [Repo](https://github.com/JuanPabloDiaz/SelfHosting-PiServer)
+
+<!-- ## [Live Demo](https://self-hosting-pi-server.vercel.app/#)-->
 
 ## Getting Started
 
