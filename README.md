@@ -5,11 +5,20 @@
 
 <!-- ABOUT THE PROJECT -->
 
-Setup a home server using a Raspberry Pi.
+Setup a home server using a Raspberry Pi (Rpi).
 
 ## Description 💡
 
-Self-hosting has been always something I would love to have and now it is posible with Docker on a Rpi. You can host multiple applications using docker containers. All files are served through NGINX, which runs in a wonderful docker container that is used as a reverse proxy with other private access services that are also runinng on the Raspberry: ( Nextcloud, Portainer, Homer, Pi-hole, qBittorrent, Jackett…).
+Self-hosting has been always something I would love to have and now it is posible with Docker on a Rpi.
+
+The structure and documentation is saved on an HTML file, the design on a CSS file and the user's interface on a Javascript file. All files are served through <a href="https://www.nginx.com/ " target="_blank " rel="noopener noreferrer ">NGINX</a>, which runs in a wonderful
+<a href="https://github.com/linuxserver/docker-letsencrypt " target="_blank " rel="noopener noreferrer ">docker container</a> that is used as a reverse proxy with other
+private access services that are also runinng on the Raspberry:
+( <a href="https://nextcloud.com/ " target="_blank " rel="noopener noreferrer ">Nextcloud</a>, <a href="https://portainer.com " target="_blank " rel="noopener noreferrer ">Portainer</a>, <a href="https://hub.docker.com/r/b4bz/homer
+" target="_blank " rel="noopener noreferrer ">Homer</a>, <a href="https://pi-hole.net/ " target="_blank " rel="noopener noreferrer ">Pi-hole</a>, <a href="https://github.com/linuxserver/docker-qbittorrent " target="_blank " rel="noopener
+noreferrer ">qBittorrent</a>, <a href="https://fleet.linuxserver.io/image?name=linuxserver/jackett " target="_blank " rel="noopener noreferrer ">Jackett</a>…).
+
+</p>
 
 This project was developed in October 2021.
 
