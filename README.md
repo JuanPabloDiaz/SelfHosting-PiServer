@@ -105,3 +105,10 @@ Inspiration, code snippets, etc.
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: images/screenshot.png
+
+
+### Lighthouse Score 🚀
+
+This is one of my first website. Build with HTML, CSS and some JS.
+
+<img src="./readme/lighthouse.png" />
